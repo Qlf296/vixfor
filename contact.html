@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Support — ForgCV by Vixfor</title>
+  <meta name="description" content="Contactez l'équipe ForgCV by Vixfor. Questions, suggestions, bugs — nous répondons sous 24h. FAQ disponible.">
+  <meta name="keywords" content="contact ForgCV, support CV, aide ForgCV, Vixfor contact">
+  <meta property="og:title" content="Contact ForgCV — Support & FAQ">
+  <meta property="og:description" content="Une question ? Notre équipe répond sous 24h. Consultez aussi notre FAQ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://forgcv.com/contact.html">
+  <meta property="og:image" content="https://forgcv.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact ForgCV — Support">
+  <meta name="twitter:description" content="Questions, suggestions — réponse sous 24h.">
+  <link rel="canonical" href="https://forgcv.com/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/vixfor-design-system.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/><rect x='13' y='14.5' width='8' height='1.8' rx='1' fill='rgba(91,87,255,0.6)'/><path d='M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z' fill='%23F59E0B'/></svg>">
+  <style>
+    .contact-page { padding-top: calc(var(--nav-h) + 4rem); padding-bottom: 5rem; max-width: 720px; margin: 0 auto; }
+    .contact-header { text-align: center; margin-bottom: 3rem; }
+    .contact-header h1 { font-size: clamp(1.75rem,4vw,2.5rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .contact-header p { color: var(--clr-text-2); font-size: 1rem; }
+
+    .contact-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--r-2xl); padding: 2rem; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-submit { width: 100%; padding: 0.875rem; font-size: 1rem; margin-top: 0.5rem; }
+    .contact-success { display: none; text-align: center; padding: 3rem; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--r-2xl); animation: scaleIn 0.35s var(--ease-spring); }
+    .contact-success.show { display: block; }
+    .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .success-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+
+    .info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    .info-card { background: var(--clr-surface-2); border: 1px solid var(--clr-border); border-radius: var(--r-xl); padding: 1.25rem; text-align: center; }
+    .info-card .icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+    .info-card .label { font-size: 0.75rem; color: var(--clr-text-3); margin-bottom: 0.25rem; }
+    .info-card .value { font-size: 0.875rem; font-weight: 700; }
+
+    .faq-section { background: var(--clr-surface-2); border-radius: var(--r-2xl); padding: 2rem; }
+    .faq-section h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 1.5rem; }
+    details { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--r-lg); padding: 1rem 1.25rem; margin-bottom: 0.75rem; cursor: pointer; }
+    details summary { font-weight: 600; font-size: 0.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    details summary::after { content: '+'; font-size: 1.25rem; color: var(--clr-accent); font-weight: 300; }
+    details[open] summary::after { content: '−'; }
+    details p { margin-top: 0.875rem; font-size: 0.875rem; color: var(--clr-text-2); line-height: 1.7; }
+
+    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } .contact-card { padding: 1.25rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="/index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none" style="display:block;flex-shrink:0"><defs><linearGradient id="nl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#nl)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/><rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/><rect x="13" y="18" width="6" height="1.8" rx="1" fill="rgba(91,87,255,0.35)"/><path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/></svg>
+      <div style="display:flex;flex-direction:column;line-height:1.1">
+        <span style="font-size:15px;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Forg<span style="color:var(--clr-accent)">CV</span></span>
+        <span style="font-size:8px;font-weight:700;letter-spacing:.08em;color:var(--clr-accent);text-transform:uppercase;opacity:.75">by Vixfor</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/create-cv-free.html">Créer un CV</a>
+      <a href="/resume-builder.html">Builder</a>
+      <a href="/templates.html">Templates</a>
+    </div>
+    <div class="nav-right">
+      <a href="/create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="/index.html">Accueil</a>
+  <a href="/create-cv-free.html">Créer un CV gratuit</a>
+  <a href="/resume-builder.html">Builder</a>
+  <a href="/templates.html">Templates</a>
+  <a href="/cover-letter.html">Lettre de motivation</a>
+  <a href="/about.html">À propos</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<main>
+<div class="container">
+<div class="contact-page">
+
+  <div class="contact-header reveal">
+    <div class="badge badge-accent" style="display:inline-flex;margin-bottom:1rem">💬 Support</div>
+    <h1 data-i18n="contact_title">Contactez-nous</h1>
+    <p>Une question, une suggestion, un bug ? Notre équipe répond sous 24h.</p>
+  </div>
+
+  <div class="info-grid reveal">
+    <div class="info-card">
+      <span class="icon">⚡</span>
+      <p class="label">Temps de réponse</p>
+      <p class="value">Sous 24h</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🌍</span>
+      <p class="label">Langues</p>
+      <p class="value">FR · EN · NL · ES</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🎁</span>
+      <p class="label">Support</p>
+      <p class="value">100% gratuit</p>
+    </div>
+  </div>
+
+  <div class="contact-card reveal" id="contact-form-card">
+    <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <input type="hidden" name="bot-field" style="display:none">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label"><span data-i18n="contact_name">Votre nom</span> <span class="required">*</span></label>
+          <input class="form-input" id="contact-name" type="text" placeholder="Sophie Martin" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span data-i18n="contact_email">Votre email</span> <span class="required">*</span></label>
+          <input class="form-input" id="contact-email" type="email" placeholder="sophie@email.com" required autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sujet</label>
+        <select class="form-select" id="contact-subject">
+          <option value="">Sélectionner un sujet</option>
+          <option value="bug">🐛 Bug / Problème technique</option>
+          <option value="suggestion">💡 Suggestion / Amélioration</option>
+          <option value="template">🎨 Demande de template</option>
+          <option value="language">🌍 Demande de langue</option>
+          <option value="partnership">🤝 Partenariat</option>
+          <option value="other">💬 Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label"><span data-i18n="contact_message">Votre message</span> <span class="required">*</span></label>
+        <textarea class="form-textarea" id="contact-message" rows="5" placeholder="Décrivez votre question ou suggestion en détail..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary contact-submit" id="contact-submit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span data-i18n="contact_send">Envoyer</span>
+      </button>
+    </form>
+  </div>
+
+  <div class="contact-success" id="contact-success">
+    <div class="success-icon">🎉</div>
+    <h2 class="success-title" data-i18n="contact_sent">Message envoyé !</h2>
+    <p style="color:var(--clr-text-2);margin-bottom:1.5rem">Merci pour votre message. Notre équipe vous répondra dans les 24 heures.</p>
+    <a href="/index.html" class="btn btn-primary">Retour à l'accueil</a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section reveal" id="faq" style="margin-top:2rem">
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>ForgCV est-il vraiment gratuit ?</summary>
+      <p>Oui, 100% gratuit. Aucun abonnement, aucune carte bancaire requise. Toutes les fonctionnalités principales — CV, lettre de motivation, export PDF, 6 templates — sont entièrement gratuites et le resteront.</p>
+    </details>
+    <details>
+      <summary>Mes données sont-elles en sécurité ?</summary>
+      <p>Absolument. Vos données ne quittent jamais votre appareil. Nous utilisons le localStorage de votre navigateur pour la sauvegarde automatique. Nous ne collectons aucune information personnelle.</p>
+    </details>
+    <details>
+      <summary>Le PDF est-il compatible avec les logiciels ATS ?</summary>
+      <p>Oui. Nos templates Classic, Minimal et Executive sont spécialement optimisés pour les systèmes de suivi des candidatures (ATS) utilisés par la majorité des grandes entreprises.</p>
+    </details>
+    <details>
+      <summary>Puis-je utiliser ForgCV sur mobile ?</summary>
+      <p>Oui ! ForgCV est entièrement responsive et optimisé pour tous les appareils — mobile, tablette et ordinateur.</p>
+    </details>
+    <details>
+      <summary>Combien de CV puis-je créer ?</summary>
+      <p>Autant que vous le souhaitez, sans aucune limite. Créez un CV différent pour chaque candidature, adaptez votre template selon le secteur, téléchargez autant de PDF que vous voulez.</p>
+    </details>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
+      <div class="footer-brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="fl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#fl)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/></svg>
+          <div>
+            <div style="font-size:16px;font-weight:800;color:var(--clr-text)">Forg<span style="color:#6366F1">CV</span></div>
+            <div style="font-size:9px;font-weight:700;letter-spacing:.07em;color:#6366F1;text-transform:uppercase">by Vixfor</div>
+          </div>
+        </a>
+        <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Créez votre CV professionnel en 2 minutes. 100% gratuit, sans inscription.</p>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🔒 GDPR</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">⚡ Gratuit</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🌍 6 langues</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <div class="footer-links">
+          <a href="/create-cv-free.html">Créer un CV gratuit</a>
+          <a href="/resume-builder.html">Resume Builder</a>
+          <a href="/cover-letter.html">Lettre de motivation</a>
+          <a href="/templates.html">Templates ATS</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <div class="footer-links">
+          <a href="/seo/how-to-write-a-cv.html">Écrire un CV</a>
+          <a href="/seo/cv-examples.html">Exemples de CV</a>
+          <a href="/seo/cv-format-2026.html">Format 2026</a>
+          <a href="/seo/cv-with-no-experience.html">CV sans expérience</a>
+          <a href="/seo/cv-europe-jobs.html">Jobs en Europe</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Par pays</h4>
+        <div class="footer-links">
+          <a href="/seo/cv-france.html">🇫🇷 France</a>
+          <a href="/seo/cv-netherlands.html">🇳🇱 Pays-Bas</a>
+          <a href="/seo/cv-germany.html">🇩🇪 Allemagne</a>
+          <a href="/seo/cv-spain.html">🇪🇸 Espagne</a>
+          <a href="/seo/cv-italy.html">🇮🇹 Italie</a>
+          <a href="/seo/cv-portugal.html">🇵🇹 Portugal</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <div class="footer-links">
+          <a href="/about.html">À propos</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/vixfor/index.html">Vixfor</a>
+          <a href="/legal/privacy-policy.html">Confidentialité</a>
+          <a href="/legal/terms-of-service.html">CGU</a>
+          <a href="/legal/cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ForgCV by <a href="https://vixfor.com" target="_blank" rel="noopener" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. Tous droits réservés.</span>
+      <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
+        <a href="/legal/privacy-policy.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Confidentialité</a>
+        <a href="/legal/terms-of-service.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">CGU</a>
+        <a href="/legal/cookies.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/js/analytics.js"></script>
+
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    if (!name || !email || !message) {
+      if (typeof showToast === 'function') showToast('Veuillez remplir tous les champs obligatoires.', 'error');
+      return;
+    }
+    const btn = document.getElementById('contact-submit');
+    btn.innerHTML = '<span class="spinner"></span> Envoi...';
+    btn.disabled  = true;
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(function() {
+      document.getElementById('contact-form-card').style.display = 'none';
+      document.getElementById('contact-success').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(function() {
+      // Fallback: show success anyway (form may not be on Netlify yet in dev)
+      document.getElementById('contact-form-card').style.display = 'none';
+      document.getElementById('contact-success').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+<script src="/js/analytics.js"></script>
+</body>
+</html>

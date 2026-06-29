@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — ForgCV by Vixfor</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Page introuvable — Retournez à ForgCV pour créer votre CV gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/><rect x='13' y='14.5' width='8' height='1.8' rx='1' fill='rgba(91,87,255,0.6)'/><path d='M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z' fill='%23F59E0B'/></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FAFAFA;
+      color: #0F0F1A;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0A0A12; color: #F0F0FF; }
+      .card { background: #16161E; border-color: rgba(255,255,255,0.07); }
+      .btn-secondary { background: #1E1E28; border-color: rgba(255,255,255,0.12); color: #F0F0FF; }
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .err-num {
+      font-size: clamp(5rem, 20vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      background: linear-gradient(135deg, #5B57FF 0%, #8B5CF6 50%, #C084FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .err-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .err-desc {
+      font-size: 0.9375rem;
+      color: #5A5A78;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    @media (prefers-color-scheme: dark) { .err-desc { color: #9898B8; } }
+
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #5B57FF, #8B5CF6);
+      color: white;
+      box-shadow: 0 4px 16px rgba(91,87,255,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,87,255,0.4); }
+
+    .btn-secondary {
+      background: #F4F4F8;
+      color: #0F0F1A;
+      border-color: rgba(0,0,0,0.1);
+    }
+    .btn-secondary:hover { border-color: rgba(91,87,255,0.3); color: #5B57FF; }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+    .logo-text { font-size: 14px; font-weight: 800; letter-spacing: -0.02em; }
+    .logo-sub { font-size: 8px; font-weight: 700; letter-spacing: 0.08em; color: #6366F1; text-transform: uppercase; }
+  </style>
+  <link rel="stylesheet" href="/css/vixfor-design-system.css">
+</head>
+<body>
+  <div class="card">
+    <a href="/index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+        <defs><linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>
+        <rect width="36" height="36" rx="10" fill="url(#gl)"/>
+        <rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/>
+        <rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/>
+        <rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/>
+        <path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/>
+      </svg>
+      <div>
+        <div class="logo-text">ForgCV</div>
+        <div class="logo-sub">by Vixfor</div>
+      </div>
+    </a>
+
+    <div class="err-num">404</div>
+    <h1 class="err-title">Page introuvable</h1>
+    <p class="err-desc">Cette page n'existe pas ou a été déplacée. Pas d'inquiétude — votre CV vous attend !</p>
+
+    <div class="btn-row">
+      <a href="/index.html" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Accueil
+      </a>
+      <a href="/create-cv-free.html" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Créer mon CV
+      </a>
+    </div>
+  </div>
+<script src="/js/analytics.js"></script>
+</body>
+</html>

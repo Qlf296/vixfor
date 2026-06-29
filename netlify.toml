@@ -1,0 +1,351 @@
+# ForgCV by Vixfor — Netlify config
+# Updated: 2026-06-29
+
+# ── Build ──────────────────────────────────────────────────────────────────
+[build]
+  publish = "."
+
+# ── Security headers (all pages) ──────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options           = "DENY"
+    X-XSS-Protection          = "1; mode=block"
+    X-Content-Type-Options    = "nosniff"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Permissions-Policy        = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# ── Asset caching ──────────────────────────────────────────────────────────
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# ── Block sensitive files ──────────────────────────────────────────────────
+[[redirects]]
+  from   = "/*.py"
+  to     = "/404.html"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/FORGCV-*.html"
+  to     = "/404.html"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/brand-guide.html"
+  to     = "/404.html"
+  status = 404
+  force  = true
+
+# ── Vixfor ecosystem ──────────────────────────────────────────────────────
+[[redirects]]
+  from   = "/nextora/*"
+  to     = "/vixfor/:splat"
+  status = 301
+
+[[redirects]]
+  from   = "/vixfor"
+  to     = "/vixfor/index.html"
+  status = 200
+
+# ── Clean URLs — Core pages ────────────────────────────────────────────────
+[[redirects]]
+  from   = "/create-cv-free"
+  to     = "/create-cv-free.html"
+  status = 200
+
+[[redirects]]
+  from   = "/pricing"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/resume-builder"
+  to     = "/resume-builder.html"
+  status = 200
+
+[[redirects]]
+  from   = "/templates"
+  to     = "/templates.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cover-letter"
+  to     = "/cover-letter.html"
+  status = 200
+
+[[redirects]]
+  from   = "/about"
+  to     = "/about.html"
+  status = 200
+
+[[redirects]]
+  from   = "/contact"
+  to     = "/contact.html"
+  status = 200
+
+# ── Clean URLs — SEO pages (/seo/ subfolder) ──────────────────────────────
+[[redirects]]
+  from   = "/cv-examples"
+  to     = "/seo/cv-examples.html"
+  status = 200
+
+[[redirects]]
+  from   = "/how-to-write-a-cv"
+  to     = "/seo/how-to-write-a-cv.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-format-2026"
+  to     = "/seo/cv-format-2026.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-with-no-experience"
+  to     = "/seo/cv-with-no-experience.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-france"
+  to     = "/seo/cv-france.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-netherlands"
+  to     = "/seo/cv-netherlands.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-germany"
+  to     = "/seo/cv-germany.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-spain"
+  to     = "/seo/cv-spain.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-italy"
+  to     = "/seo/cv-italy.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-portugal"
+  to     = "/seo/cv-portugal.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-europe-jobs"
+  to     = "/seo/cv-europe-jobs.html"
+  status = 200
+
+# ── Clean URLs — Legal pages ───────────────────────────────────────────────
+[[redirects]]
+  from   = "/legal/privacy-policy"
+  to     = "/legal/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from   = "/legal/terms-of-service"
+  to     = "/legal/terms-of-service.html"
+  status = 200
+
+[[redirects]]
+  from   = "/legal/cookies"
+  to     = "/legal/cookies.html"
+  status = 200
+
+# ── Convenience aliases ────────────────────────────────────────────────────
+[[redirects]]
+  from   = "/create-cv"
+  to     = "/create-cv-free.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-builder"
+  to     = "/create-cv-free.html"
+  status = 200
+
+[[redirects]]
+  from   = "/free-cv"
+  to     = "/create-cv-free.html"
+  status = 200
+
+[[redirects]]
+  from   = "/builder"
+  to     = "/resume-builder.html"
+  status = 200
+
+# ── Legacy 301 redirects (deprecated pages) ────────────────────────────────
+[[redirects]]
+  from   = "/cv-generator"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-generator.html"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-maker-online"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-maker-online.html"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-template"
+  to     = "/templates.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-tips"
+  to     = "/seo/how-to-write-a-cv.html"
+  status = 301
+
+# ── Redirects for old non-/seo/ SEO page URLs (if indexed) ────────────────
+[[redirects]]
+  from   = "/cv-examples.html"
+  to     = "/seo/cv-examples.html"
+  status = 301
+
+[[redirects]]
+  from   = "/how-to-write-a-cv.html"
+  to     = "/seo/how-to-write-a-cv.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-format-2026.html"
+  to     = "/seo/cv-format-2026.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-with-no-experience.html"
+  to     = "/seo/cv-with-no-experience.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-france.html"
+  to     = "/seo/cv-france.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-netherlands.html"
+  to     = "/seo/cv-netherlands.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-germany.html"
+  to     = "/seo/cv-germany.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-spain.html"
+  to     = "/seo/cv-spain.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-italy.html"
+  to     = "/seo/cv-italy.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-portugal.html"
+  to     = "/seo/cv-portugal.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-europe-jobs.html"
+  to     = "/seo/cv-europe-jobs.html"
+  status = 301
+
+# ── Anglophone market SEO pages ────────────────────────────────────────────
+[[redirects]]
+  from   = "/cv-uk"
+  to     = "/seo/cv-uk.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-usa"
+  to     = "/seo/cv-usa.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-canada"
+  to     = "/seo/cv-canada.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-australia"
+  to     = "/seo/cv-australia.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-arabic-countries"
+  to     = "/seo/cv-arabic-countries.html"
+  status = 200
+
+# ── Aliases for common search queries ──────────────────────────────────────
+[[redirects]]
+  from   = "/cv-uk.html"
+  to     = "/seo/cv-uk.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-usa.html"
+  to     = "/seo/cv-usa.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-canada.html"
+  to     = "/seo/cv-canada.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-australia.html"
+  to     = "/seo/cv-australia.html"
+  status = 301
+
+[[redirects]]
+  from   = "/resume-usa"
+  to     = "/seo/cv-usa.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-arab"
+  to     = "/seo/cv-arabic-countries.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-dubai"
+  to     = "/seo/cv-arabic-countries.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-gulf"
+  to     = "/seo/cv-arabic-countries.html"
+  status = 301

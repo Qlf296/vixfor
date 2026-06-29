@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder — Créez votre CV avec l'IA | ForgCV</title>
+  <meta name="description" content="Créez votre CV professionnel gratuitement. Score ATS en temps réel, 6 templates, export PDF sans filigrane, 6 langues. Aucune inscription.">
+  <meta property="og:title" content="Resume Builder — ForgCV">
+  <meta property="og:description" content="IA intégrée, score ATS en temps réel, 6 templates ATS. Créez votre CV en 3 minutes.">
+  <meta property="og:url" content="https://forgcv.com/resume-builder">
+  <meta property="og:image" content="/og-image.png">
+  <link rel="canonical" href="https://forgcv.com/resume-builder">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ForgCV Resume Builder","url":"https://forgcv.com/resume-builder","applicationCategory":"BusinessApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Plan gratuit disponible"},"featureList":["IA suggestions","Score ATS temps réel","6 templates ATS","Export PDF sans filigrane","Lettre de motivation","6 langues"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/vixfor-design-system.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/></svg>">
+  <style>
+    /* ── Resume Builder page ── */
+    .rb-hero{padding:6rem 0 4rem;background:linear-gradient(170deg,var(--clr-bg) 40%,rgba(91,87,255,.04) 100%);position:relative;overflow:hidden}
+    .rb-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(91,87,255,.08) 0%,transparent 70%);pointer-events:none}
+    .rb-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.06) 0%,transparent 70%);pointer-events:none}
+    .rb-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .rb-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--clr-accent);background:rgba(91,87,255,.08);border:1px solid rgba(91,87,255,.2);padding:5px 14px;border-radius:9999px;margin-bottom:1.25rem}
+    .rb-h1{font-size:clamp(2rem,4.5vw,3.25rem);font-weight:900;letter-spacing:-.05em;line-height:1.06;margin-bottom:1rem;color:var(--clr-text)}
+    .rb-h1 .g{background:var(--clr-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .rb-sub{font-size:1.05rem;color:var(--clr-text-2);line-height:1.65;margin-bottom:2rem;max-width:480px}
+    .rb-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2rem}
+    .rb-trust{display:flex;flex-wrap:wrap;gap:1rem}
+    .rb-trust-item{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--clr-text-3);font-weight:500}
+    .rb-trust-item svg{color:var(--clr-accent);flex-shrink:0}
+
+    /* Mockup */
+    .rb-mockup{background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.12),0 0 0 1px rgba(91,87,255,.08);position:relative}
+    .rb-mockup-bar{background:var(--clr-bg-2);border-bottom:1px solid var(--clr-border);padding:.625rem 1rem;display:flex;align-items:center;gap:.5rem}
+    .rb-dot{width:10px;height:10px;border-radius:50%}
+    .rb-mockup-title{font-size:.75rem;font-weight:600;color:var(--clr-text-3);margin-left:.5rem;flex:1;text-align:center}
+    .rb-live{display:flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;color:#10B981}
+    .rb-live-dot{width:7px;height:7px;border-radius:50%;background:#10B981;animation:pulse 1.5s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+    .rb-mockup-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .rb-form-side{padding:1.25rem;border-right:1px solid var(--clr-border)}
+    .rb-field{margin-bottom:.875rem}
+    .rb-field label{display:block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--clr-text-3);margin-bottom:.25rem}
+    .rb-field-val{background:var(--clr-bg);border:1px solid var(--clr-border);border-radius:8px;padding:.5rem .75rem;font-size:.75rem;color:var(--clr-text-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rb-field-val.filled{border-color:var(--clr-accent);background:rgba(91,87,255,.04);color:var(--clr-text)}
+    .rb-ai-chip{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,rgba(91,87,255,.12),rgba(139,92,246,.12));border:1px solid rgba(91,87,255,.25);border-radius:6px;padding:3px 8px;font-size:.65rem;font-weight:700;color:var(--clr-accent);margin-bottom:.5rem}
+    .rb-cv-preview{padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+    .rb-cv-header{background:var(--clr-grad);border-radius:8px;padding:.75rem;color:#fff}
+    .rb-cv-name{font-size:.875rem;font-weight:800;letter-spacing:-.02em}
+    .rb-cv-title-role{font-size:.65rem;opacity:.8;margin-top:2px}
+    .rb-cv-section{margin-top:.375rem}
+    .rb-cv-sec-label{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--clr-accent);margin-bottom:.25rem}
+    .rb-cv-line{height:6px;border-radius:3px;background:var(--clr-border);margin-bottom:.25rem}
+    .rb-cv-line.w90{width:90%}
+    .rb-cv-line.w70{width:70%}
+    .rb-cv-line.w80{width:80%}
+    .rb-cv-line.w60{width:60%}
+    .rb-skill-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.25rem}
+    .rb-skill-tag{font-size:.55rem;font-weight:700;background:rgba(91,87,255,.1);color:var(--clr-accent);padding:2px 7px;border-radius:9999px;border:1px solid rgba(91,87,255,.2)}
+    .rb-ats-bar{padding:.75rem 1.25rem;border-top:1px solid var(--clr-border);display:flex;align-items:center;gap:.75rem}
+    .rb-ats-label{font-size:.65rem;font-weight:700;color:var(--clr-text-3);white-space:nowrap}
+    .rb-ats-track{flex:1;height:8px;border-radius:4px;background:var(--clr-border);overflow:hidden}
+    .rb-ats-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#5B57FF,#10B981);width:87%;transition:width .8s}
+    .rb-ats-score{font-size:.75rem;font-weight:800;color:#059669;white-space:nowrap}
+
+    /* Features */
+    .rb-features{padding:5rem 0;background:var(--clr-bg-2)}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .feat-card{background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;padding:1.75rem;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:default}
+    .feat-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:rgba(91,87,255,.25)}
+    .feat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;flex-shrink:0}
+    .feat-card h3{font-size:1rem;font-weight:700;color:var(--clr-text);margin-bottom:.4rem;letter-spacing:-.02em}
+    .feat-card p{font-size:.825rem;color:var(--clr-text-2);line-height:1.6}
+    .feat-tag{display:inline-flex;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--clr-accent);background:rgba(91,87,255,.08);padding:2px 8px;border-radius:9999px;margin-top:.75rem}
+
+    /* How it works */
+    .rb-how{padding:5rem 0}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:840px;margin:0 auto;position:relative}
+    .steps-grid::before{content:'';position:absolute;top:32px;left:calc(16.7% + 32px);right:calc(16.7% + 32px);height:2px;background:linear-gradient(90deg,var(--clr-accent),rgba(91,87,255,.2));z-index:0}
+    .step-item{text-align:center;position:relative;z-index:1}
+    .step-num{width:64px;height:64px;border-radius:50%;background:var(--clr-grad);color:#fff;font-size:1.25rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;box-shadow:0 8px 24px rgba(91,87,255,.3)}
+    .step-item h3{font-size:1rem;font-weight:700;color:var(--clr-text);margin-bottom:.375rem;letter-spacing:-.02em}
+    .step-item p{font-size:.825rem;color:var(--clr-text-2);line-height:1.6}
+
+    /* Compare */
+    .rb-compare{padding:5rem 0;background:var(--clr-bg-2)}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:780px;margin:0 auto}
+    .compare-col{background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:16px;padding:2rem}
+    .compare-col.pro{border-color:var(--clr-accent);box-shadow:0 0 0 1px rgba(91,87,255,.2),0 8px 24px rgba(91,87,255,.08)}
+    .compare-badge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:9999px;margin-bottom:.875rem}
+    .badge-free{color:var(--clr-text-3);background:var(--clr-bg-2);border:1px solid var(--clr-border)}
+    .badge-pro{color:#fff;background:var(--clr-grad)}
+    .compare-col h3{font-size:1.375rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.25rem;color:var(--clr-text)}
+    .compare-col .price{font-size:.875rem;color:var(--clr-text-3);margin-bottom:1.5rem}
+    .compare-feature{display:flex;align-items:flex-start;gap:.625rem;font-size:.85rem;color:var(--clr-text-2);margin-bottom:.5rem;line-height:1.4}
+    .compare-feature .ci{font-size:.75rem;margin-top:2px;flex-shrink:0}
+    .ci-yes{color:#059669}
+    .ci-no{color:var(--clr-text-3);opacity:.4}
+
+    /* Stats */
+    .rb-stats{padding:4rem 0}
+    .stats-row{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+    .stat-item{text-align:center;padding:1.5rem 2rem;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:16px;min-width:150px}
+    .stat-num{font-size:2.25rem;font-weight:900;letter-spacing:-.04em;background:var(--clr-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.25rem}
+    .stat-label{font-size:.8rem;color:var(--clr-text-3);font-weight:500}
+
+    /* Bottom CTA */
+    .rb-bottom{padding:5rem 0;background:linear-gradient(135deg,#4F46E5,#7C3AED);text-align:center;position:relative;overflow:hidden}
+    .rb-bottom::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.06) 0%,transparent 60%);pointer-events:none}
+    .rb-bottom h2{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:.75rem}
+    .rb-bottom p{color:rgba(255,255,255,.8);font-size:1rem;margin-bottom:2rem;max-width:440px;margin-left:auto;margin-right:auto}
+    .rb-bottom-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    .section-header{text-align:center;margin-bottom:3rem}
+    .section-header h2{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;letter-spacing:-.04em;margin-bottom:.5rem;color:var(--clr-text)}
+    .section-header p{color:var(--clr-text-2);font-size:.95rem;max-width:500px;margin:0 auto;line-height:1.6}
+
+    @media(max-width:900px){
+      .rb-hero-inner{grid-template-columns:1fr}
+      .rb-mockup{display:none}
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-grid::before{display:none}
+      .compare-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .features-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:1fr}
+      .rb-cta-row{flex-direction:column}
+      .rb-cta-row a{width:100%;justify-content:center}
+    }
+  </style>
+</head>
+<body>
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="/index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none" style="display:block;flex-shrink:0"><defs><linearGradient id="nl12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#nl12)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/><rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/><path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/></svg>
+      <div style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:15px;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Forg<span style="color:var(--clr-accent)">CV</span></span><span style="font-size:8px;font-weight:700;letter-spacing:.08em;color:var(--clr-accent);text-transform:uppercase;opacity:.75">by Vixfor</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="/create-cv-free.html">Créer un CV</a>
+      <a href="/resume-builder.html" style="color:var(--clr-accent);font-weight:700">Builder</a>
+      <a href="/templates.html">Templates</a>
+    </div>
+    <div class="nav-right">
+      <a href="/create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="/index.html">Accueil</a>
+  <a href="/create-cv-free.html">Créer un CV gratuit</a>
+  <a href="/resume-builder.html">Builder</a>
+  <a href="/templates.html">Templates</a>
+  <a href="/cover-letter.html">Lettre de motivation</a>
+  <a href="/about.html">À propos</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="rb-hero">
+  <div class="container">
+    <div class="rb-hero-inner">
+      <div>
+        <div class="rb-eyebrow">🤖 Propulsé par l'IA</div>
+        <h1 class="rb-h1">Le Resume Builder<br><span class="g">le plus puissant</span><br>d'Europe</h1>
+        <p class="rb-sub">Créez un CV parfait en 3 minutes. Score ATS en temps réel, suggestions IA, 6 langues, 6 templates ATS. Zéro compétence technique requise.</p>
+        <div class="rb-cta-row">
+          <a href="/create-cv-free.html" class="btn btn-primary btn-xl" onclick="cvf_track('cta_click','rb_hero_primary');cvf_track('start_cv',{source:'resume-builder'})">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Essayer gratuitement
+          </a>
+          <a href="/create-cv-free.html" class="btn btn-secondary btn-xl" onclick="cvf_track('cta_click','rb_hero_pricing')">
+            Voir les templates →
+          </a>
+        </div>
+        <div class="rb-trust">
+          <span class="rb-trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100% gratuit pour démarrer</span>
+          <span class="rb-trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sans carte bancaire</span>
+          <span class="rb-trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> GDPR compliant</span>
+        </div>
+      </div>
+
+      <!-- CV Builder Mockup -->
+      <div class="rb-mockup">
+        <div class="rb-mockup-bar">
+          <div class="rb-dot" style="background:#FF5F57"></div>
+          <div class="rb-dot" style="background:#FEBC2E"></div>
+          <div class="rb-dot" style="background:#28C840"></div>
+          <div class="rb-mockup-title">ForgCV Builder</div>
+          <div class="rb-live"><div class="rb-live-dot"></div> Live</div>
+        </div>
+        <div class="rb-mockup-body">
+          <div class="rb-form-side">
+            <div class="rb-ai-chip">🤖 IA active</div>
+            <div class="rb-field"><label>Nom complet</label><div class="rb-field-val filled">Alexandre Moreau</div></div>
+            <div class="rb-field"><label>Titre professionnel</label><div class="rb-field-val filled">Senior Product Manager</div></div>
+            <div class="rb-field"><label>Résumé — <span style="color:var(--clr-accent)">suggestion IA</span></label><div class="rb-field-val filled" style="white-space:normal;font-size:.7rem;line-height:1.4">Product Manager passionné avec 7 ans d'expérience dans les fintech B2B. Expert en roadmap produit et méthodes agiles...</div></div>
+            <div class="rb-field"><label>Compétences</label>
+              <div class="rb-skill-tags">
+                <span class="rb-skill-tag">Product Strategy</span>
+                <span class="rb-skill-tag">Agile/Scrum</span>
+                <span class="rb-skill-tag">SQL</span>
+                <span class="rb-skill-tag">Figma</span>
+                <span class="rb-skill-tag">Jira</span>
+              </div>
+            </div>
+          </div>
+          <div class="rb-cv-preview">
+            <div class="rb-cv-header">
+              <div class="rb-cv-name">Alexandre Moreau</div>
+              <div class="rb-cv-title-role">Senior Product Manager · Paris, France</div>
+              <div style="font-size:.55rem;opacity:.7;margin-top:3px">alexandre@moreau.fr · +33 6 12 34 56 78</div>
+            </div>
+            <div class="rb-cv-section">
+              <div class="rb-cv-sec-label">Résumé</div>
+              <div class="rb-cv-line w90"></div>
+              <div class="rb-cv-line w80"></div>
+              <div class="rb-cv-line w70"></div>
+            </div>
+            <div class="rb-cv-section">
+              <div class="rb-cv-sec-label">Expérience</div>
+              <div style="font-size:.6rem;font-weight:700;color:var(--clr-text);margin-bottom:3px">Stripe · 2021–Présent</div>
+              <div class="rb-cv-line w90"></div>
+              <div class="rb-cv-line w75" style="width:75%"></div>
+            </div>
+            <div class="rb-cv-section">
+              <div class="rb-cv-sec-label">Compétences</div>
+              <div class="rb-skill-tags">
+                <span class="rb-skill-tag" style="font-size:.5rem">Product Strategy</span>
+                <span class="rb-skill-tag" style="font-size:.5rem">Agile</span>
+                <span class="rb-skill-tag" style="font-size:.5rem">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rb-ats-bar">
+          <div class="rb-ats-label">Score ATS</div>
+          <div class="rb-ats-track"><div class="rb-ats-fill"></div></div>
+          <div class="rb-ats-score">87/100 🎯</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="rb-stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item"><span class="stat-num">50k+</span><span class="stat-label">CVs créés</span></div>
+      <div class="stat-item"><span class="stat-num">3 min</span><span class="stat-label">Temps moyen</span></div>
+      <div class="stat-item"><span class="stat-num">87%</span><span class="stat-label">Score ATS moyen</span></div>
+      <div class="stat-item"><span class="stat-num">127</span><span class="stat-label">Pays</span></div>
+      <div class="stat-item"><span class="stat-num">4.9★</span><span class="stat-label">Satisfaction</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="rb-features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Tout ce dont vous avez besoin<br>pour décrocher le poste</h2>
+      <p>ForgCV combine IA, design et stratégie ATS pour maximiser vos chances.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(91,87,255,.1)">🤖</div>
+        <h3>Suggestions IA en temps réel</h3>
+        <p>L'IA analyse votre profil et suggère des formulations percutantes pour chaque section : résumé, expériences, compétences.</p>
+        
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(16,185,129,.1)">📊</div>
+        <h3>Score ATS instantané</h3>
+        <p>Analysez la compatibilité de votre CV avec les systèmes de recrutement automatisés. Score de 0 à 100, conseils d'optimisation inclus.</p>
+        
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(245,158,11,.1)">🎨</div>
+        <h3>6 templates ATS ATS</h3>
+        <p>Des designs créés par des designers professionnels, validés par des recruteurs RH. De Classique à Bold, trouvez votre identité.</p>
+        
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(239,68,68,.1)">📄</div>
+        <h3>PDF haute résolution</h3>
+        <p>Export PDF propre, sans filigrane, format A4 standard. Prêt à envoyer aux recruteurs ou à imprimer. Compatible ATS garanti.</p>
+        
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(14,165,233,.1)">🌍</div>
+        <h3>6 langues disponibles</h3>
+        <p>Créez votre CV en français, anglais, néerlandais, espagnol, portugais ou arabe. Interface et contenu entièrement traduits.</p>
+        <span class="feat-tag">Gratuit</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(139,92,246,.1)">✉️</div>
+        <h3>Lettre de motivation incluse</h3>
+        <p>Générateur de lettre de motivation avec IA. Personnalisez automatiquement pour chaque offre d'emploi en 60 secondes.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="rb-how">
+  <div class="container">
+    <div class="section-header">
+      <h2>Comment ça marche</h2>
+      <p>De zéro à un CV professionnel en moins de 3 minutes.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h3>Remplissez votre profil</h3>
+        <p>Notre formulaire guidé avec placeholders intelligents. L'IA complète et améliore chaque section à mesure que vous tapez.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h3>Choisissez votre design</h3>
+        <p>6 templates ATS premium. Aperçu en temps réel à droite. Changez de template en un clic, votre contenu suit automatiquement.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h3>Téléchargez votre CV</h3>
+        <p>PDF haute résolution en 1 clic. Format A4, compatible tous les ATS. Envoyez directement depuis le navigateur.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="/create-cv-free.html" class="btn btn-primary btn-xl" onclick="cvf_track('cta_click','rb_how');cvf_track('start_cv',{source:'how-it-works'})">
+        Commencer maintenant — Gratuit →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TOUT INCLUS — 100% GRATUIT -->
+<section class="rb-compare">
+  <div class="container">
+    <div class="section-header">
+      <h2>Tout inclus — 100% Gratuit</h2>
+      <p>Aucune carte bancaire. Aucune limite cachée. Zéro inscription requise.</p>
+    </div>
+    <div class="compare-grid" style="display:grid;grid-template-columns:1fr;max-width:540px;margin:0 auto">
+      <div class="compare-col" style="text-align:center">
+        <span class="compare-badge badge-free">✦ Gratuit pour toujours</span>
+        <h3 style="font-size:2rem;margin:.75rem 0 .25rem">ForgCV</h3>
+        <p class="price" style="font-size:2.5rem;font-weight:900;color:var(--clr-accent)">€0</p>
+        <p style="font-size:.85rem;color:var(--clr-text-2);margin-bottom:1.5rem">Pour toujours · Aucun abonnement</p>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>CVs illimités</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>6 templates ATS</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>Export PDF sans filigrane</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>Aperçu en direct</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>6 langues (FR/EN/NL/ES/AR/PT)</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>Score ATS 0–100</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> <strong>Lettre de motivation</strong></div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> Aucune inscription</div>
+        <div class="compare-feature"><span class="ci ci-yes">✓</span> Données stockées localement</div>
+        <a href="/create-cv-free.html" class="btn btn-primary btn-xl" style="width:100%;justify-content:center;margin-top:1.75rem" onclick="cvf_track('cta_click','rb_compare_free');cvf_track('start_cv',{source:'rb-compare'})">
+          ✦ Créer mon CV gratuitement
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="rb-bottom">
+  <div class="container" style="position:relative;z-index:1">
+    <h2>Prêt à créer le CV<br>qui change tout ?</h2>
+    <p>Rejoignez 50 000+ professionnels qui ont choisi ForgCV pour décrocher leur prochain poste.</p>
+    <div class="rb-bottom-btns">
+      <a href="/create-cv-free.html" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#5B57FF;font-weight:800;padding:0 2rem;height:52px;border-radius:12px;text-decoration:none;font-size:1rem;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''" onclick="cvf_track('cta_click','rb_bottom_free');cvf_track('start_cv',{source:'rb-cta'})">
+        ✦ Commencer gratuitement
+      </a>
+      <a href="/create-cv-free.html" style="display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;padding:0 1.75rem;height:52px;border-radius:12px;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.4);transition:border-color .2s,background .2s" onmouseover="this.style.borderColor='#fff';this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.borderColor='rgba(255,255,255,.4)';this.style.background=''" onclick="cvf_track('cta_click','rb_bottom_pricing')">
+        Voir les templates →
+      </a>
+    </div>
+    <p style="color:rgba(255,255,255,.45);font-size:.8rem;margin-top:1.5rem">Aucune carte bancaire · Aucune inscription · Données sécurisées</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
+      <div class="footer-brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="fl12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#fl12)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/></svg>
+          <div><div style="font-size:16px;font-weight:800;color:var(--clr-text)">Forg<span style="color:#6366F1">CV</span></div><div style="font-size:9px;font-weight:700;letter-spacing:.07em;color:#6366F1;text-transform:uppercase">by Vixfor</div></div>
+        </a>
+        <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Créez votre CV professionnel en 2 minutes. 100% gratuit, sans inscription.</p>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🔒 GDPR</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">⚡ Gratuit</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🌍 6 langues</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Produit</h4><div class="footer-links"><a href="/create-cv-free.html">Créer un CV gratuit</a><a href="/resume-builder.html">Resume Builder</a><a href="/cover-letter.html">Lettre de motivation</a><a href="/templates.html">Templates ATS</a></div></div>
+      <div class="footer-col"><h4>Guides</h4><div class="footer-links"><a href="/seo/how-to-write-a-cv.html">Écrire un CV</a><a href="/seo/cv-examples.html">Exemples de CV</a><a href="/seo/cv-format-2026.html">Format 2026</a><a href="/seo/cv-with-no-experience.html">CV sans expérience</a><a href="/seo/cv-europe-jobs.html">Jobs en Europe</a></div></div>
+      <div class="footer-col"><h4>Par pays</h4><div class="footer-links"><a href="/seo/cv-france.html">🇫🇷 France</a><a href="/seo/cv-netherlands.html">🇳🇱 Pays-Bas</a><a href="/seo/cv-germany.html">🇩🇪 Allemagne</a><a href="/seo/cv-spain.html">🇪🇸 Espagne</a><a href="/seo/cv-italy.html">🇮🇹 Italie</a><a href="/seo/cv-portugal.html">🇵🇹 Portugal</a></div></div>
+      <div class="footer-col"><h4>Entreprise</h4><div class="footer-links"><a href="/about.html">À propos</a><a href="/contact.html">Contact</a><a href="/vixfor/index.html">Vixfor</a><a href="/legal/privacy-policy.html">Confidentialité</a><a href="/legal/terms-of-service.html">CGU</a><a href="/legal/cookies.html">Cookies</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ForgCV by <a href="https://vixfor.com" target="_blank" rel="noopener" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. Tous droits réservés.</span>
+      <div style="display:flex;gap:1.25rem">
+        <a href="/legal/privacy-policy.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none">Confidentialité</a>
+        <a href="/legal/terms-of-service.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none">CGU</a>
+        <a href="/legal/cookies.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/js/analytics.js"></script>
+
+<script>
+/* Vixfor micro-interactions */
+(function(){
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  // Card tilt on hover (subtle)
+  document.querySelectorAll('.card,.pricing-card,.feat-card,.testi-card').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='translateY(-4px) perspective(600px) rotateX('+(-y*4)+'deg) rotateY('+(x*4)+'deg)';
+    });
+    el.addEventListener('mouseleave',function(){
+      el.style.transform='';
+    });
+  });
+  // Button ripple
+  document.querySelectorAll('.btn-primary,.btn-vxf-primary,.btn-cvf-primary').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      var ripple=document.createElement('span');
+      var r=btn.getBoundingClientRect();
+      var size=Math.max(r.width,r.height);
+      ripple.style.cssText='position:absolute;width:'+size+'px;height:'+size+'px;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple .5s ease-out forwards;left:'+(e.clientX-r.left-size/2)+'px;top:'+(e.clientY-r.top-size/2)+'px;pointer-events:none';
+      if(!btn.style.position||btn.style.position==='static')btn.style.position='relative';
+      btn.style.overflow='hidden';
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend',function(){ripple.remove();});
+    });
+  });
+})();
+</script>
+<style>
+@keyframes ripple{to{transform:scale(2.5);opacity:0}}
+</style>
+</body>
+</html>

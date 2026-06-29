@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /*.py
+Disallow: /FORGCV-*.html
+Disallow: /brand-guide.html
+
+Sitemap: https://forgcv.com/sitemap.xml

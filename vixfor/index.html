@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vixfor — Building the Future of Free SaaS Tools</title>
+<meta name="description" content="Vixfor is a suite of free, fast, and intelligent web tools designed to help people build careers, productivity, and digital workflows.">
+<meta property="og:title" content="Vixfor — Building the Future of Free SaaS Tools">
+<meta property="og:description" content="Free, fast, and intelligent web tools for careers and productivity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vixfor.com/">
+<link rel="canonical" href="https://vixfor.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/vixfor-design-system.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%236366F1'/><stop offset='100%25' stop-color='%238B5CF6'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><text x='18' y='26' font-size='20' text-anchor='middle' fill='white' font-family='Arial' font-weight='900'>N</text></svg>">
+
+<style>
+/* ══════════════════════════════════════════════════
+   VIXFOR — Clean Light-First Design
+   Toggle dark mode available via button
+══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── LIGHT (default) ── */
+:root {
+  --accent:      #6366F1;
+  --accent-2:    #8B5CF6;
+  --accent-light: rgba(99,102,241,0.08);
+  --bg:          #FFFFFF;
+  --bg-2:        #F8F9FF;
+  --bg-3:        #F1F2F9;
+  --surface:     #FFFFFF;
+  --border:      #E8E9F5;
+  --border-2:    #D0D2EA;
+  --text:        #0F1225;
+  --text-2:      #2D3048;
+  --text-3:      #6B7280;
+  --text-4:      #9CA3AF;
+  --shadow-sm:   0 1px 4px rgba(60,60,120,0.07);
+  --shadow-md:   0 4px 20px rgba(60,60,120,0.10);
+  --shadow-lg:   0 12px 40px rgba(60,60,120,0.13);
+  --nav-bg:      rgba(255,255,255,0.92);
+  --toggle-bg:   #E5E7EB;
+  --toggle-knob: #FFFFFF;
+  --ease:        cubic-bezier(0.16,1,0.3,1);
+  --nav-h:       64px;
+}
+
+/* ── DARK ── */
+.dark {
+  --bg:          #0B0F19;
+  --bg-2:        #0F1523;
+  --bg-3:        #141927;
+  --surface:     #111827;
+  --border:      rgba(255,255,255,0.07);
+  --border-2:    rgba(255,255,255,0.12);
+  --text:        #F9FAFB;
+  --text-2:      #E5E7EB;
+  --text-3:      #9CA3AF;
+  --text-4:      #6B7280;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.5);
+  --nav-bg:      rgba(11,15,25,0.92);
+  --toggle-bg:   #374151;
+  --toggle-knob: #6366F1;
+  --accent-light: rgba(99,102,241,0.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ── Utils ── */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.75rem; }
+
+/* ══════════════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s, border-color 0.25s;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100%; max-width: 1080px; margin: 0 auto; padding: 0 1.75rem;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 9px;
+  font-weight: 800; font-size: 1.1rem; letter-spacing: -0.03em; color: var(--text);
+}
+.nav-logo:hover { opacity: 0.8; }
+.logo-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 12px; font-weight: 900;
+}
+.nav-links { display: flex; align-items: center; gap: 1.75rem; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-3); transition: color 0.15s; }
+.nav-links a:hover { color: var(--text); }
+.nav-right { display: flex; align-items: center; gap: 0.875rem; }
+
+/* Toggle */
+.theme-toggle {
+  display: flex; align-items: center; gap: 7px;
+  border: none; background: none; cursor: pointer; padding: 0;
+  color: var(--text-3); font-family: inherit;
+}
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.t-track {
+  width: 42px; height: 22px; border-radius: 11px; background: var(--toggle-bg);
+  position: relative; transition: background 0.25s; flex-shrink: 0;
+}
+.t-knob {
+  position: absolute; top: 2px; left: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--toggle-knob);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: transform 0.25s var(--ease);
+  display: flex; align-items: center; justify-content: center; font-size: 9px;
+}
+.dark .t-knob { transform: translateX(20px); }
+.t-label { font-size: 0.75rem; font-weight: 600; }
+
+/* CTA nav */
+.btn-nav {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; font-size: 0.8rem; font-weight: 700;
+  padding: 0.5rem 1.1rem; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(99,102,241,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-nav:hover { transform: translateY(-1px); box-shadow: 0 4px 18px rgba(99,102,241,0.35); }
+
+/* live badge */
+.badge-live {
+  font-size: 9px; font-weight: 700;
+  background: rgba(16,185,129,0.1); color: #10B981;
+  border: 1px solid rgba(16,185,129,0.2);
+  padding: 1px 5px; border-radius: 4px; margin-left: 4px; vertical-align: middle;
+}
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .t-label { display: none; }
+}
+
+/* ══════════════════════════════════════════════════
+   HERO — Clean, bright, spacious
+══════════════════════════════════════════════════ */
+.hero {
+  padding: calc(var(--nav-h) + 5rem) 1.75rem 5.5rem;
+  text-align: center;
+  background: var(--bg);
+  position: relative; overflow: hidden;
+  transition: background 0.25s;
+}
+
+/* Subtle gradient blob — light only */
+.hero::before {
+  content: '';
+  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(99,102,241,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.dark .hero::before { opacity: 0.5; }
+
+.hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light); border: 1px solid rgba(99,102,241,0.2);
+  padding: 0.3rem 0.875rem; border-radius: 20px; margin-bottom: 1.5rem;
+}
+.eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+.hero-h1 {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-weight: 900; letter-spacing: -0.04em; line-height: 1.1;
+  color: var(--text); margin-bottom: 1.25rem;
+}
+.hero-h1 .grad {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), #A78BFA);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.05rem; color: var(--text-3); line-height: 1.75;
+  max-width: 520px; margin: 0 auto 2.25rem;
+}
+
+.hero-ctas { display: flex; justify-content: center; gap: 0.875rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; font-size: 0.9375rem; font-weight: 700;
+  padding: 0.8rem 1.6rem; border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(99,102,241,0.4); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--surface); color: var(--text);
+  font-size: 0.9375rem; font-weight: 600;
+  padding: 0.8rem 1.6rem; border-radius: 10px;
+  border: 1.5px solid var(--border-2);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* Tool pills */
+.hero-pills {
+  display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
+  margin-top: 2.75rem;
+}
+.pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 0.65rem 1.1rem;
+  box-shadow: var(--shadow-sm); transition: all 0.2s;
+  cursor: default;
+}
+.pill.clickable { cursor: pointer; }
+.pill.clickable:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.pill-icon { font-size: 1.1rem; }
+.pill-name { font-size: 0.875rem; font-weight: 700; color: var(--text); }
+.pill-sub  { font-size: 0.7rem; color: var(--text-4); }
+.pill-tag  { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 5px; margin-left: 4px; }
+.tag-live { background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.2); }
+.tag-soon { background: rgba(245,158,11,0.1); color: #F59E0B; border: 1px solid rgba(245,158,11,0.2); }
+
+/* ══════════════════════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════════════════════ */
+section { padding: 5.5rem 0; }
+.s-alt { background: var(--bg-2); transition: background 0.25s; }
+
+.s-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-light); border: 1px solid rgba(99,102,241,0.2);
+  padding: 0.28rem 0.8rem; border-radius: 20px; margin-bottom: 1rem;
+}
+.s-h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900; letter-spacing: -0.04em; line-height: 1.2;
+  margin-bottom: 0.75rem; color: var(--text);
+}
+.s-desc { font-size: 0.9375rem; color: var(--text-3); line-height: 1.75; max-width: 460px; }
+
+/* Scroll reveal */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+/* Fallback: sans JS ou animation désactivée */
+@media (prefers-reduced-motion: reduce) { .fade-in { opacity: 1; transform: none; transition: none; } }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
+
+/* ══════════════════════════════════════════════════
+   ECOSYSTEM
+══════════════════════════════════════════════════ */
+.eco-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.125rem; margin-top: 2.75rem;
+}
+.eco-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.eco-card.link { cursor: pointer; }
+.eco-card.link:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(99,102,241,0.35); }
+
+.eco-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.875rem; }
+.eco-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: var(--accent-light); border: 1px solid rgba(99,102,241,0.15);
+  display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+  transition: background 0.2s;
+}
+.eco-card.link:hover .eco-icon { background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.eco-status {
+  font-size: 0.62rem; font-weight: 700; padding: 2px 7px; border-radius: 5px;
+}
+.st-live { background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.2); }
+.st-soon { background: rgba(245,158,11,0.1); color: #F59E0B; border: 1px solid rgba(245,158,11,0.2); }
+
+.eco-name { font-size: 1rem; font-weight: 800; margin-bottom: 0.35rem; color: var(--text); }
+.eco-desc { font-size: 0.8rem; color: var(--text-3); line-height: 1.65; margin-bottom: 1rem; }
+.eco-cta  {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.8rem; font-weight: 700; color: var(--accent);
+  transition: gap 0.15s;
+}
+.eco-card.link:hover .eco-cta { gap: 7px; }
+.eco-card.disabled .eco-cta { color: var(--text-4); pointer-events: none; }
+
+/* ══════════════════════════════════════════════════
+   VISION — split layout
+══════════════════════════════════════════════════ */
+.vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+
+/* Timeline */
+.tl { display: flex; flex-direction: column; }
+.tl-item { display: flex; gap: 0.875rem; padding-bottom: 1.5rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.tl-dot {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+}
+.tl-dot.on  { background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 3px 12px rgba(99,102,241,0.3); }
+.tl-dot.off { background: var(--bg-3); border: 2px solid var(--border-2); }
+.tl-line { width: 2px; flex: 1; min-height: 16px; background: var(--border); margin: 3px 0; }
+.tl-body { padding-top: 5px; }
+.tl-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.tl-desc  { font-size: 0.78rem; color: var(--text-3); line-height: 1.6; }
+.tl-tag   { font-size: 0.68rem; font-weight: 700; color: var(--accent); margin-top: 3px; }
+.tl-tag.muted { color: var(--text-4); }
+
+/* ══════════════════════════════════════════════════
+   WHY — 3 cards
+══════════════════════════════════════════════════ */
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 2.75rem; }
+.why-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(99,102,241,0.25); }
+.why-icon-wrap {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: var(--accent-light); border: 1px solid rgba(99,102,241,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; margin-bottom: 1.1rem;
+}
+.why-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text); }
+.why-text  { font-size: 0.8375rem; color: var(--text-3); line-height: 1.7; }
+
+/* ══════════════════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════════════════ */
+.cta-final { text-align: center; padding: 7rem 1.75rem; background: var(--bg); transition: background 0.25s; }
+.cta-inner { max-width: 520px; margin: 0 auto; }
+.feature-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 2rem; }
+.feature-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.75rem; font-weight: 600; color: var(--text-3);
+  background: var(--bg-2); border: 1px solid var(--border);
+  padding: 0.28rem 0.7rem; border-radius: 20px;
+}
+.check { color: #10B981; font-size: 10px; }
+
+/* ══════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════ */
+footer {
+  background: var(--bg-2); border-top: 1px solid var(--border);
+  padding: 3rem 0 1.75rem;
+  transition: background 0.25s, border-color 0.25s;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem;
+}
+.f-brand-logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text); }
+.f-brand-icon { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; color: white; font-size: 11px; font-weight: 900; }
+.f-tagline { font-size: 0.8375rem; color: var(--text-3); line-height: 1.7; max-width: 220px; }
+.f-col h4 { font-size: 0.8rem; font-weight: 700; color: var(--text); margin-bottom: 0.875rem; }
+.f-col a, .f-col span.dim {
+  display: block; font-size: 0.8125rem; color: var(--text-3);
+  margin-bottom: 0.5rem; transition: color 0.15s;
+}
+.f-col a:hover { color: var(--accent); }
+.f-col span.dim { opacity: 0.45; font-size: 0.72rem; pointer-events: none; }
+.f-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1.75rem; border-top: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--text-4);
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .vision-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 560px) {
+  section { padding: 3.75rem 0; }
+  .why-grid { grid-template-columns: 1fr; }
+  .eco-grid { grid-template-columns: 1fr; }
+  .hero-pills { flex-direction: column; align-items: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .f-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:0">
+      <svg width="120" height="28" viewBox="0 0 200 48" fill="none" aria-label="Vixfor" style="display:block;flex-shrink:0">
+        <defs><linearGradient id="vgvx1" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0%" stop-color="#6366F1"/><stop offset="55%" stop-color="#7C6FF5"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+        <polygon points="0,2 12,2 20,42 16,46 8,46" fill="url(#vgvx1)"/>
+        <polygon points="28,2 40,2 32,46 24,46 20,42" fill="url(#vgvx1)" opacity="0.7"/>
+        <text x="56" y="35" font-family="Inter,-apple-system,sans-serif" font-size="26" font-weight="800" letter-spacing="-0.055em" fill="#000000">Vixfor</text>
+      </svg>
+    </a>
+
+    <div class="nav-links">
+      <a href="#ecosystem">Products</a>
+      <a href="#vision">Vision</a>
+      <a href="#why">Why Vixfor</a>
+      <a href="../create-cv-free.html">FORGCV <span class="badge-live">LIVE</span></a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <div class="t-track">
+          <div class="t-knob"><span id="themeIcon">☀️</span></div>
+        </div>
+        <span class="t-label" id="themeLabel">Light</span>
+      </button>
+      <a href="../index.html" class="btn-nav">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Launch FORGCV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Vixfor Ecosystem
+    </div>
+
+    <h1 class="hero-h1">
+      Build the future of<br>
+      <span class="grad">simple SaaS tools.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Vixfor is a suite of free, fast, and intelligent web tools designed to help people build careers, productivity, and digital workflows.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#ecosystem" class="btn-primary">
+        Explore Tools
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="../index.html" class="btn-outline">
+        Start with FORGCV
+      </a>
+    </div>
+
+    <div class="hero-pills">
+      <a href="../create-cv-free.html" class="pill clickable" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px">
+        <span class="pill-icon">📄</span>
+        <div>
+          <div class="pill-name">FORGCV</div>
+          <div class="pill-sub">CV Builder + Cover Letter</div>
+        </div>
+        <span class="pill-tag tag-live">LIVE</span>
+      </a>
+      <div class="pill">
+        <span class="pill-icon">🎤</span>
+        <div>
+          <div class="pill-name" style="color:var(--text-3)">HirePrep</div>
+          <div class="pill-sub">Interview Simulation</div>
+        </div>
+        <span class="pill-tag tag-soon">Soon</span>
+      </div>
+      <div class="pill">
+        <span class="pill-icon">💼</span>
+        <div>
+          <div class="pill-name" style="color:var(--text-3)">LinkBoost</div>
+          <div class="pill-sub">LinkedIn Optimizer</div>
+        </div>
+        <span class="pill-tag tag-soon">Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section class="s-alt" id="ecosystem">
+  <div class="wrap">
+    <div class="fade-in">
+      <div class="s-eyebrow">The Ecosystem</div>
+      <h2 class="s-h2">One ecosystem.<br>Multiple powerful tools.</h2>
+      <p class="s-desc">Every tool is free, fast, and connects to the next one. No accounts. No friction. Just results.</p>
+    </div>
+
+    <div class="eco-grid">
+      <a href="../create-cv-free.html" class="eco-card link fade-in d1" style="text-decoration:none;display:block;color:inherit">
+        <div class="eco-head">
+          <div class="eco-icon">📄</div>
+          <span class="eco-status st-live">Live</span>
+        </div>
+        <div class="eco-name">FORGCV</div>
+        <div class="eco-desc">Create a professional CV in 5 minutes. 6 templates, PDF export, 6 languages. Zero signup.</div>
+        <span class="eco-cta">Open tool <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="../cover-letter.html" class="eco-card link fade-in d2" style="text-decoration:none;display:block;color:inherit">
+        <div class="eco-head">
+          <div class="eco-icon">✉️</div>
+          <span class="eco-status st-live">Live</span>
+        </div>
+        <div class="eco-name">Cover Letter</div>
+        <div class="eco-desc">Generate a personalized cover letter in 3 minutes. 3 tones. Professional output. Free PDF.</div>
+        <span class="eco-cta">Open tool <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <div class="eco-card disabled fade-in d3" aria-disabled="true">
+        <div class="eco-head">
+          <div class="eco-icon">🎤</div>
+          <span class="eco-status st-soon">Q3 2026</span>
+        </div>
+        <div class="eco-name">HirePrep</div>
+        <div class="eco-desc">AI-powered interview simulation. Practice with real questions. Get instant feedback. Land the job.</div>
+        <span class="eco-cta" style="color:var(--text-4)">Coming soon</span>
+      </div>
+
+      <div class="eco-card disabled fade-in d4" aria-disabled="true">
+        <div class="eco-head">
+          <div class="eco-icon">💼</div>
+          <span class="eco-status st-soon">Q4 2026</span>
+        </div>
+        <div class="eco-name">LinkBoost</div>
+        <div class="eco-desc">Optimize your LinkedIn profile with AI. Higher visibility. More recruiter views. Better connections.</div>
+        <span class="eco-cta" style="color:var(--text-4)">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="wrap">
+    <div class="vision-grid">
+      <div class="fade-in">
+        <div class="s-eyebrow">The Vision</div>
+        <h2 class="s-h2">Not a website.<br>A system.</h2>
+        <p class="s-desc">Vixfor is building a connected ecosystem where each tool helps users grow professionally and leads naturally to the next step in their career journey.</p>
+        <a href="../index.html" class="btn-primary" style="display:inline-flex;margin-top:1.75rem">
+          Start with FORGCV
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="tl fade-in d1">
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot on">📄</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-title">Create Your CV</div>
+            <div class="tl-desc">FORGCV — Free, professional, 5 minutes</div>
+            <div class="tl-tag">✓ Live now</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot on">✉️</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-title">Write a Cover Letter</div>
+            <div class="tl-desc">AI-generated, personalized, 3 tones</div>
+            <div class="tl-tag">✓ Live now</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot off">🎤</div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-title">Ace the Interview</div>
+            <div class="tl-desc">HirePrep — AI simulation & feedback</div>
+            <div class="tl-tag muted">Q3 2026</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-dot off">💼</div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-title">Boost Your LinkedIn</div>
+            <div class="tl-desc">LinkBoost — Profile optimization & visibility</div>
+            <div class="tl-tag muted">Q4 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VIXFOR -->
+<section class="s-alt" id="why">
+  <div class="wrap">
+    <div class="fade-in" style="text-align:center">
+      <div class="s-eyebrow">Why Vixfor</div>
+      <h2 class="s-h2">Built different.</h2>
+      <p class="s-desc" style="margin:0 auto">Three principles that guide every tool we build.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in d1">
+        <div class="why-icon-wrap">⚡</div>
+        <div class="why-title">Speed First</div>
+        <div class="why-text">Instant tools, instant results. No loading screens. No waiting. No account creation. You open, you use, you get the result.</div>
+      </div>
+      <div class="why-card fade-in d2">
+        <div class="why-icon-wrap">🧠</div>
+        <div class="why-title">Radical Simplicity</div>
+        <div class="why-text">We remove every unnecessary step. Minimal UI, focused flows, zero cognitive overload. If it doesn't help the user, it doesn't exist.</div>
+      </div>
+      <div class="why-card fade-in d3">
+        <div class="why-icon-wrap">🌍</div>
+        <div class="why-title">Free for Everyone</div>
+        <div class="why-text">Every Vixfor tool is 100% free. No paywalls, no "premium" locks. Great career tools should be accessible to every person on the planet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <div class="fade-in">
+      <div class="s-eyebrow" style="margin:0 auto 1rem">Get Started</div>
+      <h2 class="s-h2">Start with FORGCV today.</h2>
+      <p class="s-desc" style="margin:0 auto">Build your professional CV in 5 minutes. Free forever. No signup. Download PDF instantly.</p>
+      <div class="feature-pills">
+        <span class="feature-pill"><span class="check">✓</span> 100% Free</span>
+        <span class="feature-pill"><span class="check">✓</span> No Signup</span>
+        <span class="feature-pill"><span class="check">✓</span> PDF in 5 Minutes</span>
+        <span class="feature-pill"><span class="check">✓</span> No Watermark</span>
+      </div>
+      <a href="../index.html" class="btn-primary" style="font-size:0.975rem;padding:0.9rem 1.75rem">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Launch FORGCV — It's Free
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand-logo" style="display:flex;align-items:center;gap:0"><svg width="80" height="20" viewBox="0 0 200 48" fill="none" aria-label="Vixfor"><defs><linearGradient id="vgf1" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs><polygon points="0,2 12,2 20,42 16,46 8,46" fill="url(#vgf1)"/><polygon points="28,2 40,2 32,46 24,46 20,42" fill="url(#vgf1)" opacity="0.7"/><text x="56" y="35" font-family="Inter,-apple-system,sans-serif" font-size="26" font-weight="800" letter-spacing="-0.055em" fill="#000000">Vixfor</text></svg></div>
+        <p class="f-tagline">Building the future of free SaaS tools. One product at a time. For everyone.</p>
+      </div>
+      <div class="f-col">
+        <h4>Tools</h4>
+        <a href="../create-cv-free.html">FORGCV <span class="badge-live">LIVE</span></a>
+        <a href="../cover-letter.html">Cover Letter <span class="badge-live">LIVE</span></a>
+        <span class="dim">HirePrep — Q3 2026</span>
+        <span class="dim">LinkBoost — Q4 2026</span>
+      </div>
+      <div class="f-col">
+        <h4>FORGCV</h4>
+        <a href="../index.html">Home</a>
+        <a href="../templates.html">Templates</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="/">Vixfor</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact</a>
+        <span class="dim">Blog — Coming Soon</span>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Vixfor. All rights reserved.</span>
+      <span>Building the future of free SaaS tools — one tool at a time.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── THEME TOGGLE ── */
+(function () {
+  var body   = document.body;
+  var btn    = document.getElementById('themeToggle');
+  var icon   = document.getElementById('themeIcon');
+  var lbl    = document.getElementById('themeLabel');
+
+  // Default: light. Read saved preference.
+  var saved  = '';
+  try { saved = localStorage.getItem('nx-theme') || ''; } catch(e){}
+  // Apply saved or respect system (but default to light if no preference)
+  var pref = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  apply(pref, false);
+
+  btn.addEventListener('click', function () {
+    apply(body.classList.contains('dark') ? 'light' : 'dark', true);
+  });
+
+  function apply(theme, save) {
+    if (theme === 'dark') {
+      body.classList.add('dark');
+      icon.textContent = '🌙';
+      lbl.textContent  = 'Dark';
+    } else {
+      body.classList.remove('dark');
+      icon.textContent = '☀️';
+      lbl.textContent  = 'Light';
+    }
+    if (save) { try { localStorage.setItem('nx-theme', theme); } catch(e){} }
+  }
+})();
+
+/* ── SCROLL REVEAL ── */
+(function () {
+  var els = document.querySelectorAll('.fade-in');
+  if (!window.IntersectionObserver) {
+    els.forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  // Ajouter immédiatement visible aux éléments déjà dans le viewport
+  els.forEach(function(el){
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) { el.classList.add('visible'); }
+  });
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+  els.forEach(function(el){ if (!el.classList.contains('visible')) io.observe(el); });
+})();
+
+/* ── NAV SCROLL BORDER ── */
+(function () {
+  var nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function () {
+    nav.style.borderBottomColor = window.scrollY > 8 ? 'var(--border-2)' : 'var(--border)';
+  }, { passive: true });
+})();
+</script>
+
+<script>
+/* Vixfor micro-interactions */
+(function(){
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  // Card tilt on hover (subtle)
+  document.querySelectorAll('.card,.pricing-card,.feat-card,.testi-card').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='translateY(-4px) perspective(600px) rotateX('+(-y*4)+'deg) rotateY('+(x*4)+'deg)';
+    });
+    el.addEventListener('mouseleave',function(){
+      el.style.transform='';
+    });
+  });
+  // Button ripple
+  document.querySelectorAll('.btn-primary,.btn-vxf-primary,.btn-cvf-primary').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      var ripple=document.createElement('span');
+      var r=btn.getBoundingClientRect();
+      var size=Math.max(r.width,r.height);
+      ripple.style.cssText='position:absolute;width:'+size+'px;height:'+size+'px;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple .5s ease-out forwards;left:'+(e.clientX-r.left-size/2)+'px;top:'+(e.clientY-r.top-size/2)+'px;pointer-events:none';
+      if(!btn.style.position||btn.style.position==='static')btn.style.position='relative';
+      btn.style.overflow='hidden';
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend',function(){ripple.remove();});
+    });
+  });
+})();
+</script>
+<style>
+@keyframes ripple{to{transform:scale(2.5);opacity:0}}
+</style>
+<script src="/js/analytics.js"></script>
+</body>
+</html>

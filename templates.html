@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Templates CV Professionnels Gratuits | ForgCV by Vixfor</title>
+  <meta name="description" content="6 templates de CV modernes et professionnels : Classic, Modern, Minimal, Executive, Elegant, Bold. Choisissez votre style et téléchargez votre CV en PDF gratuitement.">
+  <meta name="keywords" content="templates CV gratuits, modèles CV, CV professionnel, template CV moderne, ForgCV">
+  <meta property="og:title" content="6 Templates CV Professionnels Gratuits — ForgCV by Vixfor">
+  <meta property="og:description" content="6 designs de CV premium. Gratuit, export PDF, aucune inscription.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://forgcv.com/templates.html">
+  <meta property="og:image" content="https://forgcv.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="6 Templates CV Gratuits — ForgCV">
+  <meta name="twitter:description" content="Classic, Modern, Minimal, Executive, Elegant, Bold. Gratuit, PDF HD.">
+  <link rel="canonical" href="https://forgcv.com/templates.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Templates CV ForgCV","description":"6 templates de CV professionnels gratuits","url":"https://forgcv.com/templates.html","numberOfItems":6}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/vixfor-design-system.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/><rect x='13' y='14.5' width='8' height='1.8' rx='1' fill='rgba(91,87,255,0.6)'/><path d='M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z' fill='%23F59E0B'/></svg>">
+  <style>
+    /* ── PAGE LAYOUT ── */
+    .templates-page { padding-top: calc(var(--nav-h) + var(--sp-10)); padding-bottom: var(--sp-16); }
+    .page-hero { text-align: center; margin-bottom: var(--sp-12); }
+    .page-hero h1 { font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl)); font-weight: 800; letter-spacing: -0.03em; margin-bottom: var(--sp-3); }
+    .page-hero p { color: var(--clr-text-2); font-size: var(--fs-md); }
+
+    .tpl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-8);
+    }
+
+    /* ── CARD ── */
+    .tpl-full-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .tpl-full-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.13);
+      border-color: rgba(91,87,255,0.35);
+    }
+
+    /* ── PREVIEW WINDOW ── */
+    .tpl-preview-large {
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      background: #f4f5f7;
+      border-bottom: 1px solid var(--clr-border);
+      /* paper shadow inside */
+      box-shadow: inset 0 -8px 20px rgba(0,0,0,0.04);
+    }
+
+    /* Each mini-CV is rendered at natural size then scaled down */
+    .cv-thumb {
+      position: absolute;
+      top: 0; left: 0;
+      width: 680px;
+      background: white;
+      transform-origin: top left;
+      transform: scale(0.44);
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1A1A2E;
+      line-height: 1.5;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    /* ── CLASSIC TEMPLATE ── */
+    .cv-thumb-classic { padding: 32px 36px; }
+    .ct-header { border-bottom: 3px solid #5B57FF; padding-bottom: 16px; margin-bottom: 20px; }
+    .ct-name   { font-size: 26px; font-weight: 800; color: #5B57FF; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .ct-title  { font-size: 14px; color: #555; font-weight: 500; margin-bottom: 10px; }
+    .ct-contact { display: flex; gap: 16px; font-size: 11px; color: #777; }
+    .ct-section-title { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #5B57FF; border-bottom: 1.5px solid #5B57FF; padding-bottom: 4px; margin: 18px 0 10px; }
+    .ct-entry  { margin-bottom: 12px; }
+    .ct-entry-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .ct-entry-title { font-size: 12px; font-weight: 700; }
+    .ct-entry-sub   { font-size: 11px; color: #666; }
+    .ct-entry-date  { font-size: 10px; color: #999; }
+    .ct-text   { font-size: 11px; color: #555; line-height: 1.6; }
+    .ct-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ct-skill  { background: rgba(91,87,255,0.1); color: #5B57FF; padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 600; border: 1px solid rgba(91,87,255,0.2); }
+
+    /* ── MODERN TEMPLATE ── */
+    .cv-thumb-modern { display: flex; min-height: 580px; }
+    .cm-sidebar { width: 180px; background: #0EA5E9; padding: 28px 16px; flex-shrink: 0; }
+    .cm-avatar { width: 64px; height: 64px; border-radius: 14px; background: rgba(255,255,255,0.25); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; color: white; }
+    .cm-name   { font-size: 14px; font-weight: 800; color: white; text-align: center; margin-bottom: 3px; line-height: 1.3; }
+    .cm-title  { font-size: 10px; color: rgba(255,255,255,0.8); text-align: center; margin-bottom: 18px; }
+    .cm-s-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 8px; font-weight: 700; }
+    .cm-contact-item { font-size: 10px; color: rgba(255,255,255,0.9); margin-bottom: 5px; }
+    .cm-skill-bar { background: rgba(255,255,255,0.18); border-radius: 3px; padding: 4px 8px; font-size: 10px; color: white; margin-bottom: 4px; }
+    .cm-main   { flex: 1; padding: 28px 24px; }
+    .cm-section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #0EA5E9; border-bottom: 2px solid #0EA5E9; padding-bottom: 4px; margin: 0 0 12px; }
+    .cm-entry  { margin-bottom: 14px; }
+    .cm-entry-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .cm-entry-title { font-size: 12px; font-weight: 700; }
+    .cm-entry-sub   { font-size: 11px; color: #0EA5E9; font-weight: 500; }
+    .cm-entry-date  { font-size: 10px; color: #999; }
+    .cm-text   { font-size: 11px; color: #555; line-height: 1.6; }
+    .cm-section-gap { margin-top: 20px; }
+
+    /* ── MINIMAL TEMPLATE ── */
+    .cv-thumb-minimal { padding: 32px 36px; }
+    .mn-accent { width: 48px; height: 3px; background: #10B981; border-radius: 2px; margin-bottom: 20px; }
+    .mn-name   { font-size: 28px; font-weight: 900; letter-spacing: -0.04em; color: #1A1A2E; margin-bottom: 4px; }
+    .mn-title  { font-size: 13px; color: #10B981; font-weight: 600; margin-bottom: 8px; }
+    .mn-contact { font-size: 10px; color: #999; margin-bottom: 20px; }
+    .mn-summary { font-size: 11px; color: #555; line-height: 1.7; margin-bottom: 20px; border-left: 2px solid #10B981; padding-left: 10px; }
+    .mn-section-title { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #aaa; border-bottom: 1px solid #eee; padding-bottom: 5px; margin: 0 0 12px; }
+    .mn-entry  { display: flex; gap: 14px; margin-bottom: 12px; }
+    .mn-date   { font-size: 10px; color: #bbb; white-space: nowrap; min-width: 70px; padding-top: 1px; }
+    .mn-entry-title { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+    .mn-entry-sub   { font-size: 11px; color: #888; margin-bottom: 3px; }
+    .mn-text   { font-size: 11px; color: #666; line-height: 1.6; }
+    .mn-skills { display: flex; flex-wrap: wrap; gap: 5px; }
+    .mn-skill  { background: #f0fdf4; color: #10B981; padding: 2px 9px; border-radius: 4px; font-size: 10px; font-weight: 600; border: 1px solid rgba(16,185,129,0.2); }
+    .mn-section-gap { margin-top: 18px; }
+
+    /* ── EXECUTIVE TEMPLATE ── */
+    .cv-thumb-executive {}
+    .ex-header { background: #1A1A2E; padding: 28px 32px; }
+    .ex-name   { font-size: 24px; font-weight: 900; color: white; letter-spacing: -0.03em; margin-bottom: 5px; }
+    .ex-title  { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 10px; font-weight: 500; }
+    .ex-contact { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.02em; }
+    .ex-body   { padding: 24px 32px; }
+    .ex-section-title { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #1A1A2E; border-bottom: 2px solid #1A1A2E; padding-bottom: 5px; margin: 0 0 12px; }
+    .ex-entry  { margin-bottom: 14px; }
+    .ex-entry-head { display: flex; justify-content: space-between; margin-bottom: 4px; }
+    .ex-entry-title { font-size: 12px; font-weight: 700; }
+    .ex-entry-sub   { font-size: 11px; color: #666; }
+    .ex-entry-date  { font-size: 10px; color: #999; }
+    .ex-text   { font-size: 11px; color: #555; line-height: 1.6; }
+    .ex-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ex-skill  { background: #f5f5f8; color: #1A1A2E; padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 600; border: 1px solid #e0e0e8; }
+    .ex-section-gap { margin-top: 20px; }
+
+    /* ── ELEGANT TEMPLATE ── */
+    .cv-thumb-elegant { padding: 32px 36px; background: #FFFDF7; }
+    .el-top-line { width: 100%; height: 1px; background: linear-gradient(90deg, #D4A853, transparent); margin-bottom: 24px; }
+    .el-name   { font-size: 26px; font-weight: 800; color: #1A1A2E; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .el-title  { font-size: 13px; color: #D4A853; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.02em; }
+    .el-contact { font-size: 10px; color: #999; margin-bottom: 8px; }
+    .el-divider { width: 40px; height: 2px; background: #D4A853; margin: 14px 0; }
+    .el-section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #D4A853; border-bottom: 1.5px solid #D4A853; padding-bottom: 4px; margin: 18px 0 10px; }
+    .el-entry  { margin-bottom: 12px; }
+    .el-entry-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .el-entry-title { font-size: 12px; font-weight: 700; color: #1A1A2E; }
+    .el-entry-sub   { font-size: 11px; color: #D4A853; }
+    .el-entry-date  { font-size: 10px; color: #bbb; }
+    .el-text   { font-size: 11px; color: #666; line-height: 1.6; }
+    .el-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .el-skill  { background: rgba(212,168,83,0.1); color: #B8882A; padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 600; border: 1px solid rgba(212,168,83,0.25); }
+
+    /* ── BOLD TEMPLATE ── */
+    .cv-thumb-bold {}
+    .bd-header { background: #EF4444; padding: 28px 32px; }
+    .bd-name   { font-size: 26px; font-weight: 900; color: white; letter-spacing: -0.04em; margin-bottom: 4px; }
+    .bd-title  { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 600; margin-bottom: 8px; }
+    .bd-contact { font-size: 10px; color: rgba(255,255,255,0.7); }
+    .bd-body   { padding: 24px 32px; }
+    .bd-section-title { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #EF4444; border-left: 3px solid #EF4444; padding-left: 8px; margin: 0 0 12px; }
+    .bd-entry  { margin-bottom: 13px; border-left: 1px solid #fee2e2; padding-left: 10px; }
+    .bd-entry-head { display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .bd-entry-title { font-size: 12px; font-weight: 700; }
+    .bd-entry-sub   { font-size: 11px; color: #EF4444; }
+    .bd-entry-date  { font-size: 10px; color: #999; }
+    .bd-text   { font-size: 11px; color: #555; line-height: 1.6; }
+    .bd-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bd-skill  { background: rgba(239,68,68,0.08); color: #EF4444; padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 600; border: 1px solid rgba(239,68,68,0.2); }
+    .bd-section-gap { margin-top: 20px; }
+
+    /* ── CARD INFO ── */
+    .tpl-info { padding: var(--sp-5); }
+    .tpl-info-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-3); }
+    .tpl-info-name { font-size: var(--fs-md); font-weight: 700; letter-spacing: -0.02em; }
+    .tpl-info-desc { font-size: var(--fs-sm); color: var(--clr-text-2); margin-bottom: var(--sp-4); line-height: 1.55; }
+    .tpl-tags { display: flex; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-4); }
+    .tpl-tag  { font-size: 10px; padding: 2px 8px; border-radius: var(--r-full); background: var(--clr-surface-2); color: var(--clr-text-3); font-weight: 600; }
+
+    @media (max-width: 1024px) { .tpl-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .tpl-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="/index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none" style="display:block;flex-shrink:0"><defs><linearGradient id="nl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#nl)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/><rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/><rect x="13" y="18" width="6" height="1.8" rx="1" fill="rgba(91,87,255,0.35)"/><path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/></svg>
+      <div style="display:flex;flex-direction:column;line-height:1.1">
+        <span style="font-size:15px;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Forg<span style="color:var(--clr-accent)">CV</span></span>
+        <span style="font-size:8px;font-weight:700;letter-spacing:.08em;color:var(--clr-accent);text-transform:uppercase;opacity:.75">by Vixfor</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/create-cv-free.html">Créer un CV</a>
+      <a href="/resume-builder.html">Builder</a>
+      <a href="/templates.html">Templates</a>
+    </div>
+    <div class="nav-right">
+      <a href="/create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="/index.html">Accueil</a>
+  <a href="/create-cv-free.html">Créer un CV gratuit</a>
+  <a href="/resume-builder.html">Builder</a>
+  <a href="/templates.html">Templates</a>
+  <a href="/cover-letter.html">Lettre de motivation</a>
+  <a href="/about.html">À propos</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<main>
+<div class="container templates-page">
+
+  <!-- Hero -->
+  <div class="page-hero reveal">
+    <div class="badge badge-accent" style="display:inline-flex;margin-bottom:var(--sp-4)">
+      🎨 6 Templates inclus
+    </div>
+    <h1><span class="text-gradient">Templates</span> professionnels</h1>
+    <p>Tous gratuits. Tous optimisés ATS. Tous téléchargeables en PDF.</p>
+  </div>
+
+  <!-- Grid -->
+  <div class="tpl-grid">
+
+    <!-- ══ 1. CLASSIC ══ -->
+    <div class="tpl-full-card reveal">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-classic">
+          <div class="ct-header">
+            <div class="ct-name">Sophie Martin</div>
+            <div class="ct-title">Responsable Marketing Digital</div>
+            <div class="ct-contact">
+              <span>✉ sophie@email.com</span>
+              <span>📞 +33 6 12 34 56</span>
+              <span>📍 Paris, France</span>
+            </div>
+          </div>
+          <div class="ct-section-title">Expériences</div>
+          <div class="ct-entry">
+            <div class="ct-entry-head">
+              <div>
+                <div class="ct-entry-title">Directrice Marketing</div>
+                <div class="ct-entry-sub">Groupe L'Oréal</div>
+              </div>
+              <div class="ct-entry-date">Jan 2021 – Présent</div>
+            </div>
+            <div class="ct-text">Pilotage d'une stratégie digitale multi-canal ayant généré +42% de croissance en 18 mois. Management d'une équipe de 8 personnes.</div>
+          </div>
+          <div class="ct-entry">
+            <div class="ct-entry-head">
+              <div>
+                <div class="ct-entry-title">Chef de Projet Digital</div>
+                <div class="ct-entry-sub">Agence TBWA Paris</div>
+              </div>
+              <div class="ct-entry-date">Mar 2018 – Déc 2020</div>
+            </div>
+            <div class="ct-text">Gestion de campagnes SEA/SEO pour des clients CAC40. Budget annuel de 2M€.</div>
+          </div>
+          <div class="ct-section-title">Formation</div>
+          <div class="ct-entry">
+            <div class="ct-entry-head">
+              <div>
+                <div class="ct-entry-title">Master Marketing Digital</div>
+                <div class="ct-entry-sub">ESCP Business School</div>
+              </div>
+              <div class="ct-entry-date">2018</div>
+            </div>
+          </div>
+          <div class="ct-section-title">Compétences</div>
+          <div class="ct-skills">
+            <span class="ct-skill">SEO / SEA</span>
+            <span class="ct-skill">Google Analytics</span>
+            <span class="ct-skill">Management</span>
+            <span class="ct-skill">CRM Salesforce</span>
+          </div>
+          <div class="ct-section-title">Langues</div>
+          <div class="ct-skills">
+            <span class="ct-skill">Français (natif)</span>
+            <span class="ct-skill">Anglais (courant)</span>
+            <span class="ct-skill">Espagnol (B2)</span>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Classic</span>
+          <div class="badge badge-green">Populaire</div>
+        </div>
+        <p class="tpl-info-desc">Design épuré et intemporel. Parfait pour tous secteurs, idéal pour une première impression solide.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Tous secteurs</span>
+          <span class="tpl-tag">ATS friendly</span>
+          <span class="tpl-tag">Classique</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+    <!-- ══ 2. MODERN ══ -->
+    <div class="tpl-full-card reveal reveal-delay-1">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-modern">
+          <div class="cm-sidebar">
+            <div class="cm-avatar">JD</div>
+            <div class="cm-name">Jean Dupont</div>
+            <div class="cm-title">Développeur Full Stack</div>
+            <div class="cm-s-label">Contact</div>
+            <div class="cm-contact-item">✉ jean@email.com</div>
+            <div class="cm-contact-item">📞 +33 6 98 76 54</div>
+            <div class="cm-contact-item">📍 Lyon, France</div>
+            <div class="cm-s-label" style="margin-top:14px">Compétences</div>
+            <div class="cm-skill-bar">React / Next.js</div>
+            <div class="cm-skill-bar">Node.js</div>
+            <div class="cm-skill-bar">TypeScript</div>
+            <div class="cm-skill-bar">PostgreSQL</div>
+            <div class="cm-s-label" style="margin-top:14px">Langues</div>
+            <div class="cm-skill-bar">Français (natif)</div>
+            <div class="cm-skill-bar">Anglais (C1)</div>
+          </div>
+          <div class="cm-main">
+            <div class="cm-section-title">Expériences</div>
+            <div class="cm-entry">
+              <div class="cm-entry-head">
+                <div>
+                  <div class="cm-entry-title">Lead Developer</div>
+                  <div class="cm-entry-sub">Startup FinTech · Qonto</div>
+                </div>
+                <div class="cm-entry-date">2022 – Présent</div>
+              </div>
+              <div class="cm-text">Architecture et développement d'une API REST scalable traitant 500K req/jour. Lead technique d'une équipe de 5 devs.</div>
+            </div>
+            <div class="cm-entry">
+              <div class="cm-entry-head">
+                <div>
+                  <div class="cm-entry-title">Développeur Frontend</div>
+                  <div class="cm-entry-sub">Agence Digitale · Contentsquare</div>
+                </div>
+                <div class="cm-entry-date">2019 – 2022</div>
+              </div>
+              <div class="cm-text">Développement d'interfaces React performantes pour 20+ clients grands comptes.</div>
+            </div>
+            <div class="cm-section-gap"></div>
+            <div class="cm-section-title">Formation</div>
+            <div class="cm-entry">
+              <div class="cm-entry-head">
+                <div>
+                  <div class="cm-entry-title">Ingénieur Informatique</div>
+                  <div class="cm-entry-sub">INSA Lyon</div>
+                </div>
+                <div class="cm-entry-date">2019</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Modern</span>
+          <div class="badge badge-accent">Tendance</div>
+        </div>
+        <p class="tpl-info-desc">Design bicolonne avec sidebar colorée. Met en valeur vos compétences et votre personnalité.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Tech</span>
+          <span class="tpl-tag">Design</span>
+          <span class="tpl-tag">Marketing</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+    <!-- ══ 3. MINIMAL ══ -->
+    <div class="tpl-full-card reveal reveal-delay-2">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-minimal">
+          <div class="mn-accent"></div>
+          <div class="mn-name">Emma Rousseau</div>
+          <div class="mn-title">Consultante en Stratégie</div>
+          <div class="mn-contact">emma@email.com · +33 7 11 22 33 · Paris</div>
+          <div class="mn-summary">Consultante senior avec 8 ans d'expérience en transformation digitale et stratégie d'entreprise pour des acteurs du CAC40.</div>
+          <div class="mn-section-title">EXPÉRIENCES</div>
+          <div class="mn-entry">
+            <div class="mn-date">2020 – Présent</div>
+            <div>
+              <div class="mn-entry-title">Manager Senior · McKinsey & Co.</div>
+              <div class="mn-entry-sub">Conseil en stratégie</div>
+              <div class="mn-text">Pilotage de missions de transformation pour 12 clients dans les secteurs banque et assurance.</div>
+            </div>
+          </div>
+          <div class="mn-entry">
+            <div class="mn-date">2016 – 2020</div>
+            <div>
+              <div class="mn-entry-title">Consultante · Deloitte</div>
+              <div class="mn-entry-sub">Consulting</div>
+              <div class="mn-text">Accompagnement de dirigeants dans leurs projets de croissance et d'innovation.</div>
+            </div>
+          </div>
+          <div class="mn-section-gap"></div>
+          <div class="mn-section-title">FORMATION</div>
+          <div class="mn-entry">
+            <div class="mn-date">2016</div>
+            <div>
+              <div class="mn-entry-title">MBA · HEC Paris</div>
+            </div>
+          </div>
+          <div class="mn-section-gap"></div>
+          <div class="mn-section-title">COMPÉTENCES & LANGUES</div>
+          <div class="mn-skills">
+            <span class="mn-skill">Stratégie</span>
+            <span class="mn-skill">Finance</span>
+            <span class="mn-skill">Leadership</span>
+            <span class="mn-skill">Français (natif)</span>
+            <span class="mn-skill">Anglais (C2)</span>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Minimal</span>
+          <span class="badge badge-surface">Élégant</span>
+        </div>
+        <p class="tpl-info-desc">Moins c'est plus. Design minimaliste axé sur la lisibilité. Très apprécié des recruteurs.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Consulting</span>
+          <span class="tpl-tag">Finance</span>
+          <span class="tpl-tag">Droit</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+    <!-- ══ 4. EXECUTIVE ══ -->
+    <div class="tpl-full-card reveal">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-executive">
+          <div class="ex-header">
+            <div class="ex-name">Alexandre Morel</div>
+            <div class="ex-title">Directeur Général · CEO</div>
+            <div class="ex-contact">alexandre@email.com · +33 6 55 44 33 · Paris, France · linkedin.com/in/amorel</div>
+          </div>
+          <div class="ex-body">
+            <div class="ex-section-title">Executive Summary</div>
+            <div style="font-size:11px;color:#555;line-height:1.65;margin-bottom:18px">Dirigeant expérimenté avec 15 ans de leadership dans les secteurs tech et retail. Spécialiste de la croissance internationale et de la transformation organisationnelle. CA géré : 450M€.</div>
+            <div class="ex-section-title">Professional Experience</div>
+            <div class="ex-entry">
+              <div class="ex-entry-head">
+                <div>
+                  <div class="ex-entry-title">Directeur Général</div>
+                  <div class="ex-entry-sub">Groupe Fnac Darty</div>
+                </div>
+                <div class="ex-entry-date">2019 – Présent</div>
+              </div>
+              <div class="ex-text">Pilotage de la transformation digitale du groupe (5000 collaborateurs). Croissance de +28% du CA e-commerce.</div>
+            </div>
+            <div class="ex-section-gap"></div>
+            <div class="ex-section-title">Key Skills</div>
+            <div class="ex-skills">
+              <span class="ex-skill">Leadership</span>
+              <span class="ex-skill">M&A</span>
+              <span class="ex-skill">Finance</span>
+              <span class="ex-skill">Stratégie</span>
+            </div>
+            <div class="ex-section-gap"></div>
+            <div class="ex-section-title">Langues</div>
+            <div class="ex-skills">
+              <span class="ex-skill">Français (natif)</span>
+              <span class="ex-skill">Anglais (C2)</span>
+              <span class="ex-skill">Allemand (B2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Executive</span>
+          <span class="badge badge-surface">Premium</span>
+        </div>
+        <p class="tpl-info-desc">Classe et autorité. Conçu pour les postes de direction et les profils senior qui veulent imposer leur stature.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Direction</span>
+          <span class="tpl-tag">Senior</span>
+          <span class="tpl-tag">International</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+    <!-- ══ 5. ELEGANT ══ -->
+    <div class="tpl-full-card reveal reveal-delay-1">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-elegant">
+          <div class="el-top-line"></div>
+          <div class="el-name">Isabelle Fontaine</div>
+          <div class="el-title">Directrice Artistique · Luxe & Mode</div>
+          <div class="el-contact">isabelle@email.com · Paris, France</div>
+          <div class="el-divider"></div>
+          <div class="el-section-title">Expériences</div>
+          <div class="el-entry">
+            <div class="el-entry-head">
+              <div>
+                <div class="el-entry-title">Directrice Artistique</div>
+                <div class="el-entry-sub">Maison Dior</div>
+              </div>
+              <div class="el-entry-date">2020 – Présent</div>
+            </div>
+            <div class="el-text">Direction créative des collections capsule et campagnes globales. Collaboration avec les équipes de 14 pays.</div>
+          </div>
+          <div class="el-entry">
+            <div class="el-entry-head">
+              <div>
+                <div class="el-entry-title">Senior Designer</div>
+                <div class="el-entry-sub">Louis Vuitton</div>
+              </div>
+              <div class="el-entry-date">2016 – 2020</div>
+            </div>
+          </div>
+          <div class="el-section-title">Compétences</div>
+          <div class="el-skills">
+            <span class="el-skill">Direction créative</span>
+            <span class="el-skill">Adobe Suite</span>
+            <span class="el-skill">Branding</span>
+          </div>
+          <div class="el-section-title">Langues</div>
+          <div class="el-skills">
+            <span class="el-skill">Français (natif)</span>
+            <span class="el-skill">Anglais (C1)</span>
+            <span class="el-skill">Italien (B1)</span>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Elegant</span>
+          <span class="badge badge-surface">Raffiné</span>
+        </div>
+        <p class="tpl-info-desc">Tons chauds et dorés pour un CV qui se distingue avec subtilité. Idéal pour le luxe et la culture.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Luxe</span>
+          <span class="tpl-tag">Culture</span>
+          <span class="tpl-tag">Communication</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+    <!-- ══ 6. BOLD ══ -->
+    <div class="tpl-full-card reveal reveal-delay-2">
+      <div class="tpl-preview-large">
+        <div class="cv-thumb cv-thumb-bold">
+          <div class="bd-header">
+            <div class="bd-name">Lucas Bernard</div>
+            <div class="bd-title">Head of Growth · Startup Tech</div>
+            <div class="bd-contact">lucas@email.com · +33 6 77 88 99 · Paris</div>
+          </div>
+          <div class="bd-body">
+            <div class="bd-section-title">Expériences</div>
+            <div class="bd-entry">
+              <div class="bd-entry-head">
+                <div>
+                  <div class="bd-entry-title">Head of Growth</div>
+                  <div class="bd-entry-sub">Doctolib</div>
+                </div>
+                <div class="bd-entry-date">2021 – Présent</div>
+              </div>
+              <div class="bd-text">Croissance ARR de 3M€ à 18M€ en 24 mois. Création et management d'une équipe growth de 12 personnes.</div>
+            </div>
+            <div class="bd-entry">
+              <div class="bd-entry-head">
+                <div>
+                  <div class="bd-entry-title">Growth Manager</div>
+                  <div class="bd-entry-sub">Alan</div>
+                </div>
+                <div class="bd-entry-date">2019 – 2021</div>
+              </div>
+            </div>
+            <div class="bd-section-gap"></div>
+            <div class="bd-section-title">Compétences</div>
+            <div class="bd-skills">
+              <span class="bd-skill">Growth Hacking</span>
+              <span class="bd-skill">Data Analytics</span>
+              <span class="bd-skill">Product</span>
+            </div>
+            <div class="bd-section-gap"></div>
+            <div class="bd-section-title">Langues</div>
+            <div class="bd-skills">
+              <span class="bd-skill">Français (natif)</span>
+              <span class="bd-skill">Anglais (C2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-info-top">
+          <span class="tpl-info-name">Bold</span>
+          <span class="badge" style="background:rgba(239,68,68,0.12);color:#EF4444">Impact</span>
+        </div>
+        <p class="tpl-info-desc">Design audacieux et frappant. Pour ceux qui veulent être mémorables et montrer leur personnalité forte.</p>
+        <div class="tpl-tags">
+          <span class="tpl-tag">Startup</span>
+          <span class="tpl-tag">Créatif</span>
+          <span class="tpl-tag">Commercial</span>
+        </div>
+        <a href="/create-cv-free.html" class="btn btn-primary" style="width:100%;justify-content:center">Utiliser ce template →</a>
+      </div>
+    </div>
+
+  </div><!-- /tpl-grid -->
+
+  <!-- Bottom CTA -->
+  <div style="text-align:center;margin-top:var(--sp-16)" class="reveal">
+    <h2 style="font-size:var(--fs-2xl);font-weight:800;letter-spacing:-0.03em;margin-bottom:var(--sp-3)">
+      Tous gratuits, tous prêts à l'emploi.
+    </h2>
+    <p style="color:var(--clr-text-2);margin-bottom:var(--sp-6)">
+      Créez votre CV maintenant — aucune inscription, aucune carte bancaire.
+    </p>
+    <a href="/create-cv-free.html" class="btn btn-primary btn-xl">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Créer mon CV gratuitement
+    </a>
+  </div>
+
+</div><!-- /container -->
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
+      <div class="footer-brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="fl" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#fl)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/></svg>
+          <div>
+            <div style="font-size:16px;font-weight:800;color:var(--clr-text)">Forg<span style="color:#6366F1">CV</span></div>
+            <div style="font-size:9px;font-weight:700;letter-spacing:.07em;color:#6366F1;text-transform:uppercase">by Vixfor</div>
+          </div>
+        </a>
+        <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Créez votre CV professionnel en 2 minutes. 100% gratuit, sans inscription.</p>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🔒 GDPR</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">⚡ Gratuit</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🌍 6 langues</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <div class="footer-links">
+          <a href="/create-cv-free.html">Créer un CV gratuit</a>
+          <a href="/resume-builder.html">Resume Builder</a>
+          <a href="/cover-letter.html">Lettre de motivation</a>
+          <a href="/templates.html">Templates ATS</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <div class="footer-links">
+          <a href="/seo/how-to-write-a-cv.html">Écrire un CV</a>
+          <a href="/seo/cv-examples.html">Exemples de CV</a>
+          <a href="/seo/cv-format-2026.html">Format 2026</a>
+          <a href="/seo/cv-with-no-experience.html">CV sans expérience</a>
+          <a href="/seo/cv-europe-jobs.html">Jobs en Europe</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Par pays</h4>
+        <div class="footer-links">
+          <a href="/seo/cv-france.html">🇫🇷 France</a>
+          <a href="/seo/cv-netherlands.html">🇳🇱 Pays-Bas</a>
+          <a href="/seo/cv-germany.html">🇩🇪 Allemagne</a>
+          <a href="/seo/cv-spain.html">🇪🇸 Espagne</a>
+          <a href="/seo/cv-italy.html">🇮🇹 Italie</a>
+          <a href="/seo/cv-portugal.html">🇵🇹 Portugal</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <div class="footer-links">
+          <a href="/about.html">À propos</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/vixfor/index.html">Vixfor</a>
+          <a href="/legal/privacy-policy.html">Confidentialité</a>
+          <a href="/legal/terms-of-service.html">CGU</a>
+          <a href="/legal/cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ForgCV by <a href="https://vixfor.com" target="_blank" rel="noopener" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. Tous droits réservés.</span>
+      <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
+        <a href="/legal/privacy-policy.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Confidentialité</a>
+        <a href="/legal/terms-of-service.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">CGU</a>
+        <a href="/legal/cookies.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+<script src="/js/analytics.js"></script>
+
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script>
+  /* Scale each cv-thumb to fill its preview container */
+  function scaleThumbs() {
+    document.querySelectorAll('.tpl-preview-large').forEach(container => {
+      const thumb = container.querySelector('.cv-thumb');
+      if (!thumb) return;
+      const containerW = container.offsetWidth;
+      if (!containerW) return; // not laid out yet
+      const scale = containerW / 680;
+      thumb.style.transform = `scale(${scale})`;
+      thumb.style.transformOrigin = 'top left';
+      // Also set the container min-height so card doesn't collapse
+      container.style.minHeight = Math.round(scale * thumb.scrollHeight) + 'px';
+    });
+  }
+
+  // Fire at multiple points to handle fonts + layout timing
+  document.addEventListener('DOMContentLoaded', scaleThumbs);
+  window.addEventListener('load', scaleThumbs);
+  window.addEventListener('resize', scaleThumbs);
+  // Extra pass after fonts load (Google Fonts can shift layout)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => { scaleThumbs(); setTimeout(scaleThumbs, 100); });
+  }
+  // Safety net: re-run after 300ms
+  setTimeout(scaleThumbs, 300);
+</script>
+<script src="/js/analytics.js"></script>
+</body>
+</html>
