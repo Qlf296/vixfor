@@ -116,37 +116,37 @@ function addExperience(data = {}) {
   div.innerHTML = `
     <div class="entry-header">
       <span class="entry-title">Expérience #${expCount}</span>
-      <button type="button" class="btn-remove" onclick="this.closest('.exp-entry').remove();updatePreview();" aria-label="Supprimer">
+      <button type="button" class="btn-remove" onclick="this.closest('.exp-entry').remove();updatePreview();" aria-label="Remove">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Entreprise</label>
+        <label class="form-label">Company</label>
         <input class="form-input exp-company" type="text" placeholder="Google, Apple..." value="${data.company||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Poste</label>
+        <label class="form-label">Position</label>
         <input class="form-input exp-position" type="text" placeholder="Engineer, Designer..." value="${data.position||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Début</label>
+        <label class="form-label">Start</label>
         <input class="form-input exp-start" type="text" placeholder="Jan 2022" value="${data.start||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Fin</label>
-        <input class="form-input exp-end" type="text" placeholder="Déc 2024" value="${data.end||''}" oninput="updatePreview()" ${data.current?'disabled':''}>
+        <label class="form-label">End</label>
+        <input class="form-input exp-end" type="text" placeholder="Dec 2024" value="${data.end||''}" oninput="updatePreview()" ${data.current?'disabled':''}>
       </div>
     </div>
     <div class="form-group">
       <label class="form-label check-label">
         <input type="checkbox" class="exp-current" ${data.current?'checked':''} onchange="
           const ei=this.closest('.exp-entry').querySelector('.exp-end');
-          if(this.checked){ei.value='Présent';ei.disabled=true;}else{ei.value='';ei.disabled=false;}
+          if(this.checked){ei.value='Present';ei.disabled=true;}else{ei.value='';ei.disabled=false;}
           updatePreview();">
-        Poste actuel
+        Current position
       </label>
     </div>
     <div class="form-group">
@@ -166,27 +166,27 @@ function addEducation(data = {}) {
   div.innerHTML = `
     <div class="entry-header">
       <span class="entry-title">Formation #${eduCount}</span>
-      <button type="button" class="btn-remove" onclick="this.closest('.edu-entry').remove();updatePreview();" aria-label="Supprimer">
+      <button type="button" class="btn-remove" onclick="this.closest('.edu-entry').remove();updatePreview();" aria-label="Remove">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">École / Université</label>
+        <label class="form-label">School / University</label>
         <input class="form-input edu-school" type="text" placeholder="University of Amsterdam" value="${data.school||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Diplôme</label>
+        <label class="form-label">Degree</label>
         <input class="form-input edu-degree" type="text" placeholder="Master, Bachelor, BSc..." value="${data.degree||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Domaine</label>
+        <label class="form-label">Field</label>
         <input class="form-input edu-field" type="text" placeholder="Computer Science, Marketing..." value="${data.field||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Année</label>
+        <label class="form-label">Year</label>
         <input class="form-input edu-end" type="text" placeholder="2023" value="${data.end||''}" oninput="updatePreview()">
       </div>
     </div>`;
@@ -200,11 +200,11 @@ function buildCVHtml(d, tpl, forPDF = false) {
   const skills   = d.skills    ? d.skills.split(',').map(s => s.trim()).filter(Boolean)    : [];
   const langList = d.languages ? d.languages.split(',').map(s => s.trim()).filter(Boolean) : [];
   const accent   = TEMPLATES[tpl]?.accent || '#5B57FF';
-  const fullName = `${d.firstname} ${d.lastname}`.trim() || 'Votre Nom';
+  const fullName = `${d.firstname} ${d.lastname}`.trim() || 'Your Name';
 
   /* ── Helper: entry date display ── */
   const expDate = exp =>
-    `${exp.start}${exp.start && (exp.end || exp.current) ? ' – ' : ''}${exp.current ? 'Présent' : exp.end}`;
+    `${exp.start}${exp.start && (exp.end || exp.current) ? ' – ' : ''}${exp.current ? (window.CV_LANG_DICT && window.CV_LANG_DICT[window.cvLang||'en'] && window.CV_LANG_DICT[window.cvLang||'en'].present || 'Present') : exp.end}`;
 
   /* ── Shared section builders ── */
   const skillChips = (list, cls = 'cvr-skill') =>
@@ -484,18 +484,18 @@ function showLettreCTA() {
     '<style>@keyframes fgcv-pop-in{from{opacity:0;transform:translateX(-50%) translateY(20px)}',
     'to{opacity:1;transform:translateX(-50%) translateY(0)}}</style>',
     '<div style="flex:1;min-width:160px">',
-    '  <div style="font-size:.72rem;font-weight:700;opacity:.8;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.08em">✅ CV téléchargé !</div>',
-    '  <div style="font-size:.95rem;font-weight:800;line-height:1.3">Crée ta lettre de motivation<br>pour maximiser tes chances ×3</div>',
+    '  <div style="font-size:.72rem;font-weight:700;opacity:.8;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.08em">✅ CV downloaded!</div>',
+    '  <div style="font-size:.95rem;font-weight:800;line-height:1.3">Add a cover letter<br>and triple your interview chances</div>',
     '</div>',
     '<div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">',
     '  <a href="cover-letter-generator.html" style="display:inline-flex;align-items:center;gap:6px;',
     '     background:#fff;color:#5B57FF;padding:.55rem 1.1rem;border-radius:9999px;',
     '     font-weight:800;font-size:.85rem;text-decoration:none;white-space:nowrap">',
-    '    ✉️ Créer ma lettre →',
+    '    ✉️ Create my cover letter →',
     '  </a>',
-    '  <button onclick="document.getElementById('fgcv-lettre-cta').remove()" ',
+    '  <button onclick="document.getElementById(\'fgcv-lettre-cta\').remove()" ',
     '    style="background:transparent;border:none;color:rgba(255,255,255,.7);',
-    '    font-size:.75rem;cursor:pointer;text-align:center">Plus tard</button>',
+    '    font-size:.75rem;cursor:pointer;text-align:center">Later</button>',
     '</div>'
   ].join('');
   document.body.appendChild(banner);
@@ -515,12 +515,12 @@ function downloadPDF() {
   /* Guard: preview must have content */
   const previewEl = document.getElementById('cv-preview-content');
   if (!previewEl || previewEl.innerHTML.trim() === '') {
-    showToast('Remplissez d\'abord votre CV avant de télécharger.', 'error');
+    showToast('Please fill in your CV before downloading.', 'error');
     return;
   }
 
   const orig = btn.innerHTML;
-  btn.innerHTML = '<span class="spinner"></span> Génération…';
+  btn.innerHTML = '<span class="spinner"></span> Generating…';
   btn.disabled = true;
 
   const accent  = TEMPLATES[tpl]?.accent || '#5B57FF';
@@ -543,12 +543,12 @@ function downloadPDF() {
   if (!printWin) {
     btn.innerHTML = orig;
     btn.disabled = false;
-    showToast('⚠️ Autorisez les pop-ups pour générer le PDF.', 'error');
+    showToast('⚠️ Please allow pop-ups to generate the PDF.', 'error');
     return;
   }
 
   const fullHtml = `<!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>CV — ${name}</title>
@@ -768,10 +768,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-download-pdf')?.addEventListener('click', downloadPDF);
   document.getElementById('btn-copy-cv')?.addEventListener('click', () => {
     const text = document.getElementById('cv-preview-content')?.innerText || '';
-    navigator.clipboard.writeText(text).then(() => showToast('Copié !', 'success'));
+    navigator.clipboard.writeText(text).then(() => showToast('Copied!', 'success'));
   });
   document.getElementById('btn-new-cv')?.addEventListener('click', () => {
-    if (confirm('Créer un nouveau CV ? Les données seront effacées.')) location.reload();
+    if (confirm('Create a new CV? Your data will be cleared.')) location.reload();
   });
   document.getElementById('btn-add-exp')?.addEventListener('click', () => addExperience());
   document.getElementById('btn-add-edu')?.addEventListener('click', () => addEducation());

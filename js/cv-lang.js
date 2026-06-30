@@ -20,14 +20,14 @@
 
   /* ── 1. CV section heading dictionary (used by cv-generator.js for PDF titles) ── */
   var CV_LANG_DICT = {
-    en: { profile:'Profile', experience:'Experience', education:'Education', skills:'Skills', languages:'Languages', contact:'Contact', summary:'Professional Summary', rtl:false },
-    fr: { profile:'Profil', experience:'Expériences professionnelles', education:'Formation', skills:'Compétences', languages:'Langues', contact:'Contact', summary:'Profil professionnel', rtl:false },
-    nl: { profile:'Profiel', experience:'Werkervaring', education:'Opleiding', skills:'Vaardigheden', languages:'Talen', contact:'Contact', summary:'Professioneel profiel', rtl:false },
-    es: { profile:'Perfil', experience:'Experiencia profesional', education:'Formación', skills:'Habilidades', languages:'Idiomas', contact:'Contacto', summary:'Resumen profesional', rtl:false },
-    ar: { profile:'الملف الشخصي', experience:'الخبرة المهنية', education:'التعليم', skills:'المهارات', languages:'اللغات', contact:'معلومات الاتصال', summary:'الملخص المهني', rtl:true },
-    ru: { profile:'Профиль', experience:'Опыт работы', education:'Образование', skills:'Навыки', languages:'Языки', contact:'Контакты', summary:'Профессиональное резюме', rtl:false },
-    de: { profile:'Profil', experience:'Berufserfahrung', education:'Ausbildung', skills:'Kenntnisse', languages:'Sprachen', contact:'Kontakt', summary:'Berufliches Profil', rtl:false },
-    pt: { profile:'Perfil', experience:'Experiência profissional', education:'Formação académica', skills:'Competências', languages:'Idiomas', contact:'Contacto', summary:'Perfil profissional', rtl:false }
+    en: { profile:'Profile', experience:'Experience', education:'Education', skills:'Skills', languages:'Languages', contact:'Contact', summary:'Professional Summary', present:'Present', rtl:false },
+    fr: { profile:'Profil', experience:'Expériences professionnelles', education:'Formation', skills:'Compétences', languages:'Langues', contact:'Contact', summary:'Profil professionnel', present:'Présent', rtl:false },
+    nl: { profile:'Profiel', experience:'Werkervaring', education:'Opleiding', skills:'Vaardigheden', languages:'Talen', contact:'Contact', summary:'Professioneel profiel', present:'Heden', rtl:false },
+    es: { profile:'Perfil', experience:'Experiencia profesional', education:'Formación', skills:'Habilidades', languages:'Idiomas', contact:'Contacto', summary:'Resumen profesional', present:'Actualidad', rtl:false },
+    ar: { profile:'الملف الشخصي', experience:'الخبرة المهنية', education:'التعليم', skills:'المهارات', languages:'اللغات', contact:'معلومات الاتصال', summary:'الملخص المهني', present:'الحاضر', rtl:true },
+    ru: { profile:'Профиль', experience:'Опыт работы', education:'Образование', skills:'Навыки', languages:'Языки', contact:'Контакты', summary:'Профессиональное резюме', present:'Настоящее время', rtl:false },
+    de: { profile:'Profil', experience:'Berufserfahrung', education:'Ausbildung', skills:'Kenntnisse', languages:'Sprachen', contact:'Kontakt', summary:'Berufliches Profil', present:'Heute', rtl:false },
+    pt: { profile:'Perfil', experience:'Experiência profissional', education:'Formação académica', skills:'Competências', languages:'Idiomas', contact:'Contacto', summary:'Perfil profissional', present:'Presente', rtl:false }
   };
 
   /* ── 2. CV BUILDER UI dictionary (form labels inside #cv-builder) ───────────── */
