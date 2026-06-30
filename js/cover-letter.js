@@ -162,7 +162,8 @@ function generateLetter() {
   document.getElementById('cl-generating')?.classList.remove('hidden');
 
   setTimeout(() => {
-    const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+    const langSel = document.getElementById('cl-lang');
+    const lang = langSel ? langSel.value : (typeof currentLang !== 'undefined' ? currentLang : 'fr');
     const templates = CL_TEMPLATES[lang] || CL_TEMPLATES.fr;
     const toneFunc  = templates[d.tone] || templates.professional;
     const letter    = toneFunc(d);
@@ -234,6 +235,26 @@ function resetForm() {
 
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
+  // Auto-detect language from i18n system or browser
+  const langSel = document.getElementById('cl-lang');
+  if (langSel) {
+    const detected = (typeof currentLang !== 'undefined' && currentLang)
+      ? currentLang
+      : (navigator.language || navigator.userLanguage || 'fr').slice(0, 2).toLowerCase();
+    const supported = ['fr','en','nl','es','ar','ru'];
+    langSel.value = supported.includes(detected) ? detected : 'fr';
+    // Mark as auto-detected
+    const badge = document.getElementById('cl-lang-detected');
+    if (badge) {
+      const flags = {fr:'🇫🇷',en:'🇬🇧',nl:'🇳🇱',es:'🇪🇸',ar:'🇸🇦',ru:'🇷🇺'};
+      badge.textContent = flags[langSel.value] + ' Auto-détectée';
+    }
+    // When user changes manually, remove "auto" badge
+    langSel.addEventListener('change', () => {
+      if (badge) badge.textContent = '✏️ Modifiée';
+    });
+  }
+
   document.getElementById('btn-generate')?.addEventListener('click', generateLetter);
   document.getElementById('btn-cl-copy')?.addEventListener('click', copyLetter);
   document.getElementById('btn-cl-download')?.addEventListener('click', downloadLetterPDF);

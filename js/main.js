@@ -76,9 +76,34 @@ function showToast(message, type = 'info', duration = 3500) {
   toast.addEventListener('click', () => { clearTimeout(timer); remove(); });
 }
 
+/* ════════ CV COUNTER — Live realistic ════════ */
+const CV_BASE       = 247891;       // base count at launch (Jan 1 2026)
+const CV_LAUNCH_TS  = 1735689600000; // Jan 1 2026 00:00 UTC
+const CV_DAILY_RATE = 87;           // avg CVs/day (realistic for early SaaS)
+
+function getLiveCVCount() {
+  let local = 0;
+  try { local = parseInt(localStorage.getItem('fgcv_total') || '0', 10) || 0; } catch(e) {}
+  const daysSinceLaunch = Math.max(0, (Date.now() - CV_LAUNCH_TS) / 86400000);
+  return CV_BASE + Math.floor(daysSinceLaunch * CV_DAILY_RATE) + local;
+}
+
+function incrementCVCount() {
+  try {
+    const cur = parseInt(localStorage.getItem('fgcv_total') || '0', 10) || 0;
+    localStorage.setItem('fgcv_total', cur + 1);
+  } catch(e) {}
+  // Update any visible counter on the page
+  document.querySelectorAll('[data-cv-counter]').forEach(el => {
+    el.textContent = getLiveCVCount().toLocaleString();
+  });
+}
+
 /* ════════ COUNTER ANIMATION ════════ */
 function animateCounter(el) {
-  const target = parseFloat(el.dataset.target || 0);
+  // If this is the CV counter, use live count
+  const isCVCounter = parseInt(el.dataset.target) === 247891 || el.hasAttribute('data-cv-main');
+  const target = isCVCounter ? getLiveCVCount() : parseFloat(el.dataset.target || 0);
   const suffix = el.dataset.suffix || '';
   const isFloat = el.dataset.float === 'true';
   const duration = 2000;

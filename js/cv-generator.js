@@ -611,6 +611,9 @@ ${cvHtml}
   btn.innerHTML = orig;
   btn.disabled  = false;
   showToast('🖨️ Dans la boîte d\'impression : décochez "En-têtes et pieds de page", puis Enregistrer en PDF', 'info');
+
+  // Increment live CV counter
+  if (typeof incrementCVCount === 'function') incrementCVCount();
 }
 
 
