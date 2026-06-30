@@ -146,7 +146,7 @@ function addExperience(data = {}) {
       <label class="form-label check-label">
         <input type="checkbox" class="exp-current" ${data.current?'checked':''} onchange="
           const ei=this.closest('.exp-entry').querySelector('.exp-end');
-          if(this.checked){ei.value='Present';ei.disabled=true;}else{ei.value='';ei.disabled=false;}
+          if(this.checked){ei.value=(window.CV_LANG_DICT&&window.CV_LANG_DICT[window.cvLang||'en']&&window.CV_LANG_DICT[window.cvLang||'en'].present)||'Present';ei.disabled=true;}else{ei.value='';ei.disabled=false;}
           updatePreview();">
         <span data-i18n="entryCurrent">${_ui.entryCurrent||'Current position'}</span>
       </label>

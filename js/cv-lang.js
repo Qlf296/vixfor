@@ -267,6 +267,13 @@
     var sel = document.getElementById('cvLanguage');
     if (sel && sel.value !== lang) sel.value = lang;
 
+    // Update "Present" text in any already-checked current-position fields
+    var presentWord = CV_LANG_DICT[lang].present || 'Present';
+    document.querySelectorAll('#cv-builder .exp-current:checked').forEach(function(cb) {
+      var ei = cb.closest('.exp-entry') && cb.closest('.exp-entry').querySelector('.exp-end');
+      if (ei) ei.value = presentWord;
+    });
+
     // Refresh live CV preview (section headings)
     if (typeof updatePreview === 'function') updatePreview();
 
