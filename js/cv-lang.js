@@ -43,7 +43,8 @@
       skillsLanguages:'Skills & Languages', skills:'Skills (comma-separated)', languages:'Languages (comma-separated)',
       chooseTemplate:'Choose your template',
       stepInfo:'Informations', stepTemplate:'Template', stepDownload:'Download',
-      autosaved:'Saved', next:'Next →', previous:'← Previous'
+      autosaved:'Saved', next:'Next →', previous:'← Previous',
+      expLabel:'Experience', eduLabel:'Education', entryCompany:'Company', entryPosition:'Position', entryStart:'Start', entryEnd:'End', entryCurrent:'Current position', entryDescription:'Description', entrySchool:'School / University', entryDegree:'Degree', entryField:'Field', entryYear:'Year'
     },
     fr: {
       personalInfo:'Vos informations personnelles', thisInfo:'Ces informations apparaîtront en haut de votre CV.',
@@ -56,7 +57,8 @@
       skillsLanguages:'Compétences & Langues', skills:'Compétences (séparées par virgules)', languages:'Langues (séparées par virgules)',
       chooseTemplate:'Choisissez votre modèle',
       stepInfo:'Informations', stepTemplate:'Modèle', stepDownload:'Télécharger',
-      autosaved:'Sauvegardé', next:'Suivant →', previous:'← Précédent'
+      autosaved:'Sauvegardé', next:'Suivant →', previous:'← Précédent',
+      expLabel:'Expérience', eduLabel:'Formation', entryCompany:'Entreprise', entryPosition:'Poste', entryStart:'Début', entryEnd:'Fin', entryCurrent:'Poste actuel', entryDescription:'Description', entrySchool:'École / Université', entryDegree:'Diplôme', entryField:'Domaine', entryYear:'Année'
     },
     nl: {
       personalInfo:'Uw persoonlijke informatie', thisInfo:'Deze informatie verschijnt bovenaan uw CV.',
@@ -69,7 +71,8 @@
       skillsLanguages:'Vaardigheden & Talen', skills:'Vaardigheden (komma-gescheiden)', languages:'Talen (komma-gescheiden)',
       chooseTemplate:'Kies uw sjabloon',
       stepInfo:'Informatie', stepTemplate:'Sjabloon', stepDownload:'Downloaden',
-      autosaved:'Opgeslagen', next:'Volgende →', previous:'← Vorige'
+      autosaved:'Opgeslagen', next:'Volgende →', previous:'← Vorige',
+      expLabel:'Ervaring', eduLabel:'Opleiding', entryCompany:'Bedrijf', entryPosition:'Functie', entryStart:'Begin', entryEnd:'Einde', entryCurrent:'Huidige functie', entryDescription:'Beschrijving', entrySchool:'School / Universiteit', entryDegree:'Diploma', entryField:'Vakgebied', entryYear:'Jaar'
     },
     es: {
       personalInfo:'Su información personal', thisInfo:'Esta información aparecerá en la parte superior de su CV.',
@@ -82,7 +85,8 @@
       skillsLanguages:'Habilidades e Idiomas', skills:'Habilidades (separadas por comas)', languages:'Idiomas (separados por comas)',
       chooseTemplate:'Elige tu plantilla',
       stepInfo:'Información', stepTemplate:'Plantilla', stepDownload:'Descargar',
-      autosaved:'Guardado', next:'Siguiente →', previous:'← Anterior'
+      autosaved:'Guardado', next:'Siguiente →', previous:'← Anterior',
+      expLabel:'Experiencia', eduLabel:'Formación', entryCompany:'Empresa', entryPosition:'Cargo', entryStart:'Inicio', entryEnd:'Fin', entryCurrent:'Puesto actual', entryDescription:'Descripción', entrySchool:'Escuela / Universidad', entryDegree:'Título', entryField:'Campo', entryYear:'Año'
     },
     ar: {
       personalInfo:'معلوماتك الشخصية', thisInfo:'ستظهر هذه المعلومات في أعلى سيرتك الذاتية.',
@@ -95,7 +99,8 @@
       skillsLanguages:'المهارات واللغات', skills:'المهارات (مفصولة بفواصل)', languages:'اللغات (مفصولة بفواصل)',
       chooseTemplate:'اختر النموذج',
       stepInfo:'المعلومات', stepTemplate:'النموذج', stepDownload:'تنزيل',
-      autosaved:'محفوظ', next:'التالي ←', previous:'→ السابق'
+      autosaved:'محفوظ', next:'التالي ←', previous:'→ السابق',
+      expLabel:'خبرة', eduLabel:'تعليم', entryCompany:'الشركة', entryPosition:'المنصب', entryStart:'البداية', entryEnd:'النهاية', entryCurrent:'المنصب الحالي', entryDescription:'الوصف', entrySchool:'المدرسة / الجامعة', entryDegree:'الشهادة', entryField:'التخصص', entryYear:'السنة'
     },
     ru: {
       personalInfo:'Ваша личная информация', thisInfo:'Эта информация появится в верхней части вашего резюме.',
@@ -108,7 +113,8 @@
       skillsLanguages:'Навыки и Языки', skills:'Навыки (через запятую)', languages:'Языки (через запятую)',
       chooseTemplate:'Выберите шаблон',
       stepInfo:'Информация', stepTemplate:'Шаблон', stepDownload:'Скачать',
-      autosaved:'Сохранено', next:'Далее →', previous:'← Назад'
+      autosaved:'Сохранено', next:'Далее →', previous:'← Назад',
+      expLabel:'Опыт', eduLabel:'Образование', entryCompany:'Компания', entryPosition:'Должность', entryStart:'Начало', entryEnd:'Конец', entryCurrent:'Текущее место работы', entryDescription:'Описание', entrySchool:'Школа / Университет', entryDegree:'Степень', entryField:'Область', entryYear:'Год'
     },
     de: {
       personalInfo:'Ihre persönlichen Informationen', thisInfo:'Diese Informationen erscheinen oben in Ihrem Lebenslauf.',
@@ -121,7 +127,8 @@
       skillsLanguages:'Kenntnisse & Sprachen', skills:'Kenntnisse (kommagetrennt)', languages:'Sprachen (kommagetrennt)',
       chooseTemplate:'Vorlage wählen',
       stepInfo:'Informationen', stepTemplate:'Vorlage', stepDownload:'Herunterladen',
-      autosaved:'Gespeichert', next:'Weiter →', previous:'← Zurück'
+      autosaved:'Gespeichert', next:'Weiter →', previous:'← Zurück',
+      expLabel:'Erfahrung', eduLabel:'Ausbildung', entryCompany:'Unternehmen', entryPosition:'Stelle', entryStart:'Beginn', entryEnd:'Ende', entryCurrent:'Aktuelle Stelle', entryDescription:'Beschreibung', entrySchool:'Schule / Universität', entryDegree:'Abschluss', entryField:'Fachbereich', entryYear:'Jahr'
     },
     pt: {
       personalInfo:'As suas informações pessoais', thisInfo:'Esta informação aparecerá no topo do seu CV.',
@@ -134,7 +141,8 @@
       skillsLanguages:'Competências & Idiomas', skills:'Competências (separadas por vírgulas)', languages:'Idiomas (separados por vírgulas)',
       chooseTemplate:'Escolha o seu modelo',
       stepInfo:'Informações', stepTemplate:'Modelo', stepDownload:'Transferir',
-      autosaved:'Guardado', next:'Seguinte →', previous:'← Anterior'
+      autosaved:'Guardado', next:'Seguinte →', previous:'← Anterior',
+      expLabel:'Experiência', eduLabel:'Formação', entryCompany:'Empresa', entryPosition:'Cargo', entryStart:'Início', entryEnd:'Fim', entryCurrent:'Cargo atual', entryDescription:'Descrição', entrySchool:'Escola / Universidade', entryDegree:'Grau', entryField:'Área', entryYear:'Ano'
     }
   };
 

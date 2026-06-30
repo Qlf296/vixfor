@@ -113,30 +113,32 @@ function addExperience(data = {}) {
   const container = document.getElementById('experiences-container');
   const div = document.createElement('div');
   div.className = 'exp-entry form-entry-card';
+  const _lang = window.cvLang || 'en';
+  const _ui = (window.CV_UI_DICT && window.CV_UI_DICT[_lang]) ? window.CV_UI_DICT[_lang] : (window.CV_UI_DICT ? window.CV_UI_DICT['en'] : {});
   div.innerHTML = `
     <div class="entry-header">
-      <span class="entry-title">Expérience #${expCount}</span>
+      <span class="entry-title"><span data-i18n="expLabel">${_ui.expLabel||'Experience'}</span> #${expCount}</span>
       <button type="button" class="btn-remove" onclick="this.closest('.exp-entry').remove();updatePreview();" aria-label="Remove">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Company</label>
+        <label class="form-label"><span data-i18n="entryCompany">${_ui.entryCompany||'Company'}</span></label>
         <input class="form-input exp-company" type="text" placeholder="Google, Apple..." value="${data.company||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Position</label>
+        <label class="form-label"><span data-i18n="entryPosition">${_ui.entryPosition||'Position'}</span></label>
         <input class="form-input exp-position" type="text" placeholder="Engineer, Designer..." value="${data.position||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Start</label>
+        <label class="form-label"><span data-i18n="entryStart">${_ui.entryStart||'Start'}</span></label>
         <input class="form-input exp-start" type="text" placeholder="Jan 2022" value="${data.start||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">End</label>
+        <label class="form-label"><span data-i18n="entryEnd">${_ui.entryEnd||'End'}</span></label>
         <input class="form-input exp-end" type="text" placeholder="Dec 2024" value="${data.end||''}" oninput="updatePreview()" ${data.current?'disabled':''}>
       </div>
     </div>
@@ -146,14 +148,15 @@ function addExperience(data = {}) {
           const ei=this.closest('.exp-entry').querySelector('.exp-end');
           if(this.checked){ei.value='Present';ei.disabled=true;}else{ei.value='';ei.disabled=false;}
           updatePreview();">
-        Current position
+        <span data-i18n="entryCurrent">${_ui.entryCurrent||'Current position'}</span>
       </label>
     </div>
     <div class="form-group">
-      <label class="form-label">Description</label>
+      <label class="form-label"><span data-i18n="entryDescription">${_ui.entryDescription||'Description'}</span></label>
       <textarea class="form-textarea exp-desc" placeholder="Describe your achievements..." oninput="updatePreview()">${data.desc||''}</textarea>
     </div>`;
   container.appendChild(div);
+  if (typeof window.updateCVLanguage === 'function') window.updateCVLanguage(window.cvLang || 'en');
 }
 
 /* ── Education entries ── */
@@ -163,34 +166,37 @@ function addEducation(data = {}) {
   const container = document.getElementById('education-container');
   const div = document.createElement('div');
   div.className = 'edu-entry form-entry-card';
+  const _lang = window.cvLang || 'en';
+  const _ui = (window.CV_UI_DICT && window.CV_UI_DICT[_lang]) ? window.CV_UI_DICT[_lang] : (window.CV_UI_DICT ? window.CV_UI_DICT['en'] : {});
   div.innerHTML = `
     <div class="entry-header">
-      <span class="entry-title">Formation #${eduCount}</span>
+      <span class="entry-title"><span data-i18n="eduLabel">${_ui.eduLabel||'Education'}</span> #${eduCount}</span>
       <button type="button" class="btn-remove" onclick="this.closest('.edu-entry').remove();updatePreview();" aria-label="Remove">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">School / University</label>
+        <label class="form-label"><span data-i18n="entrySchool">${_ui.entrySchool||'School / University'}</span></label>
         <input class="form-input edu-school" type="text" placeholder="University of Amsterdam" value="${data.school||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Degree</label>
+        <label class="form-label"><span data-i18n="entryDegree">${_ui.entryDegree||'Degree'}</span></label>
         <input class="form-input edu-degree" type="text" placeholder="Master, Bachelor, BSc..." value="${data.degree||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Field</label>
+        <label class="form-label"><span data-i18n="entryField">${_ui.entryField||'Field'}</span></label>
         <input class="form-input edu-field" type="text" placeholder="Computer Science, Marketing..." value="${data.field||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
-        <label class="form-label">Year</label>
+        <label class="form-label"><span data-i18n="entryYear">${_ui.entryYear||'Year'}</span></label>
         <input class="form-input edu-end" type="text" placeholder="2023" value="${data.end||''}" oninput="updatePreview()">
       </div>
     </div>`;
   container.appendChild(div);
+  if (typeof window.updateCVLanguage === 'function') window.updateCVLanguage(window.cvLang || 'en');
 }
 
 /* ══════════════════════════════════════════════
@@ -660,9 +666,9 @@ ${cvHtml}
 
   btn.innerHTML = orig;
   btn.disabled  = false;
-  showToast('✅ CV prêt ! Cliquez \"Enregistrer en PDF\" dans la boîte d\'impression.', 'success');
+  showToast('✅ CV ready! Click "Save as PDF" in the print dialog.', 'success');
   setTimeout(function() {
-    showToast('💡 Astuce : décochez \"En-têtes et pieds de page\" pour un rendu propre.', 'info');
+    showToast('💡 Tip: uncheck "Headers and footers" for a clean result.', 'info');
   }, 3500);
   // Show cover letter suggestion after download
   setTimeout(showLettreCTA, 800);

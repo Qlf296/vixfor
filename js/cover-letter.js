@@ -3,6 +3,8 @@
  */
 
 const CL_TEMPLATES = {
+
+  /* ── French ── */
   fr: {
     professional: (d) => `${d.city ? d.city + ', le ' + new Date().toLocaleDateString('fr-FR', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('fr-FR', {day:'numeric',month:'long',year:'numeric'})}
 
@@ -14,11 +16,11 @@ Madame, Monsieur,
 
 C'est avec un vif intérêt que je vous adresse ma candidature au poste de ${d.position} au sein de ${d.company}.
 
-Fort(e) de ${d.experience || 'mon expérience professionnelle'}, j'ai développé des compétences solides et une expertise qui correspondent précisément au profil que vous recherchez. ${d.experience ? 'Tout au long de mon parcours, j\'ai démontré ma capacité à relever des défis complexes tout en maintenant un haut niveau de qualité et de rigueur.' : ''}
+Fort(e) de ${d.experience || 'mon expérience professionnelle'}, j'ai développé des compétences solides et une expertise qui correspondent précisément au profil que vous recherchez.${d.experience ? ' Tout au long de mon parcours, j\'ai démontré ma capacité à relever des défis complexes tout en maintenant un haut niveau de qualité et de rigueur.' : ''}
 
-${d.motivation ? `Ce qui me motive particulièrement dans cette opportunité est la suivante : ${d.motivation}. Je suis convaincu(e) que cette vision s'aligne parfaitement avec les ambitions de ${d.company} et que je saurai y apporter une contribution significative.` : `Rejoindre ${d.company} représente pour moi une opportunité exceptionnelle d'apporter mes compétences et de contribuer activement au développement d'une structure que j'admire pour son dynamisme et ses valeurs.`}
+${d.motivation ? 'Ce qui me motive particulièrement dans cette opportunité : ' + d.motivation + '. Je suis convaincu(e) que cette vision s\'aligne parfaitement avec les ambitions de ' + d.company + ' et que je saurai y apporter une contribution significative.' : 'Rejoindre ' + d.company + ' représente pour moi une opportunité exceptionnelle d\'apporter mes compétences et de contribuer activement au développement d\'une structure que j\'admire.'}
 
-Je serais ravi(e) de vous rencontrer afin de vous présenter en détail mon parcours et ma motivation. Disponible à votre convenance pour un entretien, je reste à votre entière disposition pour tout renseignement complémentaire.
+Je serais ravi(e) de vous rencontrer afin de vous présenter en détail mon parcours et ma motivation.
 
 Dans cette attente, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
 
@@ -32,13 +34,13 @@ ${d.email}${d.phone ? ' · ' + d.phone : ''}
 
 Madame, Monsieur,
 
-${d.position} chez ${d.company} — cette opportunité a immédiatement retenu mon attention. Et pour cause : elle correspond exactement à l'étape suivante que je voulais franchir dans ma carrière.
+${d.position} chez ${d.company} — cette opportunité a immédiatement retenu mon attention.
 
-Après ${d.experience || 'plusieurs années d\'expérience dans mon secteur'}, j'ai acquis une expertise concrète et développé une énergie communicative pour les projets ambitieux. Je ne me contente pas d'accomplir les tâches qu'on me confie — je cherche à transformer les processus, à optimiser les résultats et à créer une vraie valeur ajoutée.
+Après ${d.experience || 'plusieurs années d\'expérience dans mon secteur'}, j'ai acquis une expertise concrète et développé une énergie pour les projets ambitieux. Je ne me contente pas d'accomplir les tâches — je cherche à transformer les processus et à créer une vraie valeur ajoutée.
 
-${d.motivation ? `Ce qui m'attire particulièrement chez ${d.company} : ${d.motivation}. Cet environnement correspond exactement à celui dans lequel je m'épanouis et donne le meilleur de moi-même.` : `${d.company} est une entreprise dans laquelle je veux investir mon énergie, mes idées et mon expertise. Votre dynamisme et votre vision m'inspirent profondément.`}
+${d.motivation ? 'Ce qui m\'attire particulièrement chez ' + d.company + ' : ' + d.motivation + '.' : d.company + ' est une entreprise dans laquelle je veux investir mon énergie et mon expertise.'}
 
-Je suis disponible rapidement pour un échange. Je suis convaincu(e) qu'une heure de votre temps suffira à vous démontrer que je suis la personne qu'il vous faut.
+Je suis disponible rapidement pour un échange.
 
 Cordialement,
 ${d.firstname} ${d.lastname}`,
@@ -51,18 +53,17 @@ ${d.email}${d.phone ? ' · ' + d.phone : ''}
 
 Madame, Monsieur,
 
-Imaginez un(e) ${d.position || 'professionnel(le)'} qui combine expertise technique, créativité et sens aigu des résultats. C'est précisément ce que j'apporte à ${d.company}.
+Imaginez un(e) ${d.position || 'professionnel(le)'} qui combine expertise, créativité et sens des résultats. C'est précisément ce que j'apporte à ${d.company}.
 
-Mon parcours — ${d.experience || 'riche d\'expériences variées et stimulantes'} — m'a permis de développer une approche singulière : je pense différemment, je propose des solutions originales là où d'autres voient des obstacles, et je m'adapte avec agilité à chaque nouveau contexte.
+Mon parcours — ${d.experience || 'riche d\'expériences variées'} — m'a permis de développer une approche singulière : je pense différemment et propose des solutions là où d'autres voient des obstacles.
 
-${d.motivation ? `Ma motivation pour rejoindre votre équipe est sincère et précise : ${d.motivation}. Je crois profondément en ce que vous construisez et je veux en faire partie.` : `Ce qui me séduit chez ${d.company}, c'est votre culture de l'innovation et votre capacité à penser autrement. C'est l'environnement dans lequel je veux grandir.`}
-
-Je serais enthousiaste à l'idée de vous présenter ma démarche lors d'un entretien. Mon énergie et mes réalisations parleront d'elles-mêmes.
+${d.motivation ? 'Ma motivation pour rejoindre votre équipe : ' + d.motivation + '.' : 'Ce qui me séduit chez ' + d.company + ', c\'est votre culture de l\'innovation.'}
 
 Avec enthousiasme,
 ${d.firstname} ${d.lastname}`
   },
 
+  /* ── English ── */
   en: {
     professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})}
 
@@ -76,9 +77,9 @@ I am writing to express my strong interest in the ${d.position} position at ${d.
 
 With ${d.experience || 'extensive professional experience'}, I have developed a robust skill set and deep expertise that aligns precisely with the requirements of this role. Throughout my career, I have consistently demonstrated the ability to deliver measurable results while maintaining the highest standards of quality.
 
-${d.motivation ? `What particularly excites me about this opportunity is: ${d.motivation}. I am confident that this vision aligns perfectly with ${d.company}'s strategic goals and that I can make a meaningful contribution to your team.` : `Joining ${d.company} represents an exceptional opportunity to apply my skills and contribute actively to an organisation I genuinely admire for its dynamism and values.`}
+${d.motivation ? 'What particularly excites me about this opportunity is: ' + d.motivation + '. I am confident that this vision aligns perfectly with ' + d.company + '\'s strategic goals.' : 'Joining ' + d.company + ' represents an exceptional opportunity to apply my skills and contribute to an organisation I genuinely admire.'}
 
-I would welcome the chance to discuss how my background and expertise would be an asset to your team. I am available at your earliest convenience for an interview.
+I would welcome the chance to discuss how my background would be an asset to your team.
 
 Yours sincerely,
 ${d.firstname} ${d.lastname}`,
@@ -93,9 +94,9 @@ Dear Hiring Team,
 
 ${d.position} at ${d.company} — this is exactly the opportunity I have been working toward.
 
-After ${d.experience || 'years of building hands-on expertise'}, I bring more than skills to the table — I bring drive, ambition, and an unwavering commitment to excellence. I don't just complete tasks; I challenge processes, optimise outcomes, and create genuine value.
+After ${d.experience || 'years of building hands-on expertise'}, I bring more than skills — I bring drive, ambition, and an unwavering commitment to excellence. I don't just complete tasks; I challenge processes, optimise outcomes, and create genuine value.
 
-${d.motivation ? `What draws me to ${d.company}: ${d.motivation}. This is precisely the environment where I do my best work and thrive.` : `${d.company}'s innovative approach and bold vision are exactly what excites me. I want to bring my energy and ideas to your team.`}
+${d.motivation ? 'What draws me to ' + d.company + ': ' + d.motivation + '. This is precisely the environment where I thrive.' : d.company + '\'s innovative approach and bold vision are exactly what excites me.'}
 
 Give me an hour of your time. I'll demonstrate exactly why I'm your next great hire.
 
@@ -114,15 +115,13 @@ What if your next ${d.position || 'hire'} was someone who doesn't just think out
 
 My journey — ${d.experience || 'a blend of creative thinking and practical execution'} — has shown me that the most impactful solutions arise from combining structured thinking with genuine creative courage.
 
-${d.motivation ? `Here's what drives me toward ${d.company}: ${d.motivation}. I believe wholeheartedly in what you're building and I want to be part of it.` : `${d.company}'s culture of innovation and long-term vision resonate deeply with the way I approach every challenge and opportunity.`}
-
-I'd love the chance to share ideas and show you my work. Let's create something exceptional together.
+${d.motivation ? 'Here\'s what drives me toward ' + d.company + ': ' + d.motivation + '.' : d.company + '\'s culture of innovation resonates deeply with the way I approach every challenge.'}
 
 Enthusiastically,
 ${d.firstname} ${d.lastname}`
-  }
-};
+  },
 
+  /* ── German ── */
   de: {
     professional: (d) => `${d.city ? d.city + ', den ' + new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'})}
 
@@ -134,11 +133,11 @@ Sehr geehrte Damen und Herren,
 
 mit großem Interesse bewerbe ich mich um die Stelle als ${d.position} bei ${d.company}.
 
-Durch ${d.experience || 'meine langjährige Berufserfahrung'} habe ich fundierte Kenntnisse und Kompetenzen entwickelt, die genau dem gesuchten Profil entsprechen. Im Laufe meiner Karriere habe ich stets bewiesen, dass ich komplexe Herausforderungen meistern und gleichzeitig höchste Qualitätsstandards einhalten kann.
+Durch ${d.experience || 'meine langjährige Berufserfahrung'} habe ich fundierte Kenntnisse entwickelt, die genau dem gesuchten Profil entsprechen.
 
-${d.motivation ? `Was mich an dieser Stelle besonders reizt: ${d.motivation}. Ich bin überzeugt, dass diese Vision perfekt mit den Zielen von ${d.company} übereinstimmt und ich einen wertvollen Beitrag zu Ihrem Team leisten kann.` : `Bei ${d.company} zu arbeiten wäre für mich eine außergewöhnliche Möglichkeit, meine Fähigkeiten einzusetzen und aktiv zur Entwicklung eines Unternehmens beizutragen, das ich für seinen Dynamismus und seine Werte sehr schätze.`}
+${d.motivation ? 'Was mich an dieser Stelle besonders reizt: ' + d.motivation + '.' : 'Bei ' + d.company + ' zu arbeiten wäre für mich eine außergewöhnliche Möglichkeit, meine Fähigkeiten einzusetzen.'}
 
-Über die Gelegenheit, Ihnen meinen Werdegang und meine Motivation in einem persönlichen Gespräch vorstellen zu dürfen, würde ich mich sehr freuen. Für Rückfragen stehe ich Ihnen jederzeit gerne zur Verfügung.
+Über die Gelegenheit, mich persönlich vorzustellen, würde ich mich sehr freuen.
 
 Mit freundlichen Grüßen,
 ${d.firstname} ${d.lastname}`,
@@ -151,13 +150,13 @@ ${d.email}${d.phone ? ' · ' + d.phone : ''}
 
 Sehr geehrte Damen und Herren,
 
-${d.position} bei ${d.company} — diese Stelle hat sofort meine Aufmerksamkeit geweckt. Und das aus gutem Grund: Sie entspricht genau dem nächsten Schritt, den ich in meiner Karriere anstrebe.
+${d.position} bei ${d.company} — diese Stelle hat sofort meine Aufmerksamkeit geweckt.
 
-Nach ${d.experience || 'Jahren praktischer Erfahrung in meinem Fachbereich'} bringe ich mehr als nur Fähigkeiten mit — ich bringe Antrieb, Ehrgeiz und ein unerschütterliches Engagement für Exzellenz. Ich erledige nicht nur Aufgaben; ich hinterfrage Prozesse, optimiere Ergebnisse und schaffe echten Mehrwert.
+Nach ${d.experience || 'Jahren praktischer Erfahrung'} bringe ich mehr als Fähigkeiten — ich bringe Antrieb und Engagement. Ich erledige nicht nur Aufgaben; ich hinterfrage Prozesse und schaffe echten Mehrwert.
 
-${d.motivation ? `Was mich zu ${d.company} zieht: ${d.motivation}. Dieses Umfeld ist genau das, in dem ich aufblühe und mein Bestes gebe.` : `${d.company} ist ein Unternehmen, dem ich meine Energie, meine Ideen und meine Expertise widmen möchte. Ihr Unternehmergeist und Ihre Vision inspirieren mich sehr.`}
+${d.motivation ? 'Was mich zu ' + d.company + ' zieht: ' + d.motivation + '.' : d.company + ' ist ein Unternehmen, dem ich meine Energie und Expertise widmen möchte.'}
 
-Geben Sie mir eine Stunde Ihrer Zeit. Ich werde Ihnen zeigen, warum ich die richtige Wahl für Ihre offene Stelle bin.
+Geben Sie mir eine Stunde — ich zeige Ihnen, warum ich die richtige Wahl bin.
 
 Mit besten Grüßen,
 ${d.firstname} ${d.lastname}`,
@@ -170,281 +169,271 @@ ${d.email}${d.phone ? ' · ' + d.phone : ''}
 
 Liebes Team von ${d.company},
 
-Was wäre, wenn Ihr nächste(r) ${d.position || 'Mitarbeiter/in'} jemand wäre, der nicht nur um die Ecke denkt — sondern das gesamte Bild neu gestaltet?
+Was wäre, wenn Ihr(e) nächste(r) ${d.position || 'Mitarbeiter/in'} jemand wäre, der das gesamte Bild neu gestaltet?
 
-Mein Weg — ${d.experience || 'geprägt von kreativem Denken und praktischer Umsetzung'} — hat mir gezeigt, dass die wirkungsvollsten Lösungen entstehen, wenn man strukturiertes Denken mit echtem kreativen Mut verbindet. Ich sehe dort Möglichkeiten, wo andere Hindernisse sehen.
+Mein Weg — ${d.experience || 'geprägt von kreativem Denken und praktischer Umsetzung'} — hat mir gezeigt, dass die wirkungsvollsten Lösungen entstehen, wenn man strukturiertes Denken mit echtem Mut verbindet.
 
-${d.motivation ? `Hier ist, was mich zu ${d.company} treibt: ${d.motivation}. Ich glaube von ganzem Herzen an das, was Sie aufbauen, und möchte ein Teil davon sein.` : `Die Innovationskultur und die langfristige Vision von ${d.company} sprechen mich tief an. Das ist das Umfeld, in dem ich wachsen und Großes erreichen möchte.`}
-
-Ich würde mich sehr freuen, Ihnen meine Arbeit und meine Ideen in einem Gespräch vorzustellen. Lassen Sie uns gemeinsam etwas Besonderes schaffen.
+${d.motivation ? 'Hier ist, was mich zu ' + d.company + ' treibt: ' + d.motivation + '.' : 'Die Innovationskultur von ' + d.company + ' spricht mich tief an.'}
 
 Mit Begeisterung,
 ${d.firstname} ${d.lastname}`
-  }
-};
+  },
 
-CL_TEMPLATES.pt = {
-  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+  /* ── Portuguese ── */
+  pt: {
+    professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company}
-A/c Departamento de Recursos Humanos
-Candidatura ao cargo: ${d.position || 'em aberto'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Exmo(a) Senhor(a),
 
-Venho por este meio manifestar o meu interesse pela posição de ${d.position || 'colaborador(a)'} na ${d.company}. ${d.experience ? 'Com ' + d.experience + ', desenvolvi competências sólidas e uma experiência que corresponde precisamente ao perfil que procuram.' : 'Estou convicto(a) de que as minhas competências e motivação representam um contributo valioso para a vossa equipa.'}
+Venho manifestar o meu interesse pela posição de ${d.position || 'colaborador(a)'} na ${d.company}. ${d.experience ? 'Com ' + d.experience + ', desenvolvi competências sólidas que correspondem precisamente ao perfil que procuram.' : 'Estou convicto(a) de que as minhas competências representam um contributo valioso para a vossa equipa.'}
 
-${d.motivation ? 'O que mais me atrai nesta oportunidade é: ' + d.motivation + '. Acredito que esta visão está perfeitamente alinhada com os objetivos estratégicos da ' + d.company + '.' : 'A ' + d.company + ' representa para mim uma oportunidade excecional de aplicar as minhas capacidades e contribuir ativamente para o crescimento de uma organização que admiro.'}
+${d.motivation ? 'O que mais me atrai nesta oportunidade: ' + d.motivation + '.' : 'A ' + d.company + ' representa uma oportunidade excepcional de aplicar as minhas capacidades.'}
 
-Coloco-me ao dispor para uma entrevista, na qual poderei desenvolver em detalhe a minha candidatura e demonstrar o valor que posso trazer à ${d.company}.
-
-Agradeço desde já a atenção dispensada e aguardo o vosso contacto.
+Coloco-me ao dispor para uma entrevista.
 
 Com os melhores cumprimentos,
-${d.firstname || ''} ${d.lastname || ''}
-${d.email ? 'E-mail: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+${d.firstname} ${d.lastname}`,
 
-  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+    dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company} — Candidatura: ${d.position || 'Cargo em aberto'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Caro(a) Recrutador(a),
 
-${d.experience ? 'Após ' + d.experience + ', acumulei uma experiência concreta e desenvolvi energia para projetos ambiciosos.' : 'Sou uma pessoa dinâmica, orientada para resultados e com capacidade de adaptação a novos desafios.'} Não me limito a cumprir tarefas — procuro transformar processos, otimizar resultados e criar valor real para a organização.
+${d.experience ? 'Após ' + d.experience + ', acumulei experiência concreta e energia para projetos ambiciosos.' : 'Sou dinâmico(a), orientado(a) para resultados.'} Não me limito a cumprir tarefas — procuro transformar processos e criar valor real.
 
-${d.motivation ? 'O que me motiva nesta oportunidade: ' + d.motivation + '.' : 'A ' + d.company + ' representa o ambiente ideal para crescer e alcançar grandes resultados.'}
-
-Tenho a certeza de que posso fazer a diferença na ${d.company}. Estou disponível para uma reunião quando for mais conveniente.
+${d.motivation ? 'O que me motiva: ' + d.motivation + '.' : 'A ' + d.company + ' representa o ambiente ideal para crescer.'}
 
 Com entusiasmo,
-${d.firstname || ''} ${d.lastname || ''}`,
+${d.firstname} ${d.lastname}`,
 
-  creative: (d) => `${new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+    creative: (d) => `${new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
 
 ${d.company}
 
-Imagine um(a) ${d.position || 'profissional'} que combina expertise técnica, criatividade e sentido de resultados. É precisamente o que trago para a ${d.company}.
+Imagine um(a) ${d.position || 'profissional'} que combina expertise, criatividade e resultados. É o que trago para a ${d.company}.
 
-${d.experience ? 'O meu percurso — ' + d.experience + ' — permitiu-me desenvolver uma abordagem singular.' : 'Penso de forma diferente, proponho soluções originais e adapto-me com agilidade a cada novo contexto.'}
+${d.experience ? 'O meu percurso — ' + d.experience + ' — deu-me uma abordagem singular.' : 'Penso diferente e adapto-me com agilidade.'}
 
-${d.motivation ? 'A razão pela qual escolhi a ' + d.company + ': ' + d.motivation : 'A cultura de inovação e a visão de longo prazo da ' + d.company + ' são o ambiente perfeito para eu crescer e contribuir de forma única.'}
-
-Adorava a oportunidade de partilhar ideias. Vamos criar algo excecional juntos.
+${d.motivation ? 'A razão pela qual escolho a ' + d.company + ': ' + d.motivation + '.' : 'A cultura de inovação da ' + d.company + ' é o ambiente perfeito.'}
 
 Com criatividade,
-${d.firstname || ''} ${d.lastname || ''}`
-};
+${d.firstname} ${d.lastname}`
+  },
 
-/* ── Dutch (NL) ── */
-CL_TEMPLATES.nl = {
-  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+  /* ── Dutch ── */
+  nl: {
+    professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company}
-T.a.v. HR-afdeling
-Sollicitatie: ${d.position || 'Vacature'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Geachte heer/mevrouw,
 
-Hierbij solliciteer ik met veel interesse naar de functie van ${d.position || 'medewerker'} bij ${d.company}. ${d.experience ? 'Met ' + d.experience + ' heb ik robuuste vaardigheden ontwikkeld die naadloos aansluiten bij uw vereisten.' : 'Ik ben ervan overtuigd dat mijn competenties en motivatie een waardevolle aanvulling zijn voor uw team.'}
+Hierbij solliciteer ik met veel interesse naar de functie van ${d.position || 'medewerker'} bij ${d.company}. ${d.experience ? 'Met ' + d.experience + ' heb ik robuuste vaardigheden ontwikkeld die aansluiten bij uw vereisten.' : 'Ik ben ervan overtuigd dat mijn competenties een waardevolle aanvulling zijn voor uw team.'}
 
-${d.motivation ? 'Wat mij bijzonder aanspreekt in deze functie is: ' + d.motivation + '.' : d.company + ' spreekt mij aan vanwege de professionele cultuur en de groeimogelijkheden die het biedt.'}
+${d.motivation ? 'Wat mij aanspreekt in deze functie: ' + d.motivation + '.' : d.company + ' spreekt mij aan vanwege de professionele cultuur en groeimogelijkheden.'}
 
-Ik zie graag de mogelijkheid om mijn sollicitatie persoonlijk toe te lichten tijdens een gesprek.
+Ik zie graag de mogelijkheid om mijn sollicitatie persoonlijk toe te lichten.
 
 Met vriendelijke groet,
-${d.firstname || ''} ${d.lastname || ''}
-${d.email ? 'E-mail: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+${d.firstname} ${d.lastname}`,
 
-  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+    dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company} — Sollicitatie: ${d.position || 'Openstaande vacature'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Beste recruiter,
 
-${d.experience ? 'Na ' + d.experience + ' heb ik concrete expertise opgebouwd en energie ontwikkeld voor ambitieuze projecten.' : 'Ik ben gedreven, resultaatgericht en pas me snel aan nieuwe uitdagingen aan.'} Ik beperk mezelf niet tot het uitvoeren van taken — ik zoek naar manieren om processen te verbeteren en echte waarde te creëren.
+${d.experience ? 'Na ' + d.experience + ' heb ik concrete expertise en energie voor ambitieuze projecten.' : 'Ik ben gedreven en resultaatgericht.'} Ik zoek naar manieren om processen te verbeteren en echte waarde te creëren.
 
-${d.motivation ? 'Wat mij motiveert: ' + d.motivation + '.' : d.company + ' is de ideale omgeving om te groeien en geweldige resultaten te behalen.'}
-
-Ik ben ervan overtuigd dat ik het verschil kan maken bij ${d.company}. Ik sta open voor een gesprek.
+${d.motivation ? 'Wat mij motiveert: ' + d.motivation + '.' : d.company + ' is de ideale omgeving om te groeien.'}
 
 Met enthousiaste groet,
-${d.firstname || ''} ${d.lastname || ''}`,
+${d.firstname} ${d.lastname}`,
 
-  creative: (d) => `${new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+    creative: (d) => `${new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
 
 ${d.company}
 
-Stel je een ${d.position || 'professional'} voor die technische expertise, creativiteit en resultaatgerichtheid combineert. Dat is precies wat ik bij ${d.company} kom brengen.
+Stel je een ${d.position || 'professional'} voor die expertise, creativiteit en resultaatgerichtheid combineert. Dat breng ik bij ${d.company}.
 
-${d.experience ? 'Mijn traject — ' + d.experience + ' — heeft mij een unieke aanpak gegeven.' : 'Ik denk anders, bied originele oplossingen en pas me flexibel aan elke nieuwe context aan.'}
+${d.experience ? 'Mijn traject — ' + d.experience + ' — heeft mij een unieke aanpak gegeven.' : 'Ik denk anders en bied originele oplossingen.'}
 
-${d.motivation ? 'De reden waarom ik kies voor ' + d.company + ': ' + d.motivation : 'De innovatiecultuur van ' + d.company + ' is de perfecte omgeving voor mij om te excelleren.'}
-
-Ik kijk uit naar de kans om ideeën te delen. Laten we samen iets uitzonderlijks creëren.
+${d.motivation ? 'De reden voor ' + d.company + ': ' + d.motivation + '.' : 'De innovatiecultuur van ' + d.company + ' is de perfecte omgeving.'}
 
 Met creatieve groet,
-${d.firstname || ''} ${d.lastname || ''}`
-};
+${d.firstname} ${d.lastname}`
+  },
 
-/* ── Spanish (ES) ── */
-CL_TEMPLATES.es = {
-  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
+  /* ── Spanish ── */
+  es: {
+    professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company}
-A/A Departamento de Recursos Humanos
-Candidatura al puesto: ${d.position || 'Vacante disponible'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Estimado/a señor/a:
 
-Me dirijo a ustedes para expresar mi interés por el puesto de ${d.position || 'colaborador/a'} en ${d.company}. ${d.experience ? 'Con ' + d.experience + ', he desarrollado competencias sólidas que se corresponden con el perfil que buscan.' : 'Estoy convencido/a de que mis habilidades y motivación representan un valor añadido para su equipo.'}
+Me dirijo a ustedes para expresar mi interés por el puesto de ${d.position || 'colaborador/a'} en ${d.company}. ${d.experience ? 'Con ' + d.experience + ', he desarrollado competencias sólidas que corresponden con el perfil que buscan.' : 'Estoy convencido/a de que mis habilidades representan un valor añadido para su equipo.'}
 
-${d.motivation ? 'Lo que me atrae especialmente de esta oportunidad es: ' + d.motivation + '.' : d.company + ' representa para mí una oportunidad excepcional de aplicar mis capacidades y contribuir activamente al crecimiento de una organización que admiro.'}
+${d.motivation ? 'Lo que me atrae de esta oportunidad: ' + d.motivation + '.' : d.company + ' representa una oportunidad excepcional de aplicar mis capacidades.'}
 
-Quedo a su disposición para una entrevista en la que podré desarrollar en detalle mi candidatura.
+Quedo a su disposición para una entrevista.
 
 Atentamente,
-${d.firstname || ''} ${d.lastname || ''}
-${d.email ? 'Correo: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+${d.firstname} ${d.lastname}`,
 
-  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
+    dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company} — Candidatura: ${d.position || 'Puesto disponible'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Estimado/a responsable de selección:
 
-${d.experience ? 'Tras ' + d.experience + ', he acumulado experiencia concreta y desarrollado energía para proyectos ambiciosos.' : 'Soy una persona dinámica, orientada a resultados y con capacidad de adaptación.'} No me limito a cumplir tareas — busco transformar procesos, optimizar resultados y crear valor real.
+${d.experience ? 'Tras ' + d.experience + ', he acumulado experiencia concreta y energía para proyectos ambiciosos.' : 'Soy dinámico/a y orientado/a a resultados.'} Busco transformar procesos y crear valor real.
 
-${d.motivation ? 'Lo que me motiva de esta oportunidad: ' + d.motivation + '.' : d.company + ' representa el entorno ideal para crecer y alcanzar grandes resultados.'}
+${d.motivation ? 'Lo que me motiva: ' + d.motivation + '.' : d.company + ' representa el entorno ideal para crecer.'}
 
-Estoy convencido/a de que puedo hacer la diferencia en ${d.company}. Estoy disponible para una reunión.
+Estoy disponible para una reunión.
 
 Un saludo cordial,
-${d.firstname || ''} ${d.lastname || ''}`,
+${d.firstname} ${d.lastname}`,
 
-  creative: (d) => `${new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
-
-${d.company}
-
-Imagina un/a ${d.position || 'profesional'} que combina experiencia técnica, creatividad y sentido de los resultados. Eso es exactamente lo que traigo a ${d.company}.
-
-${d.experience ? 'Mi trayectoria — ' + d.experience + ' — me ha permitido desarrollar un enfoque singular.' : 'Pienso diferente, propongo soluciones originales y me adapto con agilidad a cada nuevo contexto.'}
-
-${d.motivation ? 'La razón por la que elijo ' + d.company + ': ' + d.motivation : 'La cultura de innovación de ' + d.company + ' es el entorno perfecto para que yo crezca y contribuya de forma única.'}
-
-Me encantaría la oportunidad de compartir ideas. Creemos algo excepcional juntos.
-
-Con entusiasmo creativo,
-${d.firstname || ''} ${d.lastname || ''}`
-};
-
-/* ── Arabic (AR) ── */
-CL_TEMPLATES.ar = {
-  professional: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+    creative: (d) => `${new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
 
 ${d.company}
-إلى: قسم الموارد البشرية
-طلب التوظيف: ${d.position || 'الوظيفة المطلوبة'}
+
+Imagina un/a ${d.position || 'profesional'} que combina experiencia, creatividad y resultados. Eso es lo que traigo a ${d.company}.
+
+${d.experience ? 'Mi trayectoria — ' + d.experience + ' — me ha dado un enfoque singular.' : 'Pienso diferente y propongo soluciones originales.'}
+
+${d.motivation ? 'La razón por la que elijo ' + d.company + ': ' + d.motivation + '.' : 'La cultura de innovación de ' + d.company + ' es el entorno perfecto.'}
+
+Con entusiasmo,
+${d.firstname} ${d.lastname}`
+  },
+
+  /* ── Arabic ── */
+  ar: {
+    professional: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 السادة الكرام،
 
-أتقدم إليكم بطلب الانضمام إلى فريق ${d.company} في منصب ${d.position || 'موظف/ة'}. ${d.experience ? 'بفضل ' + d.experience + '، طورت مهارات متينة وخبرات تتوافق تماماً مع المتطلبات التي تبحثون عنها.' : 'أنا مقتنع/ة بأن كفاءاتي ودوافعي ستُشكّل إضافة قيّمة لفريقكم.'}
+أتقدم إليكم بطلب الانضمام إلى فريق ${d.company} في منصب ${d.position || 'موظف/ة'}. ${d.experience ? 'بفضل ' + d.experience + '، طورت مهارات متينة تتوافق تماماً مع متطلباتكم.' : 'أنا مقتنع/ة بأن كفاءاتي ستشكل إضافة قيّمة لفريقكم.'}
 
-${d.motivation ? 'ما يجذبني بشكل خاص في هذه الفرصة هو: ' + d.motivation + '.' : 'تُمثّل ' + d.company + ' بالنسبة لي فرصة استثنائية لتطبيق قدراتي والمساهمة في نمو منظمة أُكنّ لها كثيراً من الإعجاب.'}
+${d.motivation ? 'ما يجذبني في هذه الفرصة: ' + d.motivation + '.' : 'تمثل ' + d.company + ' فرصة استثنائية لتطبيق قدراتي والمساهمة في نموكم.'}
 
-أضع نفسي رهن إشارتكم لإجراء مقابلة أُفصّل فيها ترشيحي.
+أضع نفسي رهن إشارتكم لإجراء مقابلة.
 
 مع خالص الاحترام والتقدير،
-${d.firstname || ''} ${d.lastname || ''}
+${d.firstname} ${d.lastname}
 ${d.email ? 'البريد الإلكتروني: ' + d.email : ''}${d.phone ? ' | الهاتف: ' + d.phone : ''}`,
 
-  dynamic: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+    dynamic: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company} — طلب التوظيف: ${d.position || 'وظيفة شاغرة'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 إلى المسؤول/ة عن التوظيف،
 
-${d.experience ? 'بعد ' + d.experience + '، راكمت خبرة عملية وطوّرت طاقة متجددة للمشاريع الطموحة.' : 'أنا شخص ديناميكي موجَّه نحو النتائج وقادر على التكيّف مع كل تحدٍّ جديد.'} لا أكتفي بأداء المهام — أسعى إلى تحويل العمليات وتحسين النتائج وخلق قيمة حقيقية.
+${d.experience ? 'بعد ' + d.experience + '، راكمت خبرة عملية وطاقة متجددة للمشاريع الطموحة.' : 'أنا شخص ديناميكي موجّه نحو النتائج.'} لا أكتفي بأداء المهام — أسعى إلى تحويل العمليات وخلق قيمة حقيقية.
 
 ${d.motivation ? 'ما يحفزني في هذه الفرصة: ' + d.motivation + '.' : d.company + ' هي البيئة المثالية للنمو وتحقيق نتائج استثنائية.'}
 
-أنا واثق/ة من أنني أستطيع إحداث فارق في ${d.company}. أنا متاح/ة لمقابلة في أقرب وقت.
+أنا متاح/ة للقاء في أقرب وقت.
 
 مع تحياتي،
-${d.firstname || ''} ${d.lastname || ''}`,
+${d.firstname} ${d.lastname}`,
 
-  creative: (d) => `${new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
-
-${d.company}
-
-تخيّل/ي ${d.position || 'محترفاً'} يجمع بين الخبرة التقنية والإبداع والحس بالنتائج. هذا بالضبط ما أُقدّمه لـ${d.company}.
-
-${d.experience ? 'مسيرتي المهنية — ' + d.experience + ' — منحتني رؤية فريدة ومنهجية مميزة.' : 'أفكر بشكل مختلف، وأقترح حلولاً مبتكرة، وأتكيّف بمرونة مع كل سياق جديد.'}
-
-${d.motivation ? 'السبب الذي يجعلني أختار ' + d.company + ': ' + d.motivation : 'ثقافة الابتكار في ' + d.company + ' هي البيئة المثالية لي لأنمو وأُسهم بشكل فريد.'}
-
-أودّ أن تُتاح لي الفرصة لتبادل الأفكار. لنصنع شيئاً استثنائياً معاً.
-
-مع إبداعي التحياتي،
-${d.firstname || ''} ${d.lastname || ''}`
-};
-
-/* ── Russian (RU) ── */
-CL_TEMPLATES.ru = {
-  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+    creative: (d) => `${new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
 
 ${d.company}
-Отдел кадров / HR
-Заявка на должность: ${d.position || 'открытая вакансия'}
+
+تخيّل/ي ${d.position || 'محترفاً'} يجمع الخبرة والإبداع والحس بالنتائج. هذا ما أقدمه لـ${d.company}.
+
+${d.experience ? 'مسيرتي — ' + d.experience + ' — منحتني رؤية فريدة.' : 'أفكر بشكل مختلف وأقترح حلولاً مبتكرة.'}
+
+${d.motivation ? 'السبب الذي يجعلني أختار ' + d.company + ': ' + d.motivation + '.' : 'ثقافة الابتكار في ' + d.company + ' هي البيئة المثالية لي.'}
+
+مع إبداعي وتقديري،
+${d.firstname} ${d.lastname}`
+  },
+
+  /* ── Russian ── */
+  ru: {
+    professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Уважаемые коллеги,
 
-Настоящим выражаю искреннюю заинтересованность в должности ${d.position || 'специалиста'} в компании ${d.company}. ${d.experience ? 'Имея ' + d.experience + ', я развил(а) устойчивые компетенции, в полной мере соответствующие вашим требованиям.' : 'Убеждён(а), что мои навыки и мотивация станут ценным вкладом в вашу команду.'}
+Настоящим выражаю искреннюю заинтересованность в должности ${d.position || 'специалиста'} в компании ${d.company}. ${d.experience ? 'Имея ' + d.experience + ', я развил(а) компетенции, соответствующие вашим требованиям.' : 'Убеждён(а), что мои навыки станут ценным вкладом в вашу команду.'}
 
-${d.motivation ? 'Что особенно привлекает меня в этой возможности: ' + d.motivation + '.' : d.company + ' представляет для меня исключительную возможность применить свои способности и активно участвовать в развитии организации, которой я искренне восхищаюсь.'}
+${d.motivation ? 'Что привлекает меня в этой возможности: ' + d.motivation + '.' : d.company + ' представляет исключительную возможность применить свои способности.'}
 
-Готов(а) к собеседованию, на котором смогу подробнее рассказать о своей кандидатуре.
+Готов(а) к собеседованию в удобное для вас время.
 
 С уважением,
-${d.firstname || ''} ${d.lastname || ''}
-${d.email ? 'Email: ' + d.email : ''}${d.phone ? ' | Тел: ' + d.phone : ''}`,
+${d.firstname} ${d.lastname}`,
 
-  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+    dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
 
-${d.company} — Заявка: ${d.position || 'открытая вакансия'}
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
 
 Уважаемый(ая) рекрутер,
 
-${d.experience ? 'За ' + d.experience + ' я накопил(а) реальный опыт и развил(а) энергию для амбициозных проектов.' : 'Я динамичный, ориентированный на результат специалист, способный адаптироваться к любым вызовам.'} Я не ограничиваюсь выполнением задач — я стремлюсь трансформировать процессы, оптимизировать результаты и создавать реальную ценность.
+${d.experience ? 'За ' + d.experience + ' я накопил(а) реальный опыт и энергию для амбициозных проектов.' : 'Я динамичный специалист, ориентированный на результат.'} Я стремлюсь трансформировать процессы и создавать реальную ценность.
 
-${d.motivation ? 'Что мотивирует меня в этой возможности: ' + d.motivation + '.' : d.company + ' — идеальная среда для роста и достижения выдающихся результатов.'}
+${d.motivation ? 'Что мотивирует меня: ' + d.motivation + '.' : d.company + ' — идеальная среда для роста.'}
 
-Уверен(а), что смогу изменить ситуацию к лучшему в ${d.company}. Готов(а) встретиться в удобное время.
+Готов(а) встретиться в удобное время.
 
-С уважением и энтузиазмом,
-${d.firstname || ''} ${d.lastname || ''}`,
+С уважением,
+${d.firstname} ${d.lastname}`,
 
-  creative: (d) => `${new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+    creative: (d) => `${new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
 
 ${d.company}
 
-Представьте ${d.position || 'специалиста'}, сочетающего техническую экспертизу, творческий подход и нацеленность на результат. Именно это я готов(а) предложить ${d.company}.
+Представьте ${d.position || 'специалиста'}, сочетающего экспертизу, творческий подход и нацеленность на результат. Именно это я предлагаю ${d.company}.
 
-${d.experience ? 'Мой путь — ' + d.experience + ' — позволил мне выработать уникальный подход.' : 'Я мыслю нестандартно, предлагаю оригинальные решения и легко адаптируюсь к новым контекстам.'}
+${d.experience ? 'Мой путь — ' + d.experience + ' — позволил мне выработать уникальный подход.' : 'Я мыслю нестандартно и предлагаю оригинальные решения.'}
 
-${d.motivation ? 'Причина, по которой я выбираю ' + d.company + ': ' + d.motivation : 'Культура инноваций ' + d.company + ' — идеальная среда, где я смогу расти и вносить уникальный вклад.'}
-
-С удовольствием обсужу идеи на встрече. Давайте создадим что-то исключительное вместе.
+${d.motivation ? 'Причина, по которой я выбираю ' + d.company + ': ' + d.motivation + '.' : 'Культура инноваций ' + d.company + ' — идеальная среда для меня.'}
 
 С творческим приветом,
-${d.firstname || ''} ${d.lastname || ''}`
+${d.firstname} ${d.lastname}`
+  }
+
 };
 
 /* ── Generate ── */
 function generateLetter() {
-  const get = id => document.getElementById(id)?.value?.trim() || '';
-  const getTone = () => document.querySelector('input[name="cl-tone"]:checked')?.value || 'professional';
+  var get = function(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var tone = (document.querySelector('input[name="cl-tone"]:checked') || {}).value || 'professional';
 
-  const d = {
+  var d = {
     firstname:  get('cl-firstname'),
     lastname:   get('cl-lastname'),
     email:      get('cl-email'),
@@ -452,125 +441,109 @@ function generateLetter() {
     city:       get('cl-city'),
     company:    get('cl-company'),
     position:   get('cl-position'),
-    tone:       getTone(),
     experience: get('cl-experience'),
     motivation: get('cl-motivation'),
   };
 
   if (!d.company || !d.position) {
-    showToast('Veuillez indiquer l\'entreprise et le poste.', 'error');
+    if (typeof showToast === 'function') showToast('Please fill in the company and position fields.', 'error');
     return;
   }
 
-  const btn = document.getElementById('btn-generate');
-  btn.innerHTML = `<span class="spinner"></span> <span data-i18n="cl_generating">Génération...</span>`;
-  btn.disabled = true;
+  var btn = document.getElementById('btn-generate');
+  if (btn) {
+    btn.innerHTML = '<span class="spinner"></span> Generating...';
+    btn.disabled = true;
+  }
 
-  // Show generating animation
-  document.getElementById('cl-placeholder')?.classList.add('hidden');
-  document.getElementById('cl-result-text')?.classList.add('hidden');
-  document.getElementById('cl-result-actions')?.classList.add('hidden');
-  document.getElementById('cl-generating')?.classList.remove('hidden');
+  var ph = document.getElementById('cl-placeholder');
+  var rt = document.getElementById('cl-result-text');
+  var ra = document.getElementById('cl-result-actions');
+  var rg = document.getElementById('cl-generating');
+  if (ph) ph.classList.add('hidden');
+  if (rt) rt.classList.add('hidden');
+  if (ra) ra.classList.add('hidden');
+  if (rg) rg.classList.remove('hidden');
 
-  setTimeout(() => {
-    const langSel = document.getElementById('letterLanguage') || document.getElementById('cl-lang');
-    const lang = langSel ? langSel.value : (window.letterLang || 'en');
-    const templates = CL_TEMPLATES[lang] || CL_TEMPLATES.fr;
-    const toneFunc  = templates[d.tone] || templates.professional;
-    const letter    = toneFunc(d);
+  setTimeout(function() {
+    var langSel = document.getElementById('letterLanguage');
+    var lang = langSel ? langSel.value : (window.letterLang || 'en');
+    var templates = CL_TEMPLATES[lang] || CL_TEMPLATES['en'];
+    var toneFunc  = templates[tone] || templates['professional'];
+    var letter    = toneFunc(d);
 
-    // Show result
-    const textarea = document.getElementById('cl-result-text');
-    const actions  = document.getElementById('cl-result-actions');
-    if (textarea) { textarea.value = letter; textarea.classList.remove('hidden'); }
-    if (actions) actions.classList.remove('hidden');
-    document.getElementById('cl-generating')?.classList.add('hidden');
+    if (rt) { rt.value = letter; rt.classList.remove('hidden'); }
+    if (ra) ra.classList.remove('hidden');
+    if (rg) rg.classList.add('hidden');
 
-    // Reset button
-    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span data-i18n="cl_generate">Générer ma lettre</span>`;
-    btn.disabled = false;
+    var ui = window.LETTER_UI_DICT && window.LETTER_UI_DICT[lang];
+    var genLabel = ui ? ui.generate : 'Generate my letter';
+    if (btn) {
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span data-i18n="generate">' + genLabel + '</span>';
+      btn.disabled = false;
+    }
 
-    showToast('✅ Lettre générée avec succès ! Vous pouvez la télécharger ou la copier.', 'success');
-  }, 1800);
+    if (typeof showToast === 'function') showToast('✅ Letter generated! You can download or copy it.', 'success');
+  }, 1200);
 }
 
-function copyLetter() {
-  const text = document.getElementById('cl-result-text')?.value || '';
-  copyToClipboard(text);
-}
-
+/* ── Download as PDF (print dialog) ── */
 function downloadLetterPDF() {
-  const text = document.getElementById('cl-result-text')?.value || '';
+  var text = (document.getElementById('cl-result-text') || {}).value || '';
   if (!text) return;
 
-  const btn = document.getElementById('btn-cl-download');
-  const orig = btn.innerHTML;
-  btn.innerHTML = '<span class="spinner"></span>';
-  btn.disabled = true;
+  var btn = document.getElementById('btn-cl-download');
+  var orig = btn ? btn.innerHTML : '';
+  if (btn) { btn.innerHTML = '<span class="spinner"></span>'; btn.disabled = true; }
 
-  const div = document.createElement('div');
-  div.style.cssText = `
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 12pt;
-    line-height: 1.8;
-    padding: 20mm 24mm;
-    color: #1A1A2E;
-    white-space: pre-wrap;
-    max-width: 170mm;
-    margin: 0 auto;
-  `;
-  div.textContent = text;
-  document.body.appendChild(div);
+  var printWin = window.open('', '_blank', 'width=800,height=1000');
+  if (!printWin) {
+    if (btn) { btn.innerHTML = orig; btn.disabled = false; }
+    if (typeof showToast === 'function') showToast('⚠️ Please allow pop-ups to generate the PDF.', 'error');
+    return;
+  }
 
-  html2pdf().set({
-    margin:      [15, 20, 15, 20],
-    filename:    'Lettre_de_Motivation.pdf',
-    image:       { type: 'jpeg', quality: 0.97 },
-    html2canvas: { scale: 2 },
-    jsPDF:       { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  }).from(div).save().then(() => {
-    document.body.removeChild(div);
-    btn.innerHTML = orig;
-    btn.disabled = false;
-    showToast('✅ PDF téléchargé avec succès !', 'success');
-  });
+  var isRTL = window.CV_LANG_DICT && window.CV_LANG_DICT[window.letterLang||'en'] && window.CV_LANG_DICT[window.letterLang||'en'].rtl;
+  printWin.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Cover Letter</title><style>*{box-sizing:border-box;margin:0;padding:0}@page{size:A4;margin:0}body{font-family:Georgia,"Times New Roman",serif;font-size:12pt;line-height:1.8;padding:22mm 28mm;color:#1A1A2E;direction:' + (isRTL?'rtl':'ltr') + ';white-space:pre-wrap}</style></head><body>' + text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '<script>window.addEventListener("load",function(){setTimeout(function(){window.print();},400)});<\/script></body></html>');
+  printWin.document.close();
+
+  if (btn) { btn.innerHTML = orig; btn.disabled = false; }
+  if (typeof showToast === 'function') showToast('✅ PDF ready! Click "Save as PDF" in the print dialog.', 'success');
 }
 
+/* ── Copy ── */
+function copyLetter() {
+  var text = (document.getElementById('cl-result-text') || {}).value || '';
+  if (typeof copyToClipboard === 'function') copyToClipboard(text);
+  else navigator.clipboard.writeText(text).then(function(){ if(typeof showToast==='function') showToast('Copied!','success'); });
+}
+
+/* ── Reset ── */
 function resetForm() {
-  document.getElementById('cl-result-text')?.classList.add('hidden');
-  document.getElementById('cl-result-actions')?.classList.add('hidden');
-  document.getElementById('cl-generating')?.classList.add('hidden');
-  document.getElementById('cl-placeholder')?.classList.remove('hidden');
-  if (document.getElementById('cl-result-text')) document.getElementById('cl-result-text').value = '';
+  var ids = ['cl-result-text','cl-result-actions','cl-generating'];
+  ids.forEach(function(id){ var el=document.getElementById(id); if(el) el.classList.add('hidden'); });
+  var ph = document.getElementById('cl-placeholder');
+  if (ph) ph.classList.remove('hidden');
+  var rt = document.getElementById('cl-result-text');
+  if (rt) rt.value = '';
 }
 
 /* ── Init ── */
-document.addEventListener('DOMContentLoaded', () => {
-  // Auto-detect language from i18n system or browser
-  const langSel = document.getElementById('cl-lang');
-  if (langSel) {
-    const detected = (typeof currentLang !== 'undefined' && currentLang)
-      ? currentLang
-      : (navigator.language || navigator.userLanguage || 'fr').slice(0, 2).toLowerCase();
-    const supported = ['fr','en','de','nl','es','ar','ru'];
-    langSel.value = supported.includes(detected) ? detected : 'fr';
-    // Mark as auto-detected
-    const badge = document.getElementById('cl-lang-detected');
-    if (badge) {
-      const flags = {fr:'🇫🇷',en:'🇬🇧',de:'🇩🇪',nl:'🇳🇱',es:'🇪🇸',ar:'🇸🇦',ru:'🇷🇺'};
-      badge.textContent = flags[langSel.value] + ' Auto-détectée';
-    }
-    // When user changes manually, remove "auto" badge
-    langSel.addEventListener('change', () => {
-      if (badge) badge.textContent = '✏️ Modifiée';
-    });
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('btn-generate');
+  if (btn) btn.addEventListener('click', generateLetter);
 
-  document.getElementById('btn-generate')?.addEventListener('click', generateLetter);
-  document.getElementById('btn-cl-copy')?.addEventListener('click', copyLetter);
-  document.getElementById('btn-cl-download')?.addEventListener('click', downloadLetterPDF);
-  document.getElementById('btn-cl-new')?.addEventListener('click', resetForm);
-  document.getElementById('btn-cl-regenerate')?.addEventListener('click', () => {
+  var copyBtn = document.getElementById('btn-cl-copy');
+  if (copyBtn) copyBtn.addEventListener('click', copyLetter);
+
+  var dlBtn = document.getElementById('btn-cl-download');
+  if (dlBtn) dlBtn.addEventListener('click', downloadLetterPDF);
+
+  var newBtn = document.getElementById('btn-cl-new');
+  if (newBtn) newBtn.addEventListener('click', resetForm);
+
+  var regenBtn = document.getElementById('btn-cl-regenerate');
+  if (regenBtn) regenBtn.addEventListener('click', function() {
     resetForm();
     setTimeout(generateLetter, 300);
   });
