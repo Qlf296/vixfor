@@ -48,7 +48,7 @@
     <div class="nav-right">
       <a href="../create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
     </div>
-    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile">
@@ -64,7 +64,7 @@
   <div class="container">
     <div class="legal-tag">⚖️ Légal</div>
     <h1>Mentions Légales</h1>
-    <p>Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN)</p>
+    <p>Informations légales relatives au site forgcv.com — projet indépendant basé aux Pays-Bas, soumis au droit européen (RGPD).</p>
   </div>
 </div>
 
@@ -73,12 +73,12 @@
   <h2>1. Éditeur du site</h2>
   <p>Le site <strong>forgcv.com</strong> est édité par :</p>
   <ul>
-    <li><strong>Raison sociale :</strong> Vixfor</li>
-    <li><strong>Forme juridique :</strong> Entreprise individuelle / Projet indépendant</li>
-    <li><strong>Pays :</strong> France</li>
-    <li><strong>Contact :</strong> <a href="mailto:contact@forgcv.com">contact@forgcv.com</a></li>
+    <li><strong>Nom :</strong> Vixfor (projet indépendant)</li>
+    <li><strong>Statut :</strong> Projet personnel de création de services web</li>
+    <li><strong>Pays de résidence :</strong> Pays-Bas</li>
+    <li><strong>Contact :</strong> <a href="mailto:vixfor.contact@gmail.com">vixfor.contact@gmail.com</a></li>
     <li><strong>Site web :</strong> <a href="https://forgcv.com">https://forgcv.com</a></li>
-    <li><strong>Directeur de la publication :</strong> Équipe Vixfor</li>
+    <li><strong>Responsable de publication :</strong> Éditeur du site</li>
   </ul>
 
   <h2>2. Hébergeur</h2>
@@ -86,39 +86,46 @@
   <ul>
     <li><strong>Société :</strong> Netlify, Inc.</li>
     <li><strong>Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
-    <li><strong>Site :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></li>
+    <li><strong>Site :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener">https://www.netlify.com</a></li>
   </ul>
 
   <h2>3. Activité du site</h2>
-  <p>ForgCV est un <strong>générateur de CV et de lettres de motivation en ligne, gratuit et sans inscription</strong>. Le site propose des outils permettant aux utilisateurs de créer, personnaliser et télécharger des documents professionnels au format PDF.</p>
-  <p>ForgCV ne stocke aucune donnée personnelle sur ses serveurs. Toutes les informations saisies par l'utilisateur sont traitées localement dans le navigateur (via <code>localStorage</code>) et ne sont jamais transmises à un serveur tiers.</p>
+  <p>ForgCV est un outil en ligne permettant de créer des CV et lettres de motivation gratuitement et sans inscription.</p>
+  <p>Le service fonctionne côté client et permet aux utilisateurs de générer et télécharger des documents au format PDF.</p>
+  <p>Aucune donnée personnelle n'est stockée sur des serveurs. Les informations saisies sont traitées localement dans le navigateur de l'utilisateur.</p>
 
   <h2>4. Propriété intellectuelle</h2>
-  <p>L'ensemble des contenus présents sur le site forgcv.com (textes, graphiques, logos, icônes, templates, code source) est la propriété exclusive de Vixfor et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
-  <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des contenus du site, sans autorisation écrite préalable de Vixfor, est strictement interdite.</p>
-  <p>Les contenus <strong>générés par l'utilisateur</strong> (CV, lettres de motivation) restent la propriété exclusive de l'utilisateur.</p>
+  <p>Tous les éléments présents sur le site forgcv.com (textes, design, code, logos et interfaces) sont protégés par le droit de la propriété intellectuelle.</p>
+  <p>Sauf mention contraire, ces éléments appartiennent à Vixfor.</p>
+  <p>Toute reproduction, modification ou exploitation sans autorisation est interdite.</p>
+  <p>Les documents générés par les utilisateurs (CV, lettres) restent leur propriété.</p>
 
   <h2>5. Protection des données personnelles</h2>
-  <p>ForgCV s'engage à respecter la vie privée de ses utilisateurs conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679).</p>
-  <p>Pour toute information sur la collecte et le traitement de vos données personnelles, veuillez consulter notre <a href="privacy-policy.html">Politique de Confidentialité</a>.</p>
+  <p>ForgCV respecte la vie privée des utilisateurs.</p>
+  <p>Aucune donnée personnelle n'est stockée sur des serveurs externes.</p>
+  <p>Le traitement des données est limité au fonctionnement local du navigateur.</p>
+  <p>Pour toute question : <a href="mailto:vixfor.contact@gmail.com">vixfor.contact@gmail.com</a></p>
 
   <h2>6. Cookies</h2>
-  <p>Le site utilise des cookies d'audience (Google Analytics 4) uniquement avec votre consentement explicite. Pour en savoir plus, consultez notre <a href="cookies.html">Politique de cookies</a>.</p>
+  <p>Le site peut utiliser des cookies de mesure d'audience (ex : Google Analytics 4), uniquement avec consentement de l'utilisateur.</p>
 
   <h2>7. Liens hypertextes</h2>
-  <p>ForgCV décline toute responsabilité pour les contenus accessibles via des liens hypertextes figurant sur le site et pointant vers des ressources tierces. La présence de ces liens ne signifie pas que ForgCV approuve le contenu de ces sites.</p>
+  <p>ForgCV peut contenir des liens vers des sites externes. Vixfor n'est pas responsable du contenu de ces sites.</p>
 
   <h2>8. Limitation de responsabilité</h2>
-  <p>ForgCV s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur son site. Toutefois, ForgCV ne garantit pas que ces informations sont exhaustives, précises ou exemptes d'erreurs. L'utilisation des outils proposés se fait sous la seule responsabilité de l'utilisateur.</p>
+  <p>ForgCV est fourni "tel quel".</p>
+  <p>Aucune garantie n'est donnée sur l'exactitude ou l'exhaustivité des résultats générés.</p>
+  <p>L'utilisation du site est sous la responsabilité de l'utilisateur.</p>
 
   <h2>9. Droit applicable</h2>
-  <p>Les présentes mentions légales sont soumises au droit français. En cas de litige et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
+  <p>Le site est soumis au droit applicable aux Pays-Bas et aux réglementations européennes (RGPD).</p>
+  <p>En cas de litige, une solution amiable sera privilégiée avant toute action juridique.</p>
 
   <h2>10. Contact</h2>
-  <p>Pour toute question relative aux présentes mentions légales ou au fonctionnement du site :</p>
+  <p>Pour toute question :</p>
   <ul>
-    <li>Email : <a href="mailto:contact@forgcv.com">contact@forgcv.com</a></li>
-    <li>Formulaire de contact : <a href="../contact.html">forgcv.com/contact</a></li>
+    <li>📧 <a href="mailto:vixfor.contact@gmail.com">vixfor.contact@gmail.com</a></li>
+    <li>🌐 <a href="https://forgcv.com/contact">https://forgcv.com/contact</a></li>
   </ul>
 
   <p style="margin-top:2.5rem;font-size:.78rem;color:var(--clr-text-3)">Dernière mise à jour : 30 juin 2026</p>
