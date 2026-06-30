@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" fill="none">
+  <defs>
+    <linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B57FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7C843"/>
+      <stop offset="100%" stop-color="#E6A817"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="28" height="34" rx="6" fill="url(#pg2)"/>
+  <rect x="7" y="8" width="16" height="2.5" rx="1.25" fill="white"/>
+  <rect x="7" y="13" width="12" height="2" rx="1" fill="rgba(255,255,255,0.75)"/>
+  <rect x="7" y="18" width="14" height="2" rx="1" fill="rgba(255,255,255,0.75)"/>
+  <rect x="7" y="23" width="9" height="2" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <path d="M21.5 27 L22.5 24 L23.5 27 L26.5 27 L24.3 28.7 L25.1 31.5 L22.5 29.9 L19.9 31.5 L20.7 28.7 L18.5 27 Z" fill="url(#sg2)"/>
+  <text x="37" y="23" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="900" letter-spacing="-0.04em" fill="#0F1225">Forg<tspan fill="#5B57FF">CV</tspan></text>
+</svg>
