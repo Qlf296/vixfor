@@ -239,7 +239,7 @@ function generateLetter() {
     btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span data-i18n="cl_generate">Générer ma lettre</span>`;
     btn.disabled = false;
 
-    showToast('Lettre générée avec succès !', 'success');
+    showToast('✅ Lettre générée avec succès ! Vous pouvez la télécharger ou la copier.', 'success');
   }, 1800);
 }
 
@@ -281,7 +281,7 @@ function downloadLetterPDF() {
     document.body.removeChild(div);
     btn.innerHTML = orig;
     btn.disabled = false;
-    showToast('PDF téléchargé !', 'success');
+    showToast('✅ PDF téléchargé avec succès !', 'success');
   });
 }
 

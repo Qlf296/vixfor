@@ -660,7 +660,10 @@ ${cvHtml}
 
   btn.innerHTML = orig;
   btn.disabled  = false;
-  showToast('🖨️ Dans la boîte d\'impression : décochez "En-têtes et pieds de page", puis Enregistrer en PDF', 'info');
+  showToast('✅ CV prêt ! Cliquez \"Enregistrer en PDF\" dans la boîte d\'impression.', 'success');
+  setTimeout(function() {
+    showToast('💡 Astuce : décochez \"En-têtes et pieds de page\" pour un rendu propre.', 'info');
+  }, 3500);
   // Show cover letter suggestion after download
   setTimeout(showLettreCTA, 800);
 

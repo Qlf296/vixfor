@@ -112,7 +112,7 @@
   </div>
 
   <div class="contact-card reveal" id="contact-form-card">
-    <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <form class="contact-form" id="contact-form" name="contact" action="/contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="contact">
       <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
       <div class="form-row">
@@ -287,7 +287,7 @@
     const form = e.target;
     const data = new FormData(form);
 
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch(window.location.pathname, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(data).toString()
     })
     .then(function() {
@@ -298,7 +298,7 @@
     .catch(function(err) {
       btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Envoyer</span>';
       btn.disabled = false;
-      if (typeof showToast === 'function') showToast('Erreur lors de l'envoi. Réessayez ou écrivez à vixfor.contact@gmail.com', 'error');
+      if (typeof showToast === 'function') showToast('Erreur lors de l'envoi. Réessayez ou écrivez à <a href="mailto:vixfor.contact@gmail.com">vixfor.contact@gmail.com</a>', 'error');
       console.error('Form submit error:', err);
     });
   });
