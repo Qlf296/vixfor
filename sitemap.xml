@@ -241,4 +241,19 @@
     <priority>0.2</priority>
   </url>
 
+
+  <!-- ── New SEO pages 2026-06-30 ─────────────────────────────────────────── -->
+  <url>
+    <loc>https://forgcv.com/cv-tips</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cover-letter-job-change</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>

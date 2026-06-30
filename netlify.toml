@@ -57,6 +57,17 @@
 
 # ── Block sensitive files ──────────────────────────────────────────────────
 # ── Legal routes ───────────────────────────────────────────────────────────
+
+[[redirects]]
+  from   = "/cv-tips"
+  to     = "/seo/cv-tips.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cover-letter-job-change"
+  to     = "/seo/cover-letter-job-change.html"
+  status = 200
+
 [[redirects]]
   from   = "/legal/mentions-legales"
   to     = "/legal/mentions-legales.html"

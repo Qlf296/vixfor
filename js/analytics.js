@@ -94,6 +94,12 @@
       var btn = e.target.closest('[data-lang]');
       if (btn) cvf_track('language_change', btn.getAttribute('data-lang'));
     });
+    // Letter CTA clicks
+    document.querySelectorAll('a[href*="cover-letter-generator"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        cvf_track('letter_cta_click', el.textContent.trim().slice(0, 40), { page: location.pathname });
+      });
+    });
     // Section views
     if ('IntersectionObserver' in window) {
       var targets = document.querySelectorAll('.hero,.cv-page-hero,.seo-hero,.generator-page,.final-cta-band');

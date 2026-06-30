@@ -106,7 +106,7 @@
     if(s1&&s2)setStep(2);else if(s1)setStep(2);else setStep(1);
   });
   document.addEventListener('click',function(e){
-    if(e.target.id==='cl-generate-btn'||e.target.closest('#cl-generate-btn'))
+    if(e.target.id==='btn-generate'||e.target.closest('#btn-generate'))
       setTimeout(function(){setStep(3);},1200);
   });
 })();
