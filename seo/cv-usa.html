@@ -15,7 +15,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ForgCV","url":"https://forgcv.com","applicationCategory":"BusinessApplication","operatingSystem":"All","description":"Créez votre CV États-Unis en ligne, gratuit, ATS-optimisé"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/vixfor-design-system.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/></svg>">
@@ -286,7 +288,8 @@
       <div class="footer-col"><h4>Produit</h4><div class="footer-links"><a href="../create-cv-free.html">Créer un CV gratuit</a><a href="../cover-letter-generator.html">Lettre de motivation</a><a href="../cover-letter-generator.html">Lettre de motivation</a><a href="../templates.html">Templates ATS</a></div></div>
       <div class="footer-col"><h4>Guides</h4><div class="footer-links"><a href="../seo/how-to-write-a-cv.html">Écrire un CV</a><a href="../seo/cv-examples.html">Exemples de CV</a><a href="../seo/cv-format-2026.html">Format 2026</a><a href="../seo/cv-with-no-experience.html">CV sans expérience</a><a href="../seo/cv-europe-jobs.html">Jobs en Europe</a></div></div>
       <div class="footer-col"><h4>Par pays</h4><div class="footer-links"><a href="../seo/cv-france.html">🇫🇷 France</a><a href="../seo/cv-uk.html">🇬🇧 UK</a><a href="../seo/cv-usa.html">🇺🇸 USA</a><a href="../seo/cv-germany.html">🇩🇪 Allemagne</a><a href="../seo/cv-netherlands.html">🇳🇱 Pays-Bas</a><a href="../seo/cv-arabic-countries.html">🌍 Monde arabe</a></div></div>
-      <div class="footer-col"><h4>Entreprise</h4><div class="footer-links"><a href="../about.html">À propos</a><a href="../contact.html">Contact</a><a href="../vixfor/index.html">Vixfor</a><a href="../legal/privacy-policy.html">Confidentialité</a><a href="../legal/terms-of-service.html">CGU</a><a href="../legal/cookies.html">Cookies</a></div></div>
+      <div class="footer-col"><h4>Entreprise</h4><div class="footer-links"><a href="../about.html">À propos</a><a href="../contact.html">Contact</a><a href="../vixfor/index.html">Vixfor</a><a href="../legal/mentions-legales.html">Mentions légales</a>
+          <a href="../legal/privacy-policy.html">Confidentialité</a><a href="../legal/terms-of-service.html">CGU</a><a href="../legal/cookies.html">Cookies</a></div></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 ForgCV by <a href="../vixfor/index.html" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. Tous droits réservés.</span>
@@ -294,7 +297,8 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/cookie-consent.js"></script>
 <script src="../js/analytics.js"></script>
 <script>
 document.querySelectorAll('.faq-q').forEach(function(btn){

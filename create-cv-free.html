@@ -16,7 +16,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ForgCV — Créer un CV Gratuit","description":"Créez votre CV professionnel gratuitement en 2 minutes. 6 templates ATS, aperçu live, PDF HD.","url":"https://forgcv.com/create-cv-free","applicationCategory":"BusinessApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"featureList":["6 templates professionnels","Aperçu en temps réel","Export PDF gratuit","Sans inscription","Multilingue"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/cv-generator.css">
@@ -175,16 +177,16 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="cv-firstname">Prénom <span class="required">*</span></label>
-                  <input class="form-input" id="cv-firstname" type="text" placeholder="Prénom" autocomplete="given-name">
+                  <input class="form-input" id="cv-firstname" type="text" placeholder="Ex: Marie" autocomplete="given-name">
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="cv-lastname">Nom <span class="required">*</span></label>
-                  <input class="form-input" id="cv-lastname" type="text" placeholder="Nom" autocomplete="family-name">
+                  <input class="form-input" id="cv-lastname" type="text" placeholder="Ex: Dupont" autocomplete="family-name">
                 </div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="cv-job-title">Titre du poste</label>
-                <input class="form-input" id="cv-job-title" type="text" placeholder="Ex: Développeur Full-Stack, Designer UX...">
+                <input class="form-input" id="cv-job-title" type="text" placeholder="Ex: Développeur Full-Stack Senior">
               </div>
             </div>
             <div class="form-section">
@@ -192,7 +194,7 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="cv-email">Email</label>
-                  <input class="form-input" id="cv-email" type="email" placeholder="nom@email.com" autocomplete="email">
+                  <input class="form-input" id="cv-email" type="email" placeholder="marie.dupont@gmail.com" autocomplete="email">
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="cv-phone">Téléphone</label>
@@ -202,7 +204,7 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="cv-city">Ville</label>
-                  <input class="form-input" id="cv-city" type="text" placeholder="Paris" autocomplete="address-level2">
+                  <input class="form-input" id="cv-city" type="text" placeholder="Paris, France" autocomplete="address-level2">
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="cv-country">Pays</label>
@@ -212,11 +214,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="cv-linkedin">LinkedIn</label>
-                  <input class="form-input" id="cv-linkedin" type="text" placeholder="linkedin.com/in/votre-profil">
+                  <input class="form-input" id="cv-linkedin" type="text" placeholder="linkedin.com/in/marie-dupont">
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="cv-website">Site web</label>
-                  <input class="form-input" id="cv-website" type="url" placeholder="https://votre-site.com">
+                  <input class="form-input" id="cv-website" type="url" placeholder="https://marie-dupont.fr">
                 </div>
               </div>
             </div>
@@ -224,7 +226,7 @@
               <div class="form-section-label">Profil</div>
               <div class="form-group">
                 <label class="form-label" for="cv-summary">Résumé professionnel</label>
-                <textarea class="form-textarea" id="cv-summary" rows="4" placeholder="Décrivez votre profil en 3-4 lignes..." style="min-height:100px"></textarea>
+                <textarea class="form-textarea" id="cv-summary" rows="4" placeholder="Ex: Développeur passionné avec 5 ans d'expérience en React et Node.js..." style="min-height:100px"></textarea>
               </div>
             </div>
             <div class="form-section">
@@ -247,11 +249,11 @@
               <div class="form-section-label">Compétences & Langues</div>
               <div class="form-group">
                 <label class="form-label" for="cv-skills">Compétences (séparées par des virgules)</label>
-                <input class="form-input" id="cv-skills" type="text" placeholder="JavaScript, Python, Management, Adobe XD...">
+                <input class="form-input" id="cv-skills" type="text" placeholder="JavaScript, React, Python, Gestion de projet...>
               </div>
               <div class="form-group">
                 <label class="form-label" for="cv-languages">Langues (séparées par des virgules)</label>
-                <input class="form-input" id="cv-languages" type="text" placeholder="Français (natif), Anglais (C1), Espagnol (B2)...">
+                <input class="form-input" id="cv-languages" type="text" placeholder="Français (natif), Anglais (C1), Espagnol (B2)">
               </div>
             </div>
             <div class="step-actions">
@@ -472,7 +474,6 @@
         <div class="footer-links">
           <a href="create-cv-free.html">Créer un CV gratuit</a>
           <a href="cover-letter-generator.html">Lettre de motivation</a>
-          <a href="cover-letter-generator.html">Lettre de motivation</a>
           <a href="templates.html">Templates ATS</a>
         </div>
       </div>
@@ -503,6 +504,7 @@
           <a href="about.html">À propos</a>
           <a href="contact.html">Contact</a>
           <a href="vixfor/index.html">Vixfor</a>
+          <a href="legal/mentions-legales.html">Mentions légales</a>
           <a href="legal/privacy-policy.html">Confidentialité</a>
           <a href="legal/terms-of-service.html">CGU</a>
           <a href="legal/cookies.html">Cookies</a>
@@ -519,13 +521,10 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/analytics.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
 <script src="js/cv-generator.js"></script>
+<script src="js/cookie-consent.js"></script>
 <script src="js/analytics.js"></script>
 
 <script>

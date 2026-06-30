@@ -1,9 +1,26 @@
 # ForgCV by Vixfor — Netlify config
 # Updated: 2026-06-30
 
-# ── Build ──────────────────────────────────────────────────────────────────
+# ── Build + compression ────────────────────────────────────────────────────
 [build]
   publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle  = false
+  minify  = true
+
+[build.processing.js]
+  bundle  = false
+  minify  = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
 
 # ── Security headers (all pages) ──────────────────────────────────────────
 [[headers]]
@@ -15,6 +32,7 @@
     Referrer-Policy           = "strict-origin-when-cross-origin"
     Permissions-Policy        = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy   = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none'"
 
 # ── Asset caching ──────────────────────────────────────────────────────────
 [[headers]]
@@ -38,6 +56,12 @@
     Cache-Control = "public, max-age=604800"
 
 # ── Block sensitive files ──────────────────────────────────────────────────
+# ── Legal routes ───────────────────────────────────────────────────────────
+[[redirects]]
+  from   = "/legal/mentions-legales"
+  to     = "/legal/mentions-legales.html"
+  status = 200
+
 [[redirects]]
   from   = "/*.py"
   to     = "/404.html"

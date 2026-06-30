@@ -232,4 +232,13 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://forgcv.com/cv-arabic-countries"/>
   </url>
 
+
+  <!-- ── Legal pages ───────────────────────────────────────────────────────── -->
+  <url>
+    <loc>https://forgcv.com/legal/mentions-legales</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
 </urlset>

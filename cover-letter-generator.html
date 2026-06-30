@@ -9,16 +9,18 @@
   <meta property="og:title" content="Lettre de Motivation gratuite — ForgCV by Vixfor">
   <meta property="og:description" content="Créez votre lettre de motivation en 3 minutes. 3 tons, export PDF. 100% gratuit.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://forgcv.com/cover-letter-generator.html">
+  <meta property="og:url" content="https://forgcv.com/cover-letter-generator">
   <meta property="og:image" content="https://forgcv.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lettre de Motivation gratuite — ForgCV by Vixfor">
   <meta name="twitter:description" content="Lettre de motivation professionnelle en 3 minutes. Gratuit.">
-  <link rel="canonical" href="https://forgcv.com/cover-letter-generator.html">
+  <link rel="canonical" href="https://forgcv.com/cover-letter-generator">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ForgCV — Générateur de Lettre de Motivation","description":"Générez une lettre de motivation professionnelle gratuitement","url":"https://forgcv.com/cover-letter-generator.html","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/cv-generator.css">
@@ -64,6 +66,51 @@
   <a href="contact.html">Contact</a>
 </div>
 
+
+<!-- STEP INDICATOR -->
+<div style="background:var(--clr-surface);border-bottom:1px solid var(--clr-border);padding:.875rem 0">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:center;gap:0;max-width:480px;margin:0 auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <div id="cl-step-badge-1" style="width:28px;height:28px;border-radius:50%;background:var(--clr-accent);color:#fff;font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+        <span style="font-size:.78rem;font-weight:700;color:var(--clr-accent)">Vos infos</span>
+      </div>
+      <div style="flex:1;height:2px;background:var(--clr-border);margin:0 .75rem;max-width:80px"></div>
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <div id="cl-step-badge-2" style="width:28px;height:28px;border-radius:50%;background:var(--clr-border);color:var(--clr-text-2);font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+        <span id="cl-step-lbl-2" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Ton &amp; poste</span>
+      </div>
+      <div style="flex:1;height:2px;background:var(--clr-border);margin:0 .75rem;max-width:80px"></div>
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <div id="cl-step-badge-3" style="width:28px;height:28px;border-radius:50%;background:var(--clr-border);color:var(--clr-text-2);font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
+        <span id="cl-step-lbl-3" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Ta lettre</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function setStep(n){
+    [1,2,3].forEach(function(i){
+      var badge=document.getElementById('cl-step-badge-'+i);
+      if(!badge)return;
+      if(i<n){badge.style.background='#10B981';badge.textContent='✓';}
+      else if(i===n){badge.style.background='var(--clr-accent)';badge.textContent=i;}
+      else{badge.style.background='var(--clr-border)';badge.textContent=i;}
+    });
+  }
+  document.addEventListener('input',function(){
+    var f1=document.getElementById('cl-firstname'),f2=document.getElementById('cl-company');
+    var s1=f1&&f1.value.trim();
+    var s2=f2&&f2.value.trim();
+    if(s1&&s2)setStep(2);else if(s1)setStep(2);else setStep(1);
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.id==='cl-generate-btn'||e.target.closest('#cl-generate-btn'))
+      setTimeout(function(){setStep(3);},1200);
+  });
+})();
+</script>
 <main class="cl-page">
   <div class="container">
 
@@ -214,6 +261,52 @@
     </div>
 
   </div>
+
+<!-- SEO CONTENT + CONSEILS -->
+<section style="padding:3.5rem 0;border-top:1px solid var(--clr-border)">
+  <div class="container" style="max-width:780px">
+    <div style="text-align:center;margin-bottom:2.25rem">
+      <h2 style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Conseils pour une lettre qui convainc</h2>
+      <p style="font-size:.9rem;color:var(--clr-text-2);margin-top:.5rem">Les recruteurs lisent en moyenne 30 secondes. Faites compter chaque mot.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem">
+      <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:14px;padding:1.25rem">
+        <div style="font-size:1.3rem;margin-bottom:.6rem">✏️</div>
+        <h3 style="font-size:.9rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">250–400 mots maximum</h3>
+        <p style="font-size:.82rem;color:var(--clr-text-2);line-height:1.6;margin:0">Une page, pas plus. Les recruteurs apprécient la concision. Chaque phrase doit avoir une raison d'être.</p>
+      </div>
+      <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:14px;padding:1.25rem">
+        <div style="font-size:1.3rem;margin-bottom:.6rem">🎯</div>
+        <h3 style="font-size:.9rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Personnalisez chaque lettre</h3>
+        <p style="font-size:.82rem;color:var(--clr-text-2);line-height:1.6;margin:0">Mentionnez le nom de l'entreprise, le poste exact et une raison concrète de votre intérêt. Les lettres génériques sont rejetées.</p>
+      </div>
+      <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:14px;padding:1.25rem">
+        <div style="font-size:1.3rem;margin-bottom:.6rem">📊</div>
+        <h3 style="font-size:.9rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Résultats concrets</h3>
+        <p style="font-size:.82rem;color:var(--clr-text-2);line-height:1.6;margin:0">Citez des chiffres : "augmenté les ventes de 30%", "géré une équipe de 5". Les preuves valent mieux que les promesses.</p>
+      </div>
+    </div>
+    <!-- Cross-link vers CV -->
+    <div style="margin-top:2rem;background:linear-gradient(135deg,rgba(91,87,255,0.05),rgba(124,58,237,0.08));border:1.5px solid rgba(91,87,255,0.18);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:space-between">
+      <div>
+        <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--clr-accent);margin-bottom:.3rem">📄 Pas encore de CV ?</div>
+        <div style="font-size:.92rem;font-weight:700;color:var(--clr-text)">Crée ton CV professionnel en 5 minutes</div>
+        <div style="font-size:.8rem;color:var(--clr-text-2);margin-top:.2rem">6 templates · PDF HD · Sans inscription</div>
+      </div>
+      <a href="create-cv-free.html" class="btn btn-primary" style="flex-shrink:0;white-space:nowrap">📄 Créer mon CV →</a>
+    </div>
+    <!-- Guides utiles -->
+    <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--clr-border)">
+      <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--clr-text-3);margin-bottom:.875rem">Guides complémentaires</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.625rem">
+        <a href="seo/cover-letter-example.html" style="font-size:.8rem;color:var(--clr-accent);text-decoration:none;border:1px solid rgba(91,87,255,0.2);padding:5px 12px;border-radius:9999px;background:rgba(91,87,255,0.04)">✉️ Exemples de lettres</a>
+        <a href="seo/cover-letter-structure.html" style="font-size:.8rem;color:var(--clr-accent);text-decoration:none;border:1px solid rgba(91,87,255,0.2);padding:5px 12px;border-radius:9999px;background:rgba(91,87,255,0.04)">📐 Structure d'une lettre</a>
+        <a href="seo/cover-letter-student.html" style="font-size:.8rem;color:var(--clr-accent);text-decoration:none;border:1px solid rgba(91,87,255,0.2);padding:5px 12px;border-radius:9999px;background:rgba(91,87,255,0.04)">🎓 Lettre étudiant</a>
+        <a href="seo/cover-letter-internship.html" style="font-size:.8rem;color:var(--clr-accent);text-decoration:none;border:1px solid rgba(91,87,255,0.2);padding:5px 12px;border-radius:9999px;background:rgba(91,87,255,0.04)">📋 Lettre stage</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="footer">
@@ -270,6 +363,7 @@
           <a href="about.html">À propos</a>
           <a href="contact.html">Contact</a>
           <a href="vixfor/index.html">Vixfor</a>
+          <a href="legal/mentions-legales.html">Mentions légales</a>
           <a href="legal/privacy-policy.html">Confidentialité</a>
           <a href="legal/terms-of-service.html">CGU</a>
           <a href="legal/cookies.html">Cookies</a>
@@ -287,10 +381,10 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
 <script src="js/cover-letter.js"></script>
+<script src="js/cookie-consent.js"></script>
 <script src="js/analytics.js"></script>
 </body>
 </html>

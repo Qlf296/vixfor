@@ -456,6 +456,47 @@ function updatePreview() {
    - html2canvas targets the element directly, ignoring
      whatever overlay is visually on top of it
 ══════════════════════════════════════════════ */
+
+// ── Post-download: suggest cover letter ─────────────────────────────────────
+function showLettreCTA() {
+  if (document.getElementById('fgcv-lettre-cta')) return;
+  var banner = document.createElement('div');
+  banner.id = 'fgcv-lettre-cta';
+  banner.style.cssText = [
+    'position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%);',
+    'background:linear-gradient(135deg,#5B57FF,#7C3AED);color:#fff;',
+    'border-radius:16px;padding:1.25rem 1.5rem;',
+    'display:flex;align-items:center;gap:1rem;flex-wrap:wrap;',
+    'box-shadow:0 8px 40px rgba(91,87,255,0.4);z-index:9999;',
+    'max-width:520px;width:calc(100% - 2rem);',
+    'animation:fgcv-pop-in .35s cubic-bezier(.34,1.56,.64,1)'
+  ].join('');
+  banner.innerHTML = [
+    '<style>@keyframes fgcv-pop-in{from{opacity:0;transform:translateX(-50%) translateY(20px)}',
+    'to{opacity:1;transform:translateX(-50%) translateY(0)}}</style>',
+    '<div style="flex:1;min-width:160px">',
+    '  <div style="font-size:.72rem;font-weight:700;opacity:.8;margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.08em">✅ CV téléchargé !</div>',
+    '  <div style="font-size:.95rem;font-weight:800;line-height:1.3">Crée ta lettre de motivation<br>pour maximiser tes chances ×3</div>',
+    '</div>',
+    '<div style="display:flex;flex-direction:column;gap:.5rem;flex-shrink:0">',
+    '  <a href="cover-letter-generator.html" style="display:inline-flex;align-items:center;gap:6px;',
+    '     background:#fff;color:#5B57FF;padding:.55rem 1.1rem;border-radius:9999px;',
+    '     font-weight:800;font-size:.85rem;text-decoration:none;white-space:nowrap">',
+    '    ✉️ Créer ma lettre →',
+    '  </a>',
+    '  <button onclick="document.getElementById('fgcv-lettre-cta').remove()" ',
+    '    style="background:transparent;border:none;color:rgba(255,255,255,.7);',
+    '    font-size:.75rem;cursor:pointer;text-align:center">Plus tard</button>',
+    '</div>'
+  ].join('');
+  document.body.appendChild(banner);
+  // Auto-dismiss after 15s
+  setTimeout(function() {
+    var el = document.getElementById('fgcv-lettre-cta');
+    if (el) { el.style.opacity='0'; el.style.transition='opacity .4s'; setTimeout(function(){el.remove();},400); }
+  }, 15000);
+}
+
 function downloadPDF() {
   collectFormData();
   const d   = cvState.data;
@@ -611,6 +652,8 @@ ${cvHtml}
   btn.innerHTML = orig;
   btn.disabled  = false;
   showToast('🖨️ Dans la boîte d\'impression : décochez "En-têtes et pieds de page", puis Enregistrer en PDF', 'info');
+  // Show cover letter suggestion after download
+  setTimeout(showLettreCTA, 800);
 
   // Increment live CV counter
   if (typeof incrementCVCount === 'function') incrementCVCount();

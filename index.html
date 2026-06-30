@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://forgcv.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ForgCV — Générateur de CV gratuit by Vixfor">
-  <meta name="twitter:description" content="CV professionnel en 5 minutes. 6 templates, PDF HD, 6 langues. 100% gratuit.">
+  <meta name="twitter:description" content="CV professionnel en 5 minutes. 6 templates, PDF HD, 7 langues. 100% gratuit.">
   <link rel="canonical" href="https://forgcv.com/">
   <script type="application/ld+json">
   {
@@ -28,7 +28,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/home.css">
@@ -117,7 +119,7 @@
           <div class="avatar" style="background:#E3F2FD;color:#1565C0">K</div>
         </div>
         <p class="social-proof-text">
-          <strong>4 832</strong> <span data-i18n="hero_proof">CV créés cette semaine</span> ⭐
+          <strong id="hero-cv-count">4 832</strong> <span>CV créés</span> ⭐
         </p>
       </div>
     </div>
@@ -177,8 +179,8 @@
         <div class="stat-label" data-i18n="stat_cvs">CV créés</div>
       </div>
       <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-number" data-target="89" data-suffix="%">0</div>
-        <div class="stat-label" data-i18n="stat_hired">Ont trouvé un emploi</div>
+        <div class="stat-number" data-target="4.9" data-suffix="★" data-float="true">0</div>
+        <div class="stat-label">Note utilisateurs</div>
       </div>
       <div class="stat-item reveal reveal-delay-2">
         <div class="stat-number" data-target="42">0</div>
@@ -297,8 +299,8 @@
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <h3 data-i18n="feat_4">6 Langues</h3>
-        <p data-i18n="feat_4d">Interface disponible en FR, EN, NL, ES, AR et RU. Support RTL pour l'arabe.</p>
+        <h3 data-i18n="feat_4">7 Langues</h3>
+        <p data-i18n="feat_4d">Interface disponible en FR, EN, DE, NL, ES, AR et RU. Support RTL pour l'arabe.</p>
       </div>
       <a href="cover-letter-generator.html" class="feature-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;cursor:pointer;border-color:rgba(99,102,241,0.25);position:relative;overflow:hidden">
         <span style="position:absolute;top:10px;right:12px;font-size:.6rem;font-weight:700;background:rgba(99,102,241,0.12);color:var(--clr-accent);padding:2px 7px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em">Essayer →</span>
@@ -575,7 +577,6 @@
         <div class="footer-links">
           <a href="create-cv-free.html">Créer un CV gratuit</a>
           <a href="cover-letter-generator.html">Lettre de motivation</a>
-          <a href="cover-letter-generator.html">Lettre de motivation</a>
           <a href="templates.html">Templates ATS</a>
         </div>
       </div>
@@ -606,6 +607,7 @@
           <a href="about.html">À propos</a>
           <a href="contact.html">Contact</a>
           <a href="vixfor/index.html">Vixfor</a>
+          <a href="legal/mentions-legales.html">Mentions légales</a>
           <a href="legal/privacy-policy.html">Confidentialité</a>
           <a href="legal/terms-of-service.html">CGU</a>
           <a href="legal/cookies.html">Cookies</a>
@@ -622,8 +624,9 @@
     </div>
   </div>
 </footer>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/cookie-consent.js"></script>
 <script src="js/analytics.js"></script>
 
 <script>

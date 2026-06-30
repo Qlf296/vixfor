@@ -18,7 +18,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ForgCV — Générateur de CV","description":"Créez votre CV professionnel gratuitement en 5 minutes","url":"https://forgcv.com/cv-generator.html","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/cv-generator.css">
@@ -417,10 +419,10 @@
 </div><!-- /generator-page -->
 
 <!-- html2pdf CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="js/cookie-consent.js"></script>
 <script src="js/analytics.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
 <script src="js/cv-generator.js"></script>
 </body>
 </html>

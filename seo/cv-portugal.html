@@ -16,7 +16,9 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dois-je parler portugais pour travailler au Portugal ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend du secteur. Dans la tech et les multinationales à Lisbonne ou Porto, l'anglais est souvent suffisant. Pour les PME locales, le tourisme et le secteur public, le portugais est indispensable."}},{"@type":"Question","name":"Le Portugal est-il accessible pour les étrangers ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le Portugal est l'un des pays les plus ouverts aux étrangers en Europe. Les citoyens UE n'ont pas besoin de visa. Hors UE, il existe plusieurs visas attractifs dont le D8 (nomade numérique) et le D3 (talent qualifié)."}},{"@type":"Question","name":"ForgCV est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, 100% gratuit. Aucune carte bancaire, aucun abonnement, aucun watermark sur le PDF. ForgCV sera toujours gratuit."}},{"@type":"Question","name":"Dois-je créer un compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Aucune inscription, aucun email requis. Accédez directement au générateur et créez votre CV en 2 minutes."}},{"@type":"Question","name":"Puis-je télécharger mon CV en PDF ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le PDF est haute résolution, format A4, sans watermark, prêt à envoyer aux recruteurs."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/vixfor-design-system.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/></svg>">
@@ -291,6 +293,7 @@
           <a href="../about.html">À propos</a>
           <a href="../contact.html">Contact</a>
           <a href="../vixfor/index.html">Vixfor</a>
+          <a href="../legal/mentions-legales.html">Mentions légales</a>
           <a href="../legal/privacy-policy.html">Confidentialité</a>
           <a href="../legal/terms-of-service.html">CGU</a>
           <a href="../legal/cookies.html">Cookies</a>
@@ -307,7 +310,8 @@
     </div>
   </div>
 </footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/cookie-consent.js"></script>
 <script src="../js/analytics.js"></script>
 </body>
 </html>
