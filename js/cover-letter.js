@@ -123,6 +123,66 @@ ${d.firstname} ${d.lastname}`
   }
 };
 
+  de: {
+    professional: (d) => `${d.city ? d.city + ', den ' + new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
+
+Sehr geehrte Damen und Herren,
+
+mit großem Interesse bewerbe ich mich um die Stelle als ${d.position} bei ${d.company}.
+
+Durch ${d.experience || 'meine langjährige Berufserfahrung'} habe ich fundierte Kenntnisse und Kompetenzen entwickelt, die genau dem gesuchten Profil entsprechen. Im Laufe meiner Karriere habe ich stets bewiesen, dass ich komplexe Herausforderungen meistern und gleichzeitig höchste Qualitätsstandards einhalten kann.
+
+${d.motivation ? `Was mich an dieser Stelle besonders reizt: ${d.motivation}. Ich bin überzeugt, dass diese Vision perfekt mit den Zielen von ${d.company} übereinstimmt und ich einen wertvollen Beitrag zu Ihrem Team leisten kann.` : `Bei ${d.company} zu arbeiten wäre für mich eine außergewöhnliche Möglichkeit, meine Fähigkeiten einzusetzen und aktiv zur Entwicklung eines Unternehmens beizutragen, das ich für seinen Dynamismus und seine Werte sehr schätze.`}
+
+Über die Gelegenheit, Ihnen meinen Werdegang und meine Motivation in einem persönlichen Gespräch vorstellen zu dürfen, würde ich mich sehr freuen. Für Rückfragen stehe ich Ihnen jederzeit gerne zur Verfügung.
+
+Mit freundlichen Grüßen,
+${d.firstname} ${d.lastname}`,
+
+    dynamic: (d) => `${d.city ? d.city + ', den ' + new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
+
+Sehr geehrte Damen und Herren,
+
+${d.position} bei ${d.company} — diese Stelle hat sofort meine Aufmerksamkeit geweckt. Und das aus gutem Grund: Sie entspricht genau dem nächsten Schritt, den ich in meiner Karriere anstrebe.
+
+Nach ${d.experience || 'Jahren praktischer Erfahrung in meinem Fachbereich'} bringe ich mehr als nur Fähigkeiten mit — ich bringe Antrieb, Ehrgeiz und ein unerschütterliches Engagement für Exzellenz. Ich erledige nicht nur Aufgaben; ich hinterfrage Prozesse, optimiere Ergebnisse und schaffe echten Mehrwert.
+
+${d.motivation ? `Was mich zu ${d.company} zieht: ${d.motivation}. Dieses Umfeld ist genau das, in dem ich aufblühe und mein Bestes gebe.` : `${d.company} ist ein Unternehmen, dem ich meine Energie, meine Ideen und meine Expertise widmen möchte. Ihr Unternehmergeist und Ihre Vision inspirieren mich sehr.`}
+
+Geben Sie mir eine Stunde Ihrer Zeit. Ich werde Ihnen zeigen, warum ich die richtige Wahl für Ihre offene Stelle bin.
+
+Mit besten Grüßen,
+${d.firstname} ${d.lastname}`,
+
+    creative: (d) => `${d.city ? d.city + ', den ' + new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('de-DE', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.firstname} ${d.lastname}
+${d.email}${d.phone ? ' · ' + d.phone : ''}
+
+
+Liebes Team von ${d.company},
+
+Was wäre, wenn Ihr nächste(r) ${d.position || 'Mitarbeiter/in'} jemand wäre, der nicht nur um die Ecke denkt — sondern das gesamte Bild neu gestaltet?
+
+Mein Weg — ${d.experience || 'geprägt von kreativem Denken und praktischer Umsetzung'} — hat mir gezeigt, dass die wirkungsvollsten Lösungen entstehen, wenn man strukturiertes Denken mit echtem kreativen Mut verbindet. Ich sehe dort Möglichkeiten, wo andere Hindernisse sehen.
+
+${d.motivation ? `Hier ist, was mich zu ${d.company} treibt: ${d.motivation}. Ich glaube von ganzem Herzen an das, was Sie aufbauen, und möchte ein Teil davon sein.` : `Die Innovationskultur und die langfristige Vision von ${d.company} sprechen mich tief an. Das ist das Umfeld, in dem ich wachsen und Großes erreichen möchte.`}
+
+Ich würde mich sehr freuen, Ihnen meine Arbeit und meine Ideen in einem Gespräch vorzustellen. Lassen Sie uns gemeinsam etwas Besonderes schaffen.
+
+Mit Begeisterung,
+${d.firstname} ${d.lastname}`
+  }
+};
+
 // Fallback for other languages
 ['nl','es','ar','ru'].forEach(lang => {
   CL_TEMPLATES[lang] = CL_TEMPLATES.en;
@@ -241,12 +301,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const detected = (typeof currentLang !== 'undefined' && currentLang)
       ? currentLang
       : (navigator.language || navigator.userLanguage || 'fr').slice(0, 2).toLowerCase();
-    const supported = ['fr','en','nl','es','ar','ru'];
+    const supported = ['fr','en','de','nl','es','ar','ru'];
     langSel.value = supported.includes(detected) ? detected : 'fr';
     // Mark as auto-detected
     const badge = document.getElementById('cl-lang-detected');
     if (badge) {
-      const flags = {fr:'🇫🇷',en:'🇬🇧',nl:'🇳🇱',es:'🇪🇸',ar:'🇸🇦',ru:'🇷🇺'};
+      const flags = {fr:'🇫🇷',en:'🇬🇧',de:'🇩🇪',nl:'🇳🇱',es:'🇪🇸',ar:'🇸🇦',ru:'🇷🇺'};
       badge.textContent = flags[langSel.value] + ' Auto-détectée';
     }
     // When user changes manually, remove "auto" badge
