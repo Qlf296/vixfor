@@ -1,3 +1,12 @@
+// ── Tab isolation — prevents multi-tab state conflicts ──────────────────────
+var _tabKey = (function() {
+  try {
+    var k = sessionStorage.getItem('fgcv_tab');
+    if (!k) { k = Math.random().toString(36).slice(2,10); sessionStorage.setItem('fgcv_tab', k); }
+    return k;
+  } catch(e) { return 'default'; }
+})();
+
 /**
  * ForgCV by Vixfor — CV Generator
  * Multi-step form + live preview + PDF export

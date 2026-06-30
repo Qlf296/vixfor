@@ -762,3 +762,15 @@
   .step-actions { background: rgba(10,10,18,0.97); }
   .btn-add-entry:hover { background: rgba(91,87,255,0.06); }
 }
+
+/* ── 480px generator ─────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .generator-layout { grid-template-columns: 1fr; gap: 0; }
+  .generator-sidebar { position: static; border-right: none; border-bottom: 1px solid var(--clr-border); }
+  .cv-preview-panel { height: auto; min-height: 400px; }
+  .steps { gap: .5rem; }
+  .step-label { display: none; }
+  .download-panel { padding: 1rem; }
+  .download-actions { flex-direction: column; }
+  .download-actions .btn { width: 100%; }
+}

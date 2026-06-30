@@ -195,3 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initSmoothScroll();
 });
+
+// ── Contextual NAV CTA ────────────────────────────────────────────────────────
+(function() {
+  var path = location.pathname;
+  var cta = document.querySelector('.nav-right .btn-primary');
+  if (!cta) return;
+  if (path.indexOf('cover-letter') !== -1) {
+    cta.textContent = '✉️ Créer ma lettre';
+    cta.href = cta.href; // keep href
+  } else if (path.indexOf('templates') !== -1) {
+    cta.textContent = '📄 Utiliser un template';
+  } else if (path.indexOf('create-cv') !== -1) {
+    cta.textContent = '📄 Créer mon CV';
+  } else if (path.indexOf('/seo/') !== -1 || path.indexOf('cv-') !== -1 || path.indexOf('cover-letter') !== -1) {
+    cta.textContent = '🚀 Commencer gratuitement';
+  }
+})();
+

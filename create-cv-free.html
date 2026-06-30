@@ -67,7 +67,7 @@
 <body>
 
 <!-- NAV -->
-<nav class="nav" id="main-nav">
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
   <div class="container">
     <a href="index.html" class="nav-logo">
       <svg width="28" height="28" viewBox="0 0 36 36" fill="none" style="display:block;flex-shrink:0"><defs><linearGradient id="nl11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#nl11)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/><rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/><rect x="13" y="18" width="6" height="1.8" rx="1" fill="rgba(91,87,255,0.35)"/><path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/></svg>
@@ -106,12 +106,12 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<main>
+<main role="main" aria-label="Contenu principal">
 <!-- COMPACT HERO -->
 <section class="cv-page-hero">
   <div class="container">
     <div class="cv-hero-inner">
-      <h1>Créez votre CV Gratuit<br><span class="grad">en 2 Minutes</span></h1>
+      <h1>Créez votre CV Gratuit — <span class="grad">en 2 Minutes</span></h1>
       <p>Formulaire guidé, 6 templates professionnels, aperçu en direct, export PDF HD.<br>Aucune inscription. Aucune limite. 100 % gratuit.</p>
       <div class="cv-hero-chips">
         <span class="cv-hero-chip"><span class="dot"></span> Aucune inscription requise</span>
@@ -353,7 +353,7 @@
           </div>
           <div class="preview-container">
             <div class="preview-paper">
-              <div id="cv-preview-content"></div>
+              <div id="cv-preview-content" aria-live="polite" aria-label="Aperçu de votre CV en temps réel"></div>
             </div>
           </div>
         </div>
@@ -460,7 +460,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" role="contentinfo" aria-label="Pied de page">
   <div class="container">
     <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
       <div class="footer-brand">
@@ -533,8 +533,8 @@
 <script src="js/i18n.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/cv-generator.js"></script>
-<script src="js/cookie-consent.js"></script>
-<script src="js/analytics.js"></script>
+<script src="js/cookie-consent.js" defer></script>
+<script src="js/analytics.js" defer></script>
 
 <script>
 /* Vixfor micro-interactions */
