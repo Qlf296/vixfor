@@ -220,7 +220,7 @@
           <span class="content-lang-icon">🌍</span>
           <div class="content-lang-inner">
             <div class="content-lang-label">CV language</div>
-            <select id="cvLanguage" class="content-lang-select" aria-label="Select CV language">
+            <select id="cvLanguage" class="content-lang-select" onchange="window.updateCVLanguage(this.value)" aria-label="Select CV language">
               <option value="en">🇬🇧 English</option>
               <option value="fr">🇫🇷 Français</option>
               <option value="nl">🇳🇱 Nederlands</option>

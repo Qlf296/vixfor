@@ -135,7 +135,7 @@
             <span class="content-lang-icon">🌍</span>
             <div class="content-lang-inner">
               <div class="content-lang-label">Letter language</div>
-              <select id="letterLanguage" class="content-lang-select" aria-label="Select cover letter language">
+              <select id="letterLanguage" class="content-lang-select" onchange="window.updateLetterLanguage(this.value)" aria-label="Select cover letter language">
                 <option value="en">🇬🇧 English</option>
                 <option value="fr">🇫🇷 Français</option>
                 <option value="nl">🇳🇱 Nederlands</option>
@@ -187,19 +187,7 @@
             <input class="form-input" id="cl-position" type="text" placeholder="Chef de Projet Digital, Développeur Senior...">
           </div>
 
-          <!-- Language (auto-detected) -->
-          <div class="form-group">
-            <label class="form-label">🌍 Langue de la lettre <span id="cl-lang-detected" style="font-size:.72rem;font-weight:600;color:var(--clr-accent);background:var(--clr-accent-light,rgba(99,102,241,.08));padding:2px 8px;border-radius:999px;margin-left:6px">Auto-détectée</span></label>
-            <select class="form-input" id="cl-lang" style="cursor:pointer">
-              <option value="fr">🇫🇷 Français</option>
-              <option value="en">🇬🇧 English</option>
-              <option value="de">🇩🇪 Deutsch</option>
-              <option value="nl">🇳🇱 Nederlands</option>
-              <option value="es">🇪🇸 Español</option>
-              <option value="ar">🇸🇦 العربية</option>
-              <option value="ru">🇷🇺 Русский</option>
-            </select>
-          </div>
+
 
           <!-- Tone -->
           <div class="form-group">

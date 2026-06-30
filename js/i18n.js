@@ -156,7 +156,7 @@ const TRANSLATIONS = {
 };
 
 /* ════════ ENGINE ════════ */
-let currentLang = 'fr';
+let currentLang = 'en';  // Site is always English
 
 function t(key) {
   return TRANSLATIONS[key]?.[currentLang]
@@ -165,11 +165,9 @@ function t(key) {
 }
 
 function detectLanguage() {
-  const saved = localStorage.getItem('cvcraft_lang');
-  if (saved && LANGUAGES[saved]) return saved;
-  const browser = navigator.language?.slice(0,2).toLowerCase();
-  if (browser && LANGUAGES[browser]) return browser;
-  return 'fr';
+  // Site UI is always English — only CV/letter content is multilingual.
+  // Language choice for content is handled separately by cv-lang.js.
+  return 'en';
 }
 
 function setLanguage(lang) {
