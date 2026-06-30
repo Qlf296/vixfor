@@ -114,7 +114,7 @@
     <div class="info-card">
       <span class="icon">🌍</span>
       <p class="label">Langues</p>
-      <p class="value">FR · EN · NL · ES</p>
+      <p class="value">FR · EN · DE · NL · ES · AR · RU</p>
     </div>
     <div class="info-card">
       <span class="icon">🎁</span>
@@ -126,20 +126,20 @@
   <div class="contact-card reveal" id="contact-form-card">
     <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="bot-field" style="display:none">
+      <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label"><span data-i18n="contact_name">Votre nom</span> <span class="required">*</span></label>
-          <input class="form-input" id="contact-name" type="text" placeholder="Sophie Martin" required autocomplete="name">
+          <input class="form-input" id="contact-name" name="name" type="text" placeholder="Sophie Martin" required autocomplete="name">
         </div>
         <div class="form-group">
           <label class="form-label"><span data-i18n="contact_email">Votre email</span> <span class="required">*</span></label>
-          <input class="form-input" id="contact-email" type="email" placeholder="sophie@email.com" required autocomplete="email">
+          <input class="form-input" id="contact-email" name="email" type="email" placeholder="sophie@email.com" required autocomplete="email">
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">Sujet</label>
-        <select class="form-select" id="contact-subject" onchange="handleSubjectChange(this.value)">
+        <select class="form-select" id="contact-subject" name="subject" onchange="handleSubjectChange(this.value)">
           <option value="">Sélectionner un sujet</option>
           <option value="bug">🐛 Bug / Problème technique</option>
           <option value="suggestion">💡 Suggestion / Amélioration</option>
@@ -152,11 +152,11 @@
       <!-- "Autre" detail field — hidden by default -->
       <div class="form-group" id="other-detail-group" style="display:none">
         <label class="form-label">Décrivez votre demande <span class="required">*</span></label>
-        <textarea class="form-textarea" id="contact-other-detail" rows="3" placeholder="Expliquez votre demande en quelques mots..."></textarea>
+        <textarea class="form-textarea" id="contact-other-detail" name="other-detail" rows="3" placeholder="Expliquez votre demande en quelques mots..."></textarea>
       </div>
       <div class="form-group">
         <label class="form-label"><span data-i18n="contact_message">Votre message</span> <span class="required">*</span></label>
-        <textarea class="form-textarea" id="contact-message" rows="5" placeholder="Décrivez votre question ou suggestion en détail..." required></textarea>
+        <textarea class="form-textarea" id="contact-message" name="message" rows="5" placeholder="Décrivez votre question ou suggestion en détail..." required></textarea>
       </div>
       <button type="submit" class="btn btn-primary contact-submit" id="contact-submit">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -177,7 +177,7 @@
     <h2>Questions fréquentes</h2>
     <details>
       <summary>ForgCV est-il vraiment gratuit ?</summary>
-      <p>Oui, 100% gratuit. Aucun abonnement, aucune carte bancaire requise. Toutes les fonctionnalités principales — CV, lettre de motivation, export PDF, 6 templates — sont entièrement gratuites et le resteront.</p>
+      <p>Oui, 100% gratuit. Aucun abonnement, aucune carte bancaire requise. Toutes les fonctionnalités principales — CV, lettre de motivation, export PDF, 7 langues, 6 templates — sont entièrement gratuites et le resteront.</p>
     </details>
     <details>
       <summary>Mes données sont-elles en sécurité ?</summary>
@@ -271,12 +271,10 @@
     </div>
   </div>
 </footer>
+<script src="js/i18n.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/cookie-consent.js" defer></script>
 <script src="js/analytics.js" defer></script>
-
-<script src="js/i18n.js" defer></script>
-<script src="js/main.js" defer></script>
 <script>
   function handleSubjectChange(val) {
     const grp = document.getElementById('other-detail-group');
@@ -313,11 +311,11 @@
       document.getElementById('contact-success').classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     })
-    .catch(function() {
-      // Fallback: show success anyway (form may not be on Netlify yet in dev)
-      document.getElementById('contact-form-card').style.display = 'none';
-      document.getElementById('contact-success').classList.add('show');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    .catch(function(err) {
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Envoyer</span>';
+      btn.disabled = false;
+      if (typeof showToast === 'function') showToast('Erreur lors de l'envoi. Réessayez ou écrivez à vixfor.contact@gmail.com', 'error');
+      console.error('Form submit error:', err);
     });
   });
 </script>
