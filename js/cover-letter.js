@@ -183,7 +183,59 @@ ${d.firstname} ${d.lastname}`
   }
 };
 
-// Fallback for other languages
+CL_TEMPLATES.pt = {
+  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+A/c Departamento de Recursos Humanos
+Candidatura ao cargo: ${d.position || 'em aberto'}
+
+Exmo(a) Senhor(a),
+
+Venho por este meio manifestar o meu interesse pela posição de ${d.position || 'colaborador(a)'} na ${d.company}. ${d.experience ? 'Com ' + d.experience + ', desenvolvi competências sólidas e uma experiência que corresponde precisamente ao perfil que procuram.' : 'Estou convicto(a) de que as minhas competências e motivação representam um contributo valioso para a vossa equipa.'}
+
+${d.motivation ? 'O que mais me atrai nesta oportunidade é: ' + d.motivation + '. Acredito que esta visão está perfeitamente alinhada com os objetivos estratégicos da ' + d.company + '.' : 'A ' + d.company + ' representa para mim uma oportunidade excecional de aplicar as minhas capacidades e contribuir ativamente para o crescimento de uma organização que admiro.'}
+
+Coloco-me ao dispor para uma entrevista, na qual poderei desenvolver em detalhe a minha candidatura e demonstrar o valor que posso trazer à ${d.company}.
+
+Agradeço desde já a atenção dispensada e aguardo o vosso contacto.
+
+Com os melhores cumprimentos,
+${d.firstname || ''} ${d.lastname || ''}
+${d.email ? 'E-mail: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+
+  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company} — Candidatura: ${d.position || 'Cargo em aberto'}
+
+Caro(a) Recrutador(a),
+
+${d.experience ? 'Após ' + d.experience + ', acumulei uma experiência concreta e desenvolvi energia para projetos ambiciosos.' : 'Sou uma pessoa dinâmica, orientada para resultados e com capacidade de adaptação a novos desafios.'} Não me limito a cumprir tarefas — procuro transformar processos, otimizar resultados e criar valor real para a organização.
+
+${d.motivation ? 'O que me motiva nesta oportunidade: ' + d.motivation + '.' : 'A ' + d.company + ' representa o ambiente ideal para crescer e alcançar grandes resultados.'}
+
+Tenho a certeza de que posso fazer a diferença na ${d.company}. Estou disponível para uma reunião quando for mais conveniente.
+
+Com entusiasmo,
+${d.firstname || ''} ${d.lastname || ''}`,
+
+  creative: (d) => `${new Date().toLocaleDateString('pt-PT', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+
+Imagine um(a) ${d.position || 'profissional'} que combina expertise técnica, criatividade e sentido de resultados. É precisamente o que trago para a ${d.company}.
+
+${d.experience ? 'O meu percurso — ' + d.experience + ' — permitiu-me desenvolver uma abordagem singular.' : 'Penso de forma diferente, proponho soluções originais e adapto-me com agilidade a cada novo contexto.'}
+
+${d.motivation ? 'A razão pela qual escolhi a ' + d.company + ': ' + d.motivation : 'A cultura de inovação e a visão de longo prazo da ' + d.company + ' são o ambiente perfeito para eu crescer e contribuir de forma única.'}
+
+Adorava a oportunidade de partilhar ideias. Vamos criar algo excecional juntos.
+
+Com criatividade,
+${d.firstname || ''} ${d.lastname || ''}`
+};
+
+// Fallback for remaining languages
 ['nl','es','ar','ru'].forEach(lang => {
   CL_TEMPLATES[lang] = CL_TEMPLATES.en;
 });
@@ -222,8 +274,8 @@ function generateLetter() {
   document.getElementById('cl-generating')?.classList.remove('hidden');
 
   setTimeout(() => {
-    const langSel = document.getElementById('cl-lang');
-    const lang = langSel ? langSel.value : (typeof currentLang !== 'undefined' ? currentLang : 'fr');
+    const langSel = document.getElementById('letterLanguage') || document.getElementById('cl-lang');
+    const lang = langSel ? langSel.value : (window.letterLang || 'en');
     const templates = CL_TEMPLATES[lang] || CL_TEMPLATES.fr;
     const toneFunc  = templates[d.tone] || templates.professional;
     const letter    = toneFunc(d);

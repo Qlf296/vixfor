@@ -213,7 +213,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   /* ════════════ CLASSIC / ELEGANT / BOLD ════════════ */
   if (tpl === 'classic' || tpl === 'elegant' || tpl === 'bold') {
     return `
-<div class="cv-render cv-render-${tpl}" style="--cv-accent:${accent}">
+<div class="cv-render cv-render-${tpl}" style="--cv-accent:${accent}" dir="${(window.CV_LANG_DICT[window.cvLang||'en']).rtl?'rtl':'ltr'}">
   <header class="cvr-header">
     <div class="cvr-name">${fullName}</div>
     ${d.title ? `<div class="cvr-title">${d.title}</div>` : ''}
@@ -227,12 +227,12 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </header>
   ${d.summary ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title">Profil</h3>
+    <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).profile}</h3>
     <p class="cvr-text">${d.summary}</p>
   </section>` : ''}
   ${d.experiences.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title">Expériences professionnelles</h3>
+    <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).experience}</h3>
     ${d.experiences.map(exp => `
     <div class="cvr-entry">
       <div class="cvr-entry-header">
@@ -247,7 +247,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${d.education.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title">Formation</h3>
+    <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).education}</h3>
     ${d.education.map(edu => `
     <div class="cvr-entry">
       <div class="cvr-entry-header">
@@ -261,12 +261,12 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${skills.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title">Compétences</h3>
+    <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).skills}</h3>
     <div class="cvr-skills">${skillChips(skills)}</div>
   </section>` : ''}
   ${langList.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title">Langues</h3>
+    <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).languages}</h3>
     <div class="cvr-skills">${skillChips(langList, 'cvr-skill cvr-skill-lang')}</div>
   </section>` : ''}
 </div>`;
@@ -275,7 +275,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   /* ════════════ MODERN ════════════ */
   if (tpl === 'modern') {
     return `
-<div class="cv-render cv-render-modern" style="--cv-accent:${accent}">
+<div class="cv-render cv-render-modern" style="--cv-accent:${accent}" dir="${(window.CV_LANG_DICT[window.cvLang||'en']).rtl?'rtl':'ltr'}">
   <aside class="cvr-sidebar">
     <div class="cvr-avatar-lg">${(d.firstname[0]||'?')}${(d.lastname[0]||'')}</div>
     <div class="cvr-name-side">${fullName}</div>
@@ -290,24 +290,24 @@ function buildCVHtml(d, tpl, forPDF = false) {
     </div>
     ${skills.length ? `
     <div class="cvr-sidebar-section">
-      <h4>Compétences</h4>
+      <h4>${(window.CV_LANG_DICT[window.cvLang||'en']).skills}</h4>
       ${skills.map(s=>`<div class="cvr-skill-side">${s}</div>`).join('')}
     </div>` : ''}
     ${langList.length ? `
     <div class="cvr-sidebar-section">
-      <h4>Langues</h4>
+      <h4>${(window.CV_LANG_DICT[window.cvLang||'en']).languages}</h4>
       ${langList.map(l=>`<div class="cvr-skill-side">${l}</div>`).join('')}
     </div>` : ''}
   </aside>
   <main class="cvr-main-content">
     ${d.summary ? `
     <section class="cvr-section">
-      <h3 class="cvr-section-title">Profil</h3>
+      <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).profile}</h3>
       <p class="cvr-text">${d.summary}</p>
     </section>` : ''}
     ${d.experiences.length ? `
     <section class="cvr-section">
-      <h3 class="cvr-section-title">Expériences</h3>
+      <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).experience}</h3>
       ${d.experiences.map(exp => `
       <div class="cvr-entry">
         <div class="cvr-entry-header">
@@ -322,7 +322,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
     </section>` : ''}
     ${d.education.length ? `
     <section class="cvr-section">
-      <h3 class="cvr-section-title">Formation</h3>
+      <h3 class="cvr-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).education}</h3>
       ${d.education.map(edu => `
       <div class="cvr-entry">
         <div class="cvr-entry-header">
@@ -341,7 +341,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   /* ════════════ MINIMAL ════════════ */
   if (tpl === 'minimal') {
     return `
-<div class="cv-render cv-render-minimal" style="--cv-accent:${accent}">
+<div class="cv-render cv-render-minimal" style="--cv-accent:${accent}" dir="${(window.CV_LANG_DICT[window.cvLang||'en']).rtl?'rtl':'ltr'}">
   <header class="cvr-header-minimal">
     <div class="cvr-accent-bar"></div>
     <div class="cvr-name-minimal">${fullName}</div>
@@ -353,7 +353,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   ${d.summary ? `<p class="cvr-summary-minimal">${d.summary}</p>` : ''}
   ${d.experiences.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title-minimal">EXPÉRIENCES</h3>
+    <h3 class="cvr-section-title-minimal">${(window.CV_LANG_DICT[window.cvLang||'en']).experience.toUpperCase()}</h3>
     ${d.experiences.map(exp => `
     <div class="cvr-entry-minimal">
       <div class="cvr-entry-meta">${expDate(exp)}</div>
@@ -365,7 +365,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${d.education.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title-minimal">FORMATION</h3>
+    <h3 class="cvr-section-title-minimal">${(window.CV_LANG_DICT[window.cvLang||'en']).education.toUpperCase()}</h3>
     ${d.education.map(edu => `
     <div class="cvr-entry-minimal">
       <div class="cvr-entry-meta">${edu.end}</div>
@@ -374,12 +374,12 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${skills.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title-minimal">COMPÉTENCES</h3>
+    <h3 class="cvr-section-title-minimal">${(window.CV_LANG_DICT[window.cvLang||'en']).skills.toUpperCase()}</h3>
     <div class="cvr-skills">${skillChips(skills)}</div>
   </section>` : ''}
   ${langList.length ? `
   <section class="cvr-section">
-    <h3 class="cvr-section-title-minimal">LANGUES</h3>
+    <h3 class="cvr-section-title-minimal">${(window.CV_LANG_DICT[window.cvLang||'en']).languages.toUpperCase()}</h3>
     <div class="cvr-skills">${skillChips(langList, 'cvr-skill cvr-skill-lang')}</div>
   </section>` : ''}
 </div>`;
@@ -388,7 +388,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   /* ════════════ EXECUTIVE ════════════ */
   if (tpl === 'executive') {
     return `
-<div class="cv-render cv-render-executive" style="--cv-accent:${accent}">
+<div class="cv-render cv-render-executive" style="--cv-accent:${accent}" dir="${(window.CV_LANG_DICT[window.cvLang||'en']).rtl?'rtl':'ltr'}">
   <header class="cvr-exec-header">
     <div class="cvr-exec-name">${fullName}</div>
     ${d.title ? `<div class="cvr-exec-title">${d.title}</div>` : ''}
@@ -398,12 +398,12 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </header>
   ${d.summary ? `
   <section class="cvr-section cvr-exec-section">
-    <h3 class="cvr-exec-section-title">EXECUTIVE SUMMARY</h3>
+    <h3 class="cvr-exec-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).summary.toUpperCase()}</h3>
     <p class="cvr-text">${d.summary}</p>
   </section>` : ''}
   ${d.experiences.length ? `
   <section class="cvr-section cvr-exec-section">
-    <h3 class="cvr-exec-section-title">PROFESSIONAL EXPERIENCE</h3>
+    <h3 class="cvr-exec-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).experience.toUpperCase()}</h3>
     ${d.experiences.map(exp => `
     <div class="cvr-entry">
       <div class="cvr-entry-header">
@@ -418,7 +418,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${d.education.length ? `
   <section class="cvr-section cvr-exec-section">
-    <h3 class="cvr-exec-section-title">EDUCATION</h3>
+    <h3 class="cvr-exec-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).education.toUpperCase()}</h3>
     ${d.education.map(edu => `
     <div class="cvr-entry">
       <div class="cvr-entry-header">
@@ -432,12 +432,12 @@ function buildCVHtml(d, tpl, forPDF = false) {
   </section>` : ''}
   ${skills.length ? `
   <section class="cvr-section cvr-exec-section">
-    <h3 class="cvr-exec-section-title">KEY SKILLS</h3>
+    <h3 class="cvr-exec-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).skills.toUpperCase()}</h3>
     <div class="cvr-skills">${skillChips(skills)}</div>
   </section>` : ''}
   ${langList.length ? `
   <section class="cvr-section cvr-exec-section">
-    <h3 class="cvr-exec-section-title">LANGUAGES</h3>
+    <h3 class="cvr-exec-section-title">${(window.CV_LANG_DICT[window.cvLang||'en']).languages.toUpperCase()}</h3>
     <div class="cvr-skills">${skillChips(langList, 'cvr-skill cvr-skill-lang')}</div>
   </section>` : ''}
 </div>`;

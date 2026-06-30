@@ -61,32 +61,61 @@
     .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2)}
     .res-link{font-size:0.875rem;color:var(--clr-accent);text-decoration:none;border:1px solid rgba(91,87,255,0.2);padding:6px 14px;border-radius:9999px;background:rgba(91,87,255,0.04);transition:background 0.15s}
     .res-link:hover{background:rgba(91,87,255,0.09)}
-    @media(max-width:640px){.cv-page-hero{padding:2.5rem 0 1.5rem}.cv-hero-chips{gap:6px}}
+    @media(max-width:640px){.cv-page-hero{padding:2.5rem 0 1.5rem}.cv-hero-chips{gap:6px}} }
+
   
-    /* ── Language selector widget ─────────────────────────────── */
-    .lang-picker {
-      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-      padding: 8px 12px;
+    /* ── Content language selector ─────────────────────────────────────────── */
+    .content-lang-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.25rem;
+      padding: 10px 14px;
       background: var(--clr-surface);
       border: 1px solid var(--clr-border);
       border-radius: 12px;
-      margin-bottom: 1.25rem;
     }
-    .lang-picker-label {
-      font-size: .72rem; font-weight: 700; color: var(--clr-text-3);
-      text-transform: uppercase; letter-spacing: .08em; margin-right: 4px;
-      white-space: nowrap;
+    .content-lang-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
     }
-    .lang-picker-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 4px 10px; border-radius: 8px; border: 1.5px solid transparent;
-      background: none; cursor: pointer; font-size: .8rem; font-weight: 600;
-      color: var(--clr-text-2); transition: all .15s ease;
+    .content-lang-inner { flex: 1; min-width: 0; }
+    .content-lang-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--clr-text-3);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 4px;
     }
-    .lang-picker-btn:hover { background: var(--clr-bg); border-color: var(--clr-border); color: var(--clr-text); }
-    .lang-picker-btn.active { background: var(--clr-bg); border-color: var(--clr-accent); color: var(--clr-accent); }
-    .lang-picker-flag { font-size: 1rem; line-height: 1; }
-    @media(max-width:480px) { .lang-picker { gap: 4px; } .lang-picker-btn { padding: 3px 7px; font-size: .75rem; } }
+    .content-lang-select {
+      display: block;
+      width: 100%;
+      padding: 7px 32px 7px 10px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--clr-text);
+      background: var(--clr-bg);
+      border: 1.5px solid var(--clr-border);
+      border-radius: 8px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .content-lang-select:focus {
+      outline: none;
+      border-color: var(--clr-accent);
+      box-shadow: 0 0 0 3px rgba(91,87,255,.12);
+    }
+    .content-lang-hint {
+      font-size: .72rem;
+      color: var(--clr-text-3);
+      margin-top: 2px;
+    }
 
   </style>
 </head>
@@ -187,16 +216,22 @@
               <p>Ces informations apparaîtront en en-tête de votre CV.</p>
             </div>
             <div class="form-section">
-              <div class="lang-picker" id="lang-picker" aria-label="Sélectionner la langue du CV">
-          <span class="lang-picker-label">🌍 Langue</span>
-          <button class="lang-picker-btn" data-lang="fr" onclick="window.__pickLang(this,'fr')" type="button"><span class="lang-picker-flag">🇫🇷</span> FR</button>
-          <button class="lang-picker-btn" data-lang="en" onclick="window.__pickLang(this,'en')" type="button"><span class="lang-picker-flag">🇬🇧</span> EN</button>
-          <button class="lang-picker-btn" data-lang="de" onclick="window.__pickLang(this,'de')" type="button"><span class="lang-picker-flag">🇩🇪</span> DE</button>
-          <button class="lang-picker-btn" data-lang="nl" onclick="window.__pickLang(this,'nl')" type="button"><span class="lang-picker-flag">🇳🇱</span> NL</button>
-          <button class="lang-picker-btn" data-lang="pt" onclick="window.__pickLang(this,'pt')" type="button"><span class="lang-picker-flag">🇵🇹</span> PT</button>
-          <button class="lang-picker-btn" data-lang="es" onclick="window.__pickLang(this,'es')" type="button"><span class="lang-picker-flag">🇪🇸</span> ES</button>
-          <button class="lang-picker-btn" data-lang="ar" onclick="window.__pickLang(this,'ar')" type="button"><span class="lang-picker-flag">🇸🇦</span> AR</button>
-          <button class="lang-picker-btn" data-lang="ru" onclick="window.__pickLang(this,'ru')" type="button"><span class="lang-picker-flag">🇷🇺</span> RU</button>
+        <div class="content-lang-wrap">
+          <span class="content-lang-icon">🌍</span>
+          <div class="content-lang-inner">
+            <div class="content-lang-label">CV language</div>
+            <select id="cvLanguage" class="content-lang-select" aria-label="Select CV language">
+              <option value="en">🇬🇧 English</option>
+              <option value="fr">🇫🇷 Français</option>
+              <option value="nl">🇳🇱 Nederlands</option>
+              <option value="es">🇪🇸 Español</option>
+              <option value="ar">🇸🇦 العربية</option>
+              <option value="ru">🇷🇺 Русский</option>
+              <option value="de">🇩🇪 Deutsch</option>
+              <option value="pt">🇵🇹 Português</option>
+            </select>
+            <div class="content-lang-hint">This only affects your CV language — the site stays in English.</div>
+          </div>
         </div>
         <div class="form-section-label">Identité</div>
               <div class="form-row">
@@ -553,7 +588,8 @@
 </footer>
 <script src="js/i18n.js" defer></script>
 <script src="js/main.js" defer></script>
-<script src="js/cv-generator.js"></script>
+<script src="js/cv-lang.js"></script>
+  <script src="js/cv-generator.js"></script>
 <script src="js/cookie-consent.js" defer></script>
 <script src="js/analytics.js" defer></script>
 
@@ -598,37 +634,6 @@
 @keyframes ripple{to{transform:scale(2.5);opacity:0}}
 </style>
 
-<script>
-  // Language picker — manual override always wins over auto-detection
-  window.__pickLang = function(btn, lang) {
-    if (typeof setLanguage === 'function') setLanguage(lang);
-    // Update active state on all pickers (both CV and CL pages)
-    document.querySelectorAll('.lang-picker-btn').forEach(function(b) {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-  };
-  // Sync picker active state when language changes (auto-detection or external)
-  document.addEventListener('langChange', function(e) {
-    var lang = e.detail && e.detail.lang;
-    document.querySelectorAll('.lang-picker-btn').forEach(function(b) {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-  });
-  // Init active state once i18n is ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Poll until currentLang is available
-    var tries = 0;
-    var check = setInterval(function() {
-      var active = document.documentElement.lang || 'fr';
-      var btns = document.querySelectorAll('.lang-picker-btn');
-      if (btns.length && ++tries < 20) {
-        btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === active); });
-        if (active !== 'fr' || tries > 5) clearInterval(check);
-      } else {
-        clearInterval(check);
-      }
-    }, 100);
-  });
-</script>
+
 </body>
 </html>
