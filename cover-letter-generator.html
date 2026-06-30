@@ -25,6 +25,42 @@
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/cv-generator.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/><rect x='13' y='14.5' width='8' height='1.8' rx='1' fill='rgba(91,87,255,0.6)'/><path d='M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z' fill='%23F59E0B'/></svg>">
+  <style>
+    /* ── Content language selector ─────────────────────────────────────────── */
+    .content-lang-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.25rem;
+      padding: 10px 14px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 12px;
+    }
+    .content-lang-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .content-lang-inner { flex: 1; min-width: 0; }
+    .content-lang-label {
+      font-size: .72rem; font-weight: 700;
+      color: var(--clr-text-3); text-transform: uppercase;
+      letter-spacing: .07em; margin-bottom: 4px;
+    }
+    .content-lang-select {
+      display: block; width: 100%;
+      padding: 7px 32px 7px 10px;
+      font-size: .85rem; font-weight: 600;
+      color: var(--clr-text); background: var(--clr-bg);
+      border: 1.5px solid var(--clr-border); border-radius: 8px;
+      cursor: pointer; appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .content-lang-select:focus {
+      outline: none; border-color: var(--clr-accent);
+      box-shadow: 0 0 0 3px rgba(91,87,255,.12);
+    }
+    .content-lang-hint { font-size: .72rem; color: var(--clr-text-3); margin-top: 2px; }
+  </style>
 </head>
 <body>
 
@@ -66,12 +102,12 @@
       <div style="flex:1;height:2px;background:var(--clr-border);margin:0 .75rem;max-width:80px"></div>
       <div style="display:flex;align-items:center;gap:.5rem">
         <div id="cl-step-badge-2" style="width:28px;height:28px;border-radius:50%;background:var(--clr-border);color:var(--clr-text-2);font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
-        <span id="cl-step-lbl-2" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Ton &amp; poste</span>
+        <span id="cl-step-lbl-2" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Tone &amp; position</span>
       </div>
       <div style="flex:1;height:2px;background:var(--clr-border);margin:0 .75rem;max-width:80px"></div>
       <div style="display:flex;align-items:center;gap:.5rem">
         <div id="cl-step-badge-3" style="width:28px;height:28px;border-radius:50%;background:var(--clr-border);color:var(--clr-text-2);font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
-        <span id="cl-step-lbl-3" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Ta lettre</span>
+        <span id="cl-step-lbl-3" style="font-size:.78rem;font-weight:600;color:var(--clr-text-2)">Your letter</span>
       </div>
     </div>
   </div>
@@ -104,21 +140,21 @@
 <div style="background:var(--clr-bg-2);border-bottom:1px solid var(--clr-border);padding:.875rem 0">
   <div class="container">
     <div style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>100% Gratuit</strong> — sans inscription</div>
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>3 minutes</strong> pour créer</div>
-      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>3 tons</strong> : Pro, Dynamique, Créatif</div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>100% Free</strong> — no sign-up</div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>3 minutes</strong> to create</div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>3 tones</strong>: Pro, Dynamic, Creative</div>
       <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--clr-text-2)"><span style="color:#10B981;font-size:1rem">✓</span> <strong>8 languages</strong> supportées</div>
     </div>
   </div>
 </div>
-<main class="cl-page" id="letter-builder" role="main" aria-label="Générateur de lettre de motivation">
+<main class="cl-page" id="letter-builder" role="main" aria-label="Cover letter generator">
   <div class="container">
 
     <!-- Header -->
     <div style="text-align:center;margin-bottom:3rem" class="reveal">
       <div class="badge badge-accent" style="display:inline-flex;margin-bottom:1rem">✉️ Cover Letter</div>
-      <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:0.75rem" data-i18n="cl_title">Générateur de Lettre de Motivation</h1>
-      <p style="font-size:1.0625rem;color:var(--clr-text-2);max-width:540px;margin:0 auto" data-i18n="cl_sub">Créez une lettre personnalisée et convaincante en quelques clics.</p>
+      <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:0.75rem">Cover Letter Generator</h1>
+      <p style="font-size:1.0625rem;color:var(--clr-text-2);max-width:540px;margin:0 auto">Create a personalised, convincing cover letter in a few clicks.</p>
     </div>
 
     <!-- Form + Result layout -->
@@ -391,39 +427,4 @@
 
 </body>
 </html>
-    /* ── Content language selector ─────────────────────────────────────────── */
-    .content-lang-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1.25rem;
-      padding: 10px 14px;
-      background: var(--clr-surface);
-      border: 1px solid var(--clr-border);
-      border-radius: 12px;
-    }
-    .content-lang-icon { font-size: 1.1rem; flex-shrink: 0; }
-    .content-lang-inner { flex: 1; min-width: 0; }
-    .content-lang-label {
-      font-size: .72rem; font-weight: 700;
-      color: var(--clr-text-3); text-transform: uppercase;
-      letter-spacing: .07em; margin-bottom: 4px;
-    }
-    .content-lang-select {
-      display: block; width: 100%;
-      padding: 7px 32px 7px 10px;
-      font-size: .85rem; font-weight: 600;
-      color: var(--clr-text); background: var(--clr-bg);
-      border: 1.5px solid var(--clr-border); border-radius: 8px;
-      cursor: pointer; appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 10px center;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .content-lang-select:focus {
-      outline: none; border-color: var(--clr-accent);
-      box-shadow: 0 0 0 3px rgba(91,87,255,.12);
-    }
-    .content-lang-hint { font-size: .72rem; color: var(--clr-text-3); margin-top: 2px; }
 
-  

@@ -449,7 +449,7 @@ function buildCVHtml(d, tpl, forPDF = false) {
 </div>`;
   }
 
-  return `<p style="color:#999;padding:1rem">Template non reconnu.</p>`;
+  return `<p style="color:#999;padding:1rem">Unknown template.</p>`;
 }
 
 /* ── Update live preview ── */
