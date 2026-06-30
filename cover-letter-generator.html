@@ -111,7 +111,7 @@
     </div>
   </div>
 </div>
-<main class="cl-page" role="main" aria-label="Générateur de lettre de motivation">
+<main class="cl-page" id="letter-builder" role="main" aria-label="Générateur de lettre de motivation">
   <div class="container">
 
     <!-- Header -->
@@ -127,7 +127,7 @@
       <!-- FORM PANEL -->
       <div class="cl-panel">
         <div class="cl-panel-header">
-          <h2 data-i18n="cl_your_info">Your information</h2>
+          <h2 data-i18n="yourInfo">Your information</h2>
           <p>Fill in the fields to personalise your letter.</p>
         </div>
         <div class="cl-panel-body">
@@ -150,40 +150,40 @@
           </div>
           
           <!-- Applicant info -->
-          <div class="form-section-label">Applicant</div>
+          <div class="form-section-label" data-i18n="applicant">Applicant</div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" data-i18n="cv_firstname">Prénom</label>
+              <label class="form-label" data-i18n="firstName">First name</label>
               <input class="form-input" id="cl-firstname" type="text" placeholder="Sophie">
             </div>
             <div class="form-group">
-              <label class="form-label" data-i18n="cv_lastname">Nom</label>
+              <label class="form-label" data-i18n="lastName">Last name</label>
               <input class="form-input" id="cl-lastname" type="text" placeholder="Martin">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" data-i18n="cv_email">Email</label>
+              <label class="form-label" data-i18n="email">Email</label>
               <input class="form-input" id="cl-email" type="email" placeholder="sophie@email.com">
             </div>
             <div class="form-group">
-              <label class="form-label" data-i18n="cv_phone">Téléphone</label>
+              <label class="form-label" data-i18n="phone">Phone</label>
               <input class="form-input" id="cl-phone" type="tel" placeholder="+33 6 12 34 56 78">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="cv_city">Ville</label>
+            <label class="form-label" data-i18n="city">City</label>
             <input class="form-input" id="cl-city" type="text" placeholder="Paris">
           </div>
 
           <!-- Job info -->
-          <div class="form-section-label" style="margin-top:0.5rem">Target position</div>
+          <div class="form-section-label" style="margin-top:0.5rem" data-i18n="targetPosition">Target position</div>
           <div class="form-group">
-            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_company">Company</span></label>
+            <label class="form-label"><span class="required">*</span> <span data-i18n="company">Company</span></label>
             <input class="form-input" id="cl-company" type="text" placeholder="Google, LVMH, BNP Paribas...">
           </div>
           <div class="form-group">
-            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_position">Target position</span></label>
+            <label class="form-label"><span class="required">*</span> <span data-i18n="position">Target position</span></label>
             <input class="form-input" id="cl-position" type="text" placeholder="Chef de Projet Digital, Développeur Senior...">
           </div>
 
@@ -191,36 +191,36 @@
 
           <!-- Tone -->
           <div class="form-group">
-            <label class="form-label" data-i18n="cl_tone">Letter tone</label>
+            <label class="form-label" data-i18n="tone">Letter tone</label>
             <div class="tone-selector">
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-pro" value="professional" checked>
-                <label class="tone-label" for="tone-pro">🎩 <span data-i18n="cl_tone_pro">Professional</span></label>
+                <label class="tone-label" for="tone-pro">🎩 <span data-i18n="tonePro">Professional</span></label>
               </div>
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-dyn" value="dynamic">
-                <label class="tone-label" for="tone-dyn">⚡ <span data-i18n="cl_tone_dyn">Dynamic</span></label>
+                <label class="tone-label" for="tone-dyn">⚡ <span data-i18n="toneDyn">Dynamic</span></label>
               </div>
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-crea" value="creative">
-                <label class="tone-label" for="tone-crea">✨ <span data-i18n="cl_tone_crea">Creative</span></label>
+                <label class="tone-label" for="tone-crea">✨ <span data-i18n="toneCrea">Creative</span></label>
               </div>
             </div>
           </div>
 
           <!-- Experience & motivation -->
           <div class="form-group">
-            <label class="form-label" data-i18n="cl_experience">Votre expérience (résumé)</label>
+            <label class="form-label" data-i18n="experience">Your experience (summary)</label>
             <textarea class="form-textarea" id="cl-experience" rows="3" placeholder="Ex: 5 ans d'expérience en développement web, spécialisé React et Node.js..."></textarea>
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="cl_motivation">Votre motivation pour ce poste</label>
+            <label class="form-label" data-i18n="motivation">Your motivation for this position</label>
             <textarea class="form-textarea" id="cl-motivation" rows="3" placeholder="Ex: Passionné par l'innovation tech chez Google, je souhaite contribuer à..."></textarea>
           </div>
 
           <button class="btn btn-primary btn-lg btn-block" id="btn-generate" type="button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span data-i18n="cl_generate">Generate my letter</span>
+            <span data-i18n="generate">Generate my letter</span>
           </button>
         </div>
       </div>
@@ -228,16 +228,16 @@
       <!-- RESULT PREVIEW (right column — shows placeholder initially) -->
       <div class="cl-panel cl-result-panel" id="cl-result-preview">
         <div class="cl-panel-header">
-          <h2 data-i18n="cl_your_letter">Votre lettre de motivation</h2>
+          <h2 data-i18n="yourLetter">Your cover letter</h2>
           <p>Edit directly in the text area below.</p>
         </div>
         <div id="cl-placeholder" style="padding:3rem;text-align:center;color:var(--clr-text-3)">
           <div style="font-size:3rem;margin-bottom:1rem">✉️</div>
-          <p style="font-size:0.9375rem">Remplissez le formulaire et cliquez sur <strong style="color:var(--clr-text)">"Générer ma lettre"</strong> pour voir votre lettre apparaître ici.</p>
+          <p style="font-size:0.9375rem" data-i18n="fillForm">Fill in the form and click "Generate my letter" to see your letter appear here.</p>
         </div>
         <div id="cl-generating" class="cl-generating hidden">
           <div style="font-size:2rem;margin-bottom:0.75rem">✨</div>
-          <p style="font-size:0.9375rem;color:var(--clr-text-2);margin-bottom:1rem" data-i18n="cl_generating">Génération en cours...</p>
+          <p style="font-size:0.9375rem;color:var(--clr-text-2);margin-bottom:1rem" data-i18n="generating">Generating...</p>
           <div class="cl-generating-dots">
             <div class="cl-generating-dot"></div>
             <div class="cl-generating-dot"></div>
@@ -248,18 +248,18 @@
         <div class="cl-result-actions hidden" id="cl-result-actions">
           <button class="btn btn-primary" id="btn-cl-download">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="cl_download">Télécharger PDF</span>
+            <span data-i18n="download">Download PDF</span>
           </button>
           <button class="btn btn-secondary" id="btn-cl-copy">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-            <span data-i18n="cl_copy">Copier</span>
+            <span data-i18n="copy">Copy</span>
           </button>
           <button class="btn btn-ghost" id="btn-cl-regenerate">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
-            <span data-i18n="cl_regenerate">Régénérer</span>
+            <span data-i18n="regenerate">Regenerate</span>
           </button>
           <button class="btn btn-ghost" id="btn-cl-new" style="margin-left:auto">
-            <span data-i18n="cl_new">Nouvelle lettre</span>
+            <span data-i18n="newLetter">New letter</span>
           </button>
         </div>
       </div>

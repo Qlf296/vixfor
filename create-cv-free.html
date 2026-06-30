@@ -167,7 +167,7 @@
 </section>
 
 <!-- GENERATOR -->
-<div class="generator-page">
+<div class="generator-page" id="cv-builder">
   <div class="generator-header">
     <div class="container">
       <div class="generator-header-inner">
@@ -179,23 +179,23 @@
           <div class="steps">
             <div class="step active" id="step-indicator-1">
               <div class="step-num">1</div>
-              <div class="step-label">Informations</div>
+              <div class="step-label" data-i18n="stepInfo">Informations</div>
             </div>
             <div class="step-line" id="step-line-1"></div>
             <div class="step" id="step-indicator-2">
               <div class="step-num">2</div>
-              <div class="step-label">Template</div>
+              <div class="step-label" data-i18n="stepTemplate">Template</div>
             </div>
             <div class="step-line" id="step-line-2"></div>
             <div class="step" id="step-indicator-3">
               <div class="step-num">3</div>
-              <div class="step-label">Télécharger</div>
+              <div class="step-label" data-i18n="stepDownload">Download</div>
             </div>
           </div>
         </div>
         <div class="autosave-indicator">
           <div class="autosave-dot"></div>
-          <span>Sauvegardé</span>
+          <span data-i18n="autosaved">Saved</span>
         </div>
       </div>
       <div class="progress-bar" style="margin-top:1rem">
@@ -212,8 +212,8 @@
           <!-- STEP 1 -->
           <div class="cv-step-panel" id="step-panel-1">
             <div class="step-panel-header">
-              <h2>Your personal information</h2>
-              <p>This information will appear at the top of your CV.</p>
+              <h2 data-i18n="personalInfo">Your personal information</h2>
+              <p data-i18n="thisInfo">This information will appear at the top of your CV.</p>
             </div>
             <div class="form-section">
         <div class="content-lang-wrap">
@@ -233,99 +233,99 @@
             <div class="content-lang-hint">This only affects your CV language — the site stays in English.</div>
           </div>
         </div>
-        <div class="form-section-label">Identity</div>
+        <div class="form-section-label" data-i18n="identity">Identity</div>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="cv-firstname">First name <span class="required">*</span></label>
+                  <label class="form-label" for="cv-firstname"><span data-i18n="firstName">First name</span> <span class="required">*</span></label>
                   <input class="form-input" id="cv-firstname" type="text" placeholder="e.g. Marie" autocomplete="given-name">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="cv-lastname">Last name <span class="required">*</span></label>
+                  <label class="form-label" for="cv-lastname"><span data-i18n="lastName">Last name</span> <span class="required">*</span></label>
                   <input class="form-input" id="cv-lastname" type="text" placeholder="e.g. Dupont" autocomplete="family-name">
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label" for="cv-job-title">Job title</label>
+                <label class="form-label" for="cv-job-title" data-i18n="jobTitle">Job title</label>
                 <input class="form-input" id="cv-job-title" type="text" placeholder="e.g. Senior Full-Stack Developer">
               </div>
             </div>
             <div class="form-section">
-              <div class="form-section-label">Contact</div>
+              <div class="form-section-label" data-i18n="contact">Contact</div>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="cv-email">Email</label>
+                  <label class="form-label" for="cv-email" data-i18n="email">Email</label>
                   <input class="form-input" id="cv-email" type="email" placeholder="marie.dupont@gmail.com" autocomplete="email">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="cv-phone">Phone</label>
+                  <label class="form-label" for="cv-phone" data-i18n="phone">Phone</label>
                   <input class="form-input" id="cv-phone" type="tel" placeholder="+31 6 12 34 56 78" autocomplete="tel">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="cv-city">City</label>
+                  <label class="form-label" for="cv-city" data-i18n="city">City</label>
                   <input class="form-input" id="cv-city" type="text" placeholder="Paris, France" autocomplete="address-level2">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="cv-country">Country</label>
+                  <label class="form-label" for="cv-country" data-i18n="country">Country</label>
                   <input class="form-input" id="cv-country" type="text" placeholder="Netherlands" autocomplete="country-name">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="cv-linkedin">LinkedIn</label>
+                  <label class="form-label" for="cv-linkedin" data-i18n="linkedin">LinkedIn</label>
                   <input class="form-input" id="cv-linkedin" type="text" placeholder="linkedin.com/in/marie-dupont">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="cv-website">Website</label>
+                  <label class="form-label" for="cv-website" data-i18n="website">Website</label>
                   <input class="form-input" id="cv-website" type="url" placeholder="https://marie-dupont.fr">
                 </div>
               </div>
             </div>
             <div class="form-section">
-              <div class="form-section-label">Profile</div>
+              <div class="form-section-label" data-i18n="profile">Profile</div>
               <div class="form-group">
-                <label class="form-label" for="cv-summary">Professional summary</label>
+                <label class="form-label" for="cv-summary" data-i18n="professionalSummary">Professional summary</label>
                 <textarea class="form-textarea" id="cv-summary" rows="4" placeholder="Ex: Développeur passionné avec 5 ans d'expérience en React et Node.js..." style="min-height:100px"></textarea>
               </div>
             </div>
             <div class="form-section">
-              <div class="form-section-label">Work experience</div>
+              <div class="form-section-label" data-i18n="workExperience">Work experience</div>
               <div id="experiences-container"></div>
               <button class="btn-add-entry" id="btn-add-exp" type="button">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                + Add experience
+                <span data-i18n="addExperience">+ Add experience</span>
               </button>
             </div>
             <div class="form-section">
-              <div class="form-section-label">Education</div>
+              <div class="form-section-label" data-i18n="education">Education</div>
               <div id="education-container"></div>
               <button class="btn-add-entry" id="btn-add-edu" type="button">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                + Add education
+                <span data-i18n="addEducation">+ Add education</span>
               </button>
             </div>
             <div class="form-section">
-              <div class="form-section-label">Skills & Languages</div>
+              <div class="form-section-label" data-i18n="skillsLanguages">Skills & Languages</div>
               <div class="form-group">
-                <label class="form-label" for="cv-skills">Skills (comma-separated)</label>
+                <label class="form-label" for="cv-skills" data-i18n="skills">Skills (comma-separated)</label>
                 <input class="form-input" id="cv-skills" type="text" placeholder="JavaScript, React, Python, Project Management...>
               </div>
               <div class="form-group">
-                <label class="form-label" for="cv-languages">Languages (comma-separated)</label>
+                <label class="form-label" for="cv-languages" data-i18n="languages">Languages (comma-separated)</label>
                 <input class="form-input" id="cv-languages" type="text" placeholder="Français (natif), Anglais (C1), Espagnol (B2)">
               </div>
             </div>
             <div class="step-actions">
               <span></span>
-              <button class="btn btn-primary btn-lg" id="btn-next-1">Suivant →</button>
+              <button class="btn btn-primary btn-lg" id="btn-next-1" data-i18n="next">Next →</button>
             </div>
           </div>
 
           <!-- STEP 2 -->
           <div class="cv-step-panel hidden" id="step-panel-2">
             <div class="step-panel-header">
-              <h2>Choose your template</h2>
+              <h2 data-i18n="chooseTemplate">Choose your template</h2>
               <p>Sélectionnez le design qui correspond le mieux à votre secteur.</p>
             </div>
             <div class="templates-select-grid">
@@ -355,8 +355,8 @@
               </div>
             </div>
             <div class="step-actions">
-              <button class="btn btn-secondary btn-lg" id="btn-back-2">← Précédent</button>
-              <button class="btn btn-primary btn-lg" id="btn-next-2">Suivant →</button>
+              <button class="btn btn-secondary btn-lg" id="btn-back-2" data-i18n="previous">← Previous</button>
+              <button class="btn btn-primary btn-lg" id="btn-next-2" data-i18n="next">Next →</button>
             </div>
           </div>
 
@@ -397,7 +397,7 @@
               </div>
             </div>
             <div class="step-actions" style="justify-content:flex-start">
-              <button class="btn btn-ghost" id="btn-back-3">← Précédent</button>
+              <button class="btn btn-ghost" id="btn-back-3" data-i18n="previous">← Previous</button>
             </div>
           </div>
         </div>
