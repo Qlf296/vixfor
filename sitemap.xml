@@ -16,10 +16,10 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://forgcv.com/resume-builder</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://forgcv.com/cover-letter-generator</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://forgcv.com/templates</loc>
@@ -27,16 +27,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://forgcv.com/cover-letter</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
 
-  <!-- ── SEO acquisition pages ──────────────────────────────────────────── -->
+  <!-- ── SEO P1 — trafic max ────────────────────────────────────────────── -->
+  <url>
+    <loc>https://forgcv.com/cv-example</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cv-template-free</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cover-letter-example</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://forgcv.com/how-to-write-a-cv</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cv-with-no-experience</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -47,23 +65,69 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- ── SEO P2 — long tail ─────────────────────────────────────────────── -->
   <url>
-    <loc>https://forgcv.com/cv-format-2026</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://forgcv.com/cv-student</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://forgcv.com/cv-with-no-experience</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://forgcv.com/cv-internship</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cv-first-job</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cover-letter-student</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cover-letter-internship</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SEO P3 — authority ─────────────────────────────────────────────── -->
+  <url>
+    <loc>https://forgcv.com/cv-format-2026</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cv-skills-list</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cv-summary-examples</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://forgcv.com/cover-letter-structure</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://forgcv.com/cv-europe-jobs</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- ── Country pages ──────────────────────────────────────────────────── -->

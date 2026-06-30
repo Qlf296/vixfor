@@ -1,5 +1,5 @@
 # ForgCV by Vixfor — Netlify config
-# Updated: 2026-06-29
+# Updated: 2026-06-30
 
 # ── Build ──────────────────────────────────────────────────────────────────
 [build]
@@ -67,30 +67,20 @@
   to     = "/vixfor/index.html"
   status = 200
 
-# ── Clean URLs — Core pages ────────────────────────────────────────────────
+# ── CLUSTER CONVERSION — Core pages ───────────────────────────────────────
 [[redirects]]
   from   = "/create-cv-free"
   to     = "/create-cv-free.html"
   status = 200
 
 [[redirects]]
-  from   = "/pricing"
-  to     = "/create-cv-free.html"
-  status = 301
-
-[[redirects]]
-  from   = "/resume-builder"
-  to     = "/resume-builder.html"
+  from   = "/cover-letter-generator"
+  to     = "/cover-letter-generator.html"
   status = 200
 
 [[redirects]]
   from   = "/templates"
   to     = "/templates.html"
-  status = 200
-
-[[redirects]]
-  from   = "/cover-letter"
-  to     = "/cover-letter.html"
   status = 200
 
 [[redirects]]
@@ -103,10 +93,20 @@
   to     = "/contact.html"
   status = 200
 
-# ── Clean URLs — SEO pages (/seo/ subfolder) ──────────────────────────────
+# ── CLUSTER GUIDES — SEO informationnel (/seo/) ───────────────────────────
 [[redirects]]
   from   = "/cv-examples"
   to     = "/seo/cv-examples.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-example"
+  to     = "/seo/cv-example.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-template-free"
+  to     = "/seo/cv-template-free.html"
   status = 200
 
 [[redirects]]
@@ -159,7 +159,80 @@
   to     = "/seo/cv-europe-jobs.html"
   status = 200
 
-# ── Clean URLs — Legal pages ───────────────────────────────────────────────
+[[redirects]]
+  from   = "/cv-uk"
+  to     = "/seo/cv-uk.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-usa"
+  to     = "/seo/cv-usa.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-canada"
+  to     = "/seo/cv-canada.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-australia"
+  to     = "/seo/cv-australia.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-arabic-countries"
+  to     = "/seo/cv-arabic-countries.html"
+  status = 200
+
+# ── CLUSTER GUIDES — P2 long tail ────────────────────────────────────────
+[[redirects]]
+  from   = "/cv-student"
+  to     = "/seo/cv-student.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-internship"
+  to     = "/seo/cv-internship.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-first-job"
+  to     = "/seo/cv-first-job.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cover-letter-student"
+  to     = "/seo/cover-letter-student.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cover-letter-internship"
+  to     = "/seo/cover-letter-internship.html"
+  status = 200
+
+# ── CLUSTER GUIDES — P3 authority ─────────────────────────────────────────
+[[redirects]]
+  from   = "/cv-skills-list"
+  to     = "/seo/cv-skills-list.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cv-summary-examples"
+  to     = "/seo/cv-summary-examples.html"
+  status = 200
+
+[[redirects]]
+  from   = "/cover-letter-structure"
+  to     = "/seo/cover-letter-structure.html"
+  status = 200
+
+# ── CLUSTER LETTRES — SEO + conversion ────────────────────────────────────
+[[redirects]]
+  from   = "/cover-letter-example"
+  to     = "/seo/cover-letter-example.html"
+  status = 200
+
+# ── Legal pages ───────────────────────────────────────────────────────────
 [[redirects]]
   from   = "/legal/privacy-policy"
   to     = "/legal/privacy-policy.html"
@@ -175,7 +248,7 @@
   to     = "/legal/cookies.html"
   status = 200
 
-# ── Convenience aliases ────────────────────────────────────────────────────
+# ── Aliases — CV ──────────────────────────────────────────────────────────
 [[redirects]]
   from   = "/create-cv"
   to     = "/create-cv-free.html"
@@ -191,12 +264,43 @@
   to     = "/create-cv-free.html"
   status = 200
 
+# ── Aliases — Lettre ──────────────────────────────────────────────────────
+[[redirects]]
+  from   = "/cover-letter"
+  to     = "/cover-letter-generator.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cover-letter.html"
+  to     = "/cover-letter-generator.html"
+  status = 301
+
+[[redirects]]
+  from   = "/lettre-motivation"
+  to     = "/cover-letter-generator.html"
+  status = 301
+
+# ── Legacy 301 (deprecated) ───────────────────────────────────────────────
+[[redirects]]
+  from   = "/resume-builder"
+  to     = "/create-cv-free.html"
+  status = 301
+
+[[redirects]]
+  from   = "/resume-builder.html"
+  to     = "/create-cv-free.html"
+  status = 301
+
 [[redirects]]
   from   = "/builder"
-  to     = "/resume-builder.html"
-  status = 200
+  to     = "/create-cv-free.html"
+  status = 301
 
-# ── Legacy 301 redirects (deprecated pages) ────────────────────────────────
+[[redirects]]
+  from   = "/pricing"
+  to     = "/create-cv-free.html"
+  status = 301
+
 [[redirects]]
   from   = "/cv-generator"
   to     = "/create-cv-free.html"
@@ -227,7 +331,6 @@
   to     = "/seo/how-to-write-a-cv.html"
   status = 301
 
-# ── Redirects for old non-/seo/ SEO page URLs (if indexed) ────────────────
 [[redirects]]
   from   = "/cv-examples.html"
   to     = "/seo/cv-examples.html"
@@ -283,33 +386,6 @@
   to     = "/seo/cv-europe-jobs.html"
   status = 301
 
-# ── Anglophone market SEO pages ────────────────────────────────────────────
-[[redirects]]
-  from   = "/cv-uk"
-  to     = "/seo/cv-uk.html"
-  status = 200
-
-[[redirects]]
-  from   = "/cv-usa"
-  to     = "/seo/cv-usa.html"
-  status = 200
-
-[[redirects]]
-  from   = "/cv-canada"
-  to     = "/seo/cv-canada.html"
-  status = 200
-
-[[redirects]]
-  from   = "/cv-australia"
-  to     = "/seo/cv-australia.html"
-  status = 200
-
-[[redirects]]
-  from   = "/cv-arabic-countries"
-  to     = "/seo/cv-arabic-countries.html"
-  status = 200
-
-# ── Aliases for common search queries ──────────────────────────────────────
 [[redirects]]
   from   = "/cv-uk.html"
   to     = "/seo/cv-uk.html"
