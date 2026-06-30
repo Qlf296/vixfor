@@ -127,7 +127,7 @@ function addExperience(data = {}) {
       </div>
       <div class="form-group">
         <label class="form-label">Poste</label>
-        <input class="form-input exp-position" type="text" placeholder="Ingénieur, Designer..." value="${data.position||''}" oninput="updatePreview()">
+        <input class="form-input exp-position" type="text" placeholder="Engineer, Designer..." value="${data.position||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
@@ -151,7 +151,7 @@ function addExperience(data = {}) {
     </div>
     <div class="form-group">
       <label class="form-label">Description</label>
-      <textarea class="form-textarea exp-desc" placeholder="Décrivez vos réalisations..." oninput="updatePreview()">${data.desc||''}</textarea>
+      <textarea class="form-textarea exp-desc" placeholder="Describe your achievements..." oninput="updatePreview()">${data.desc||''}</textarea>
     </div>`;
   container.appendChild(div);
 }
@@ -173,17 +173,17 @@ function addEducation(data = {}) {
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">École / Université</label>
-        <input class="form-input edu-school" type="text" placeholder="Université Paris-Saclay" value="${data.school||''}" oninput="updatePreview()">
+        <input class="form-input edu-school" type="text" placeholder="University of Amsterdam" value="${data.school||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
         <label class="form-label">Diplôme</label>
-        <input class="form-input edu-degree" type="text" placeholder="Master, Licence, BTS..." value="${data.degree||''}" oninput="updatePreview()">
+        <input class="form-input edu-degree" type="text" placeholder="Master, Bachelor, BSc..." value="${data.degree||''}" oninput="updatePreview()">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">Domaine</label>
-        <input class="form-input edu-field" type="text" placeholder="Informatique, Marketing..." value="${data.field||''}" oninput="updatePreview()">
+        <input class="form-input edu-field" type="text" placeholder="Computer Science, Marketing..." value="${data.field||''}" oninput="updatePreview()">
       </div>
       <div class="form-group">
         <label class="form-label">Année</label>

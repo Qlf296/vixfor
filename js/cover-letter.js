@@ -235,10 +235,209 @@ Com criatividade,
 ${d.firstname || ''} ${d.lastname || ''}`
 };
 
-// Fallback for remaining languages
-['nl','es','ar','ru'].forEach(lang => {
-  CL_TEMPLATES[lang] = CL_TEMPLATES.en;
-});
+/* ── Dutch (NL) ── */
+CL_TEMPLATES.nl = {
+  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+T.a.v. HR-afdeling
+Sollicitatie: ${d.position || 'Vacature'}
+
+Geachte heer/mevrouw,
+
+Hierbij solliciteer ik met veel interesse naar de functie van ${d.position || 'medewerker'} bij ${d.company}. ${d.experience ? 'Met ' + d.experience + ' heb ik robuuste vaardigheden ontwikkeld die naadloos aansluiten bij uw vereisten.' : 'Ik ben ervan overtuigd dat mijn competenties en motivatie een waardevolle aanvulling zijn voor uw team.'}
+
+${d.motivation ? 'Wat mij bijzonder aanspreekt in deze functie is: ' + d.motivation + '.' : d.company + ' spreekt mij aan vanwege de professionele cultuur en de groeimogelijkheden die het biedt.'}
+
+Ik zie graag de mogelijkheid om mijn sollicitatie persoonlijk toe te lichten tijdens een gesprek.
+
+Met vriendelijke groet,
+${d.firstname || ''} ${d.lastname || ''}
+${d.email ? 'E-mail: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+
+  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company} — Sollicitatie: ${d.position || 'Openstaande vacature'}
+
+Beste recruiter,
+
+${d.experience ? 'Na ' + d.experience + ' heb ik concrete expertise opgebouwd en energie ontwikkeld voor ambitieuze projecten.' : 'Ik ben gedreven, resultaatgericht en pas me snel aan nieuwe uitdagingen aan.'} Ik beperk mezelf niet tot het uitvoeren van taken — ik zoek naar manieren om processen te verbeteren en echte waarde te creëren.
+
+${d.motivation ? 'Wat mij motiveert: ' + d.motivation + '.' : d.company + ' is de ideale omgeving om te groeien en geweldige resultaten te behalen.'}
+
+Ik ben ervan overtuigd dat ik het verschil kan maken bij ${d.company}. Ik sta open voor een gesprek.
+
+Met enthousiaste groet,
+${d.firstname || ''} ${d.lastname || ''}`,
+
+  creative: (d) => `${new Date().toLocaleDateString('nl-NL', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+
+Stel je een ${d.position || 'professional'} voor die technische expertise, creativiteit en resultaatgerichtheid combineert. Dat is precies wat ik bij ${d.company} kom brengen.
+
+${d.experience ? 'Mijn traject — ' + d.experience + ' — heeft mij een unieke aanpak gegeven.' : 'Ik denk anders, bied originele oplossingen en pas me flexibel aan elke nieuwe context aan.'}
+
+${d.motivation ? 'De reden waarom ik kies voor ' + d.company + ': ' + d.motivation : 'De innovatiecultuur van ' + d.company + ' is de perfecte omgeving voor mij om te excelleren.'}
+
+Ik kijk uit naar de kans om ideeën te delen. Laten we samen iets uitzonderlijks creëren.
+
+Met creatieve groet,
+${d.firstname || ''} ${d.lastname || ''}`
+};
+
+/* ── Spanish (ES) ── */
+CL_TEMPLATES.es = {
+  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+A/A Departamento de Recursos Humanos
+Candidatura al puesto: ${d.position || 'Vacante disponible'}
+
+Estimado/a señor/a:
+
+Me dirijo a ustedes para expresar mi interés por el puesto de ${d.position || 'colaborador/a'} en ${d.company}. ${d.experience ? 'Con ' + d.experience + ', he desarrollado competencias sólidas que se corresponden con el perfil que buscan.' : 'Estoy convencido/a de que mis habilidades y motivación representan un valor añadido para su equipo.'}
+
+${d.motivation ? 'Lo que me atrae especialmente de esta oportunidad es: ' + d.motivation + '.' : d.company + ' representa para mí una oportunidad excepcional de aplicar mis capacidades y contribuir activamente al crecimiento de una organización que admiro.'}
+
+Quedo a su disposición para una entrevista en la que podré desarrollar en detalle mi candidatura.
+
+Atentamente,
+${d.firstname || ''} ${d.lastname || ''}
+${d.email ? 'Correo: ' + d.email : ''}${d.phone ? ' | Tel: ' + d.phone : ''}`,
+
+  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company} — Candidatura: ${d.position || 'Puesto disponible'}
+
+Estimado/a responsable de selección:
+
+${d.experience ? 'Tras ' + d.experience + ', he acumulado experiencia concreta y desarrollado energía para proyectos ambiciosos.' : 'Soy una persona dinámica, orientada a resultados y con capacidad de adaptación.'} No me limito a cumplir tareas — busco transformar procesos, optimizar resultados y crear valor real.
+
+${d.motivation ? 'Lo que me motiva de esta oportunidad: ' + d.motivation + '.' : d.company + ' representa el entorno ideal para crecer y alcanzar grandes resultados.'}
+
+Estoy convencido/a de que puedo hacer la diferencia en ${d.company}. Estoy disponible para una reunión.
+
+Un saludo cordial,
+${d.firstname || ''} ${d.lastname || ''}`,
+
+  creative: (d) => `${new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+
+Imagina un/a ${d.position || 'profesional'} que combina experiencia técnica, creatividad y sentido de los resultados. Eso es exactamente lo que traigo a ${d.company}.
+
+${d.experience ? 'Mi trayectoria — ' + d.experience + ' — me ha permitido desarrollar un enfoque singular.' : 'Pienso diferente, propongo soluciones originales y me adapto con agilidad a cada nuevo contexto.'}
+
+${d.motivation ? 'La razón por la que elijo ' + d.company + ': ' + d.motivation : 'La cultura de innovación de ' + d.company + ' es el entorno perfecto para que yo crezca y contribuya de forma única.'}
+
+Me encantaría la oportunidad de compartir ideas. Creemos algo excepcional juntos.
+
+Con entusiasmo creativo,
+${d.firstname || ''} ${d.lastname || ''}`
+};
+
+/* ── Arabic (AR) ── */
+CL_TEMPLATES.ar = {
+  professional: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+إلى: قسم الموارد البشرية
+طلب التوظيف: ${d.position || 'الوظيفة المطلوبة'}
+
+السادة الكرام،
+
+أتقدم إليكم بطلب الانضمام إلى فريق ${d.company} في منصب ${d.position || 'موظف/ة'}. ${d.experience ? 'بفضل ' + d.experience + '، طورت مهارات متينة وخبرات تتوافق تماماً مع المتطلبات التي تبحثون عنها.' : 'أنا مقتنع/ة بأن كفاءاتي ودوافعي ستُشكّل إضافة قيّمة لفريقكم.'}
+
+${d.motivation ? 'ما يجذبني بشكل خاص في هذه الفرصة هو: ' + d.motivation + '.' : 'تُمثّل ' + d.company + ' بالنسبة لي فرصة استثنائية لتطبيق قدراتي والمساهمة في نمو منظمة أُكنّ لها كثيراً من الإعجاب.'}
+
+أضع نفسي رهن إشارتكم لإجراء مقابلة أُفصّل فيها ترشيحي.
+
+مع خالص الاحترام والتقدير،
+${d.firstname || ''} ${d.lastname || ''}
+${d.email ? 'البريد الإلكتروني: ' + d.email : ''}${d.phone ? ' | الهاتف: ' + d.phone : ''}`,
+
+  dynamic: (d) => `${d.city ? d.city + '، ' + new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company} — طلب التوظيف: ${d.position || 'وظيفة شاغرة'}
+
+إلى المسؤول/ة عن التوظيف،
+
+${d.experience ? 'بعد ' + d.experience + '، راكمت خبرة عملية وطوّرت طاقة متجددة للمشاريع الطموحة.' : 'أنا شخص ديناميكي موجَّه نحو النتائج وقادر على التكيّف مع كل تحدٍّ جديد.'} لا أكتفي بأداء المهام — أسعى إلى تحويل العمليات وتحسين النتائج وخلق قيمة حقيقية.
+
+${d.motivation ? 'ما يحفزني في هذه الفرصة: ' + d.motivation + '.' : d.company + ' هي البيئة المثالية للنمو وتحقيق نتائج استثنائية.'}
+
+أنا واثق/ة من أنني أستطيع إحداث فارق في ${d.company}. أنا متاح/ة لمقابلة في أقرب وقت.
+
+مع تحياتي،
+${d.firstname || ''} ${d.lastname || ''}`,
+
+  creative: (d) => `${new Date().toLocaleDateString('ar-SA', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+
+تخيّل/ي ${d.position || 'محترفاً'} يجمع بين الخبرة التقنية والإبداع والحس بالنتائج. هذا بالضبط ما أُقدّمه لـ${d.company}.
+
+${d.experience ? 'مسيرتي المهنية — ' + d.experience + ' — منحتني رؤية فريدة ومنهجية مميزة.' : 'أفكر بشكل مختلف، وأقترح حلولاً مبتكرة، وأتكيّف بمرونة مع كل سياق جديد.'}
+
+${d.motivation ? 'السبب الذي يجعلني أختار ' + d.company + ': ' + d.motivation : 'ثقافة الابتكار في ' + d.company + ' هي البيئة المثالية لي لأنمو وأُسهم بشكل فريد.'}
+
+أودّ أن تُتاح لي الفرصة لتبادل الأفكار. لنصنع شيئاً استثنائياً معاً.
+
+مع إبداعي التحياتي،
+${d.firstname || ''} ${d.lastname || ''}`
+};
+
+/* ── Russian (RU) ── */
+CL_TEMPLATES.ru = {
+  professional: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+Отдел кадров / HR
+Заявка на должность: ${d.position || 'открытая вакансия'}
+
+Уважаемые коллеги,
+
+Настоящим выражаю искреннюю заинтересованность в должности ${d.position || 'специалиста'} в компании ${d.company}. ${d.experience ? 'Имея ' + d.experience + ', я развил(а) устойчивые компетенции, в полной мере соответствующие вашим требованиям.' : 'Убеждён(а), что мои навыки и мотивация станут ценным вкладом в вашу команду.'}
+
+${d.motivation ? 'Что особенно привлекает меня в этой возможности: ' + d.motivation + '.' : d.company + ' представляет для меня исключительную возможность применить свои способности и активно участвовать в развитии организации, которой я искренне восхищаюсь.'}
+
+Готов(а) к собеседованию, на котором смогу подробнее рассказать о своей кандидатуре.
+
+С уважением,
+${d.firstname || ''} ${d.lastname || ''}
+${d.email ? 'Email: ' + d.email : ''}${d.phone ? ' | Тел: ' + d.phone : ''}`,
+
+  dynamic: (d) => `${d.city ? d.city + ', ' + new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'}) : new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company} — Заявка: ${d.position || 'открытая вакансия'}
+
+Уважаемый(ая) рекрутер,
+
+${d.experience ? 'За ' + d.experience + ' я накопил(а) реальный опыт и развил(а) энергию для амбициозных проектов.' : 'Я динамичный, ориентированный на результат специалист, способный адаптироваться к любым вызовам.'} Я не ограничиваюсь выполнением задач — я стремлюсь трансформировать процессы, оптимизировать результаты и создавать реальную ценность.
+
+${d.motivation ? 'Что мотивирует меня в этой возможности: ' + d.motivation + '.' : d.company + ' — идеальная среда для роста и достижения выдающихся результатов.'}
+
+Уверен(а), что смогу изменить ситуацию к лучшему в ${d.company}. Готов(а) встретиться в удобное время.
+
+С уважением и энтузиазмом,
+${d.firstname || ''} ${d.lastname || ''}`,
+
+  creative: (d) => `${new Date().toLocaleDateString('ru-RU', {day:'numeric',month:'long',year:'numeric'})}
+
+${d.company}
+
+Представьте ${d.position || 'специалиста'}, сочетающего техническую экспертизу, творческий подход и нацеленность на результат. Именно это я готов(а) предложить ${d.company}.
+
+${d.experience ? 'Мой путь — ' + d.experience + ' — позволил мне выработать уникальный подход.' : 'Я мыслю нестандартно, предлагаю оригинальные решения и легко адаптируюсь к новым контекстам.'}
+
+${d.motivation ? 'Причина, по которой я выбираю ' + d.company + ': ' + d.motivation : 'Культура инноваций ' + d.company + ' — идеальная среда, где я смогу расти и вносить уникальный вклад.'}
+
+С удовольствием обсужу идеи на встрече. Давайте создадим что-то исключительное вместе.
+
+С творческим приветом,
+${d.firstname || ''} ${d.lastname || ''}`
+};
 
 /* ── Generate ── */
 function generateLetter() {

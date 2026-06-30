@@ -35,22 +35,22 @@
     </a>
     <div class="nav-links">
       <a href="create-cv-free.html">Créer un CV</a>
-      <a href="cover-letter-generator.html" style="color:var(--clr-accent);font-weight:600">✉️ Lettre</a>
+      <a href="cover-letter-generator.html" style="color:var(--clr-accent);font-weight:600">✉️ Cover Letter</a>
       <a href="templates.html">Templates</a>
     </div>
     <div class="nav-right">
-      <a href="create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
+      <a href="create-cv-free.html" class="btn btn-primary btn-sm">Get Started</a>
     </div>
     <button class="nav-hamburger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile">
   <a href="index.html">Accueil</a>
-  <a href="create-cv-free.html">Créer un CV gratuit</a>
-  <a href="cover-letter-generator.html" style="color:var(--clr-accent);font-weight:600">✉️ Lettre</a>
+  <a href="create-cv-free.html">Free CV Builder</a>
+  <a href="cover-letter-generator.html" style="color:var(--clr-accent);font-weight:600">✉️ Cover Letter</a>
   <a href="templates.html">Templates</a>
   <a href="cover-letter-generator.html">Lettre de motivation</a>
-  <a href="about.html">À propos</a>
+  <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </div>
 
@@ -61,7 +61,7 @@
     <div style="display:flex;align-items:center;justify-content:center;gap:0;max-width:480px;margin:0 auto">
       <div style="display:flex;align-items:center;gap:.5rem">
         <div id="cl-step-badge-1" style="width:28px;height:28px;border-radius:50%;background:var(--clr-accent);color:#fff;font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
-        <span style="font-size:.78rem;font-weight:700;color:var(--clr-accent)">Vos infos</span>
+        <span style="font-size:.78rem;font-weight:700;color:var(--clr-accent)">Your info</span>
       </div>
       <div style="flex:1;height:2px;background:var(--clr-border);margin:0 .75rem;max-width:80px"></div>
       <div style="display:flex;align-items:center;gap:.5rem">
@@ -127,8 +127,8 @@
       <!-- FORM PANEL -->
       <div class="cl-panel">
         <div class="cl-panel-header">
-          <h2 data-i18n="cl_your_info">Vos informations</h2>
-          <p>Remplissez les champs pour personnaliser votre lettre.</p>
+          <h2 data-i18n="cl_your_info">Your information</h2>
+          <p>Fill in the fields to personalise your letter.</p>
         </div>
         <div class="cl-panel-body">
           <div class="content-lang-wrap">
@@ -150,7 +150,7 @@
           </div>
           
           <!-- Applicant info -->
-          <div class="form-section-label">Candidat</div>
+          <div class="form-section-label">Applicant</div>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" data-i18n="cv_firstname">Prénom</label>
@@ -177,13 +177,13 @@
           </div>
 
           <!-- Job info -->
-          <div class="form-section-label" style="margin-top:0.5rem">Poste visé</div>
+          <div class="form-section-label" style="margin-top:0.5rem">Target position</div>
           <div class="form-group">
-            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_company">Entreprise</span></label>
+            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_company">Company</span></label>
             <input class="form-input" id="cl-company" type="text" placeholder="Google, LVMH, BNP Paribas...">
           </div>
           <div class="form-group">
-            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_position">Poste visé</span></label>
+            <label class="form-label"><span class="required">*</span> <span data-i18n="cl_position">Target position</span></label>
             <input class="form-input" id="cl-position" type="text" placeholder="Chef de Projet Digital, Développeur Senior...">
           </div>
 
@@ -191,19 +191,19 @@
 
           <!-- Tone -->
           <div class="form-group">
-            <label class="form-label" data-i18n="cl_tone">Ton de la lettre</label>
+            <label class="form-label" data-i18n="cl_tone">Letter tone</label>
             <div class="tone-selector">
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-pro" value="professional" checked>
-                <label class="tone-label" for="tone-pro">🎩 <span data-i18n="cl_tone_pro">Professionnel</span></label>
+                <label class="tone-label" for="tone-pro">🎩 <span data-i18n="cl_tone_pro">Professional</span></label>
               </div>
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-dyn" value="dynamic">
-                <label class="tone-label" for="tone-dyn">⚡ <span data-i18n="cl_tone_dyn">Dynamique</span></label>
+                <label class="tone-label" for="tone-dyn">⚡ <span data-i18n="cl_tone_dyn">Dynamic</span></label>
               </div>
               <div class="tone-option">
                 <input type="radio" name="cl-tone" id="tone-crea" value="creative">
-                <label class="tone-label" for="tone-crea">✨ <span data-i18n="cl_tone_crea">Créatif</span></label>
+                <label class="tone-label" for="tone-crea">✨ <span data-i18n="cl_tone_crea">Creative</span></label>
               </div>
             </div>
           </div>
@@ -220,7 +220,7 @@
 
           <button class="btn btn-primary btn-lg btn-block" id="btn-generate" type="button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span data-i18n="cl_generate">Générer ma lettre</span>
+            <span data-i18n="cl_generate">Generate my letter</span>
           </button>
         </div>
       </div>
@@ -229,7 +229,7 @@
       <div class="cl-panel cl-result-panel" id="cl-result-preview">
         <div class="cl-panel-header">
           <h2 data-i18n="cl_your_letter">Votre lettre de motivation</h2>
-          <p>Modifiable directement dans la zone de texte ci-dessous.</p>
+          <p>Edit directly in the text area below.</p>
         </div>
         <div id="cl-placeholder" style="padding:3rem;text-align:center;color:var(--clr-text-3)">
           <div style="font-size:3rem;margin-bottom:1rem">✉️</div>
@@ -271,7 +271,7 @@
 <section style="padding:3.5rem 0;border-top:1px solid var(--clr-border)">
   <div class="container" style="max-width:780px">
     <div style="text-align:center;margin-bottom:2.25rem">
-      <h2 style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Conseils pour une lettre qui convainc</h2>
+      <h2 style="font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Tips for a convincing letter</h2>
       <p style="font-size:.9rem;color:var(--clr-text-2);margin-top:.5rem">Les recruteurs lisent en moyenne 30 secondes. Faites compter chaque mot.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem">
@@ -321,33 +321,33 @@
         <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
           <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:36px;width:auto">
         </a>
-        <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Créez votre CV professionnel en 2 minutes. 100% gratuit, sans inscription.</p>
+        <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Build your professional CV in 2 minutes. 100% free, no sign-up.</p>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap">
           <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🔒 GDPR</span>
-          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">⚡ Gratuit</span>
-          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🌍 7 langues</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">⚡ Free</span>
+          <span style="font-size:.68rem;font-weight:600;color:var(--clr-text-3);background:var(--clr-surface);border:1px solid var(--clr-border);padding:3px 9px;border-radius:9999px">🌍 8 Languages</span>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Produit</h4>
+        <h4>Product</h4>
         <div class="footer-links">
-          <a href="create-cv-free.html">Créer un CV gratuit</a>
+          <a href="create-cv-free.html">Free CV Builder</a>
           <a href="cover-letter-generator.html">Lettre de motivation</a>
-          <a href="templates.html">Templates ATS</a>
+          <a href="templates.html">ATS Templates</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Guides</h4>
         <div class="footer-links">
-          <a href="seo/how-to-write-a-cv.html">Écrire un CV</a>
-          <a href="seo/cv-examples.html">Exemples de CV</a>
-          <a href="seo/cv-format-2026.html">Format 2026</a>
-          <a href="seo/cv-with-no-experience.html">CV sans expérience</a>
-          <a href="seo/cv-europe-jobs.html">Jobs en Europe</a>
+          <a href="seo/how-to-write-a-cv.html">Write a CV</a>
+          <a href="seo/cv-examples.html">CV Examples</a>
+          <a href="seo/cv-format-2026.html">2026 Format</a>
+          <a href="seo/cv-with-no-experience.html">CV with No Experience</a>
+          <a href="seo/cv-europe-jobs.html">Jobs in Europe</a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Par pays</h4>
+        <h4>By Country</h4>
         <div class="footer-links">
           <a href="seo/cv-france.html">🇫🇷 France</a>
           <a href="seo/cv-netherlands.html">🇳🇱 Pays-Bas</a>
@@ -358,23 +358,23 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Entreprise</h4>
+        <h4>Company</h4>
         <div class="footer-links">
-          <a href="about.html">À propos</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="vixfor/index.html">Vixfor</a>
-          <a href="legal/mentions-legales.html">Mentions légales</a>
-          <a href="legal/privacy-policy.html">Confidentialité</a>
-          <a href="legal/terms-of-service.html">CGU</a>
+          <a href="legal/mentions-legales.html">Legal Notice</a>
+          <a href="legal/privacy-policy.html">Privacy</a>
+          <a href="legal/terms-of-service.html">Terms</a>
           <a href="legal/cookies.html">Cookies</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 ForgCV by <a href="vixfor/index.html" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. Tous droits réservés.</span>
+      <span>© 2026 ForgCV by <a href="vixfor/index.html" style="color:#6366F1;text-decoration:none;font-weight:600">Vixfor</a>. All rights reserved.</span>
       <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
-        <a href="legal/privacy-policy.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Confidentialité</a>
-        <a href="legal/terms-of-service.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">CGU</a>
+        <a href="legal/privacy-policy.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Privacy</a>
+        <a href="legal/terms-of-service.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Terms</a>
         <a href="legal/cookies.html" style="font-size:.75rem;color:var(--clr-text-3);text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-text-3)'">Cookies</a>
       </div>
     </div>
