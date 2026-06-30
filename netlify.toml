@@ -102,6 +102,11 @@
   to     = "/vixfor/index.html"
   status = 200
 
+[[redirects]]
+  from   = "/forgcv-pro"
+  to     = "/forgcv-pro.html"
+  status = 200
+
 # ── CLUSTER CONVERSION — Core pages ───────────────────────────────────────
 [[redirects]]
   from   = "/create-cv-free"

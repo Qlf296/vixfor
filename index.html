@@ -61,6 +61,7 @@
       <a href="cover-letter-generator.html" style="color:var(--clr-accent);font-weight:600">✉️ Lettre</a>
       <a href="templates.html">Templates</a>
       <a href="seo/how-to-write-a-cv.html">Guides</a>
+      <a href="forgcv-pro.html" style="color:#F59E0B;font-weight:700;display:inline-flex;align-items:center;gap:3px"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Pro</a>
     </div>
     <div class="nav-right">
       <a href="create-cv-free.html" class="btn btn-primary btn-sm">Commencer</a>
@@ -75,6 +76,7 @@
   <a href="templates.html">Templates</a>
   <a href="about.html">À propos</a>
   <a href="contact.html">Contact</a>
+  <a href="forgcv-pro.html" style="color:#F59E0B;font-weight:700">⭐ ForgCV Pro</a>
 </div>
 
 <main role="main" aria-label="Contenu principal">
@@ -201,18 +203,40 @@
       <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--clr-accent);margin-bottom:.5rem">Que veux-tu créer ?</p>
       <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-.03em">Commence en 30 secondes</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:680px;margin:0 auto">
-      <a href="create-cv-free.html" style="display:block;padding:1.75rem;background:var(--clr-bg);border:2px solid rgba(91,87,255,0.2);border-radius:18px;text-decoration:none;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(91,87,255,0.6)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(91,87,255,0.2)';this.style.transform='none'">
-        <div style="font-size:2.5rem;margin-bottom:.75rem">📄</div>
-        <div style="font-size:1.05rem;font-weight:800;color:var(--clr-text);margin-bottom:.5rem">Créer un CV</div>
-        <div style="font-size:.8rem;color:var(--clr-text-2);line-height:1.55;margin-bottom:1rem">Rapide · Gratuit · Modèles modernes<br>Compatible ATS · Export PDF HD</div>
-        <span style="display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:#fff;background:var(--clr-accent);padding:8px 18px;border-radius:9999px">Commencer →</span>
+    <style>
+      .qstart-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:680px;margin:0 auto}
+      .qstart-card{display:block;padding:1.75rem;border-radius:18px;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,border-color .25s ease}
+      .qstart-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .25s ease;pointer-events:none;border-radius:18px}
+      .qstart-card-cv{background:var(--clr-bg);border:2px solid rgba(91,87,255,0.2)}
+      .qstart-card-cv::before{background:radial-gradient(ellipse 120% 80% at 50% 0%,rgba(91,87,255,0.07) 0%,transparent 70%)}
+      .qstart-card-cl{background:var(--clr-bg);border:2px solid rgba(99,102,241,0.2)}
+      .qstart-card-cl::before{background:radial-gradient(ellipse 120% 80% at 50% 0%,rgba(124,58,237,0.07) 0%,transparent 70%)}
+      .qstart-card:hover{transform:translateY(-6px)}
+      .qstart-card-cv:hover{border-color:rgba(91,87,255,0.7);box-shadow:0 16px 40px rgba(91,87,255,0.18),0 4px 12px rgba(91,87,255,0.1)}
+      .qstart-card-cl:hover{border-color:rgba(124,58,237,0.7);box-shadow:0 16px 40px rgba(124,58,237,0.18),0 4px 12px rgba(124,58,237,0.1)}
+      .qstart-card:hover::before{opacity:1}
+      .qstart-icon{font-size:2.5rem;margin-bottom:.75rem;display:block;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+      .qstart-card:hover .qstart-icon{transform:scale(1.15)}
+      .qstart-title{font-size:1.05rem;font-weight:800;color:var(--clr-text);margin-bottom:.5rem}
+      .qstart-desc{font-size:.8rem;color:var(--clr-text-2);line-height:1.55;margin-bottom:1rem}
+      .qstart-btn-cv{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:#fff;background:var(--clr-accent);padding:9px 20px;border-radius:9999px;transition:background .2s,box-shadow .2s,transform .2s}
+      .qstart-btn-cl{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--clr-accent);background:rgba(99,102,241,0.08);padding:9px 20px;border-radius:9999px;border:1.5px solid rgba(99,102,241,0.3);transition:background .2s,box-shadow .2s,transform .2s,color .2s}
+      .qstart-card-cv:hover .qstart-btn-cv{background:linear-gradient(135deg,#5B57FF,#7C3AED);box-shadow:0 6px 20px rgba(91,87,255,0.4);transform:scale(1.04)}
+      .qstart-card-cl:hover .qstart-btn-cl{background:rgba(99,102,241,0.16);border-color:rgba(99,102,241,0.6);box-shadow:0 6px 20px rgba(124,58,237,0.25);transform:scale(1.04)}
+      @media(max-width:480px){.qstart-grid{grid-template-columns:1fr}.qstart-card{padding:1.5rem}}
+    </style>
+    <div class="qstart-grid">
+      <a href="create-cv-free.html" class="qstart-card qstart-card-cv">
+        <span class="qstart-icon">📄</span>
+        <div class="qstart-title">Créer un CV</div>
+        <div class="qstart-desc">Rapide · Gratuit · Modèles modernes<br>Compatible ATS · Export PDF HD</div>
+        <span class="qstart-btn-cv">Commencer →</span>
       </a>
-      <a href="cover-letter-generator.html" style="display:block;padding:1.75rem;background:var(--clr-bg);border:2px solid rgba(99,102,241,0.2);border-radius:18px;text-decoration:none;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(99,102,241,0.6)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(99,102,241,0.2)';this.style.transform='none'">
-        <div style="font-size:2.5rem;margin-bottom:.75rem">✉️</div>
-        <div style="font-size:1.05rem;font-weight:800;color:var(--clr-text);margin-bottom:.5rem">Créer une lettre</div>
-        <div style="font-size:.8rem;color:var(--clr-text-2);line-height:1.55;margin-bottom:1rem">Complète ton CV · Exemples inclus<br>3 styles · Génération rapide</div>
-        <span style="display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--clr-accent);background:rgba(99,102,241,0.1);padding:8px 18px;border-radius:9999px;border:1.5px solid rgba(99,102,241,0.3)">Générer →</span>
+      <a href="cover-letter-generator.html" class="qstart-card qstart-card-cl">
+        <span class="qstart-icon">✉️</span>
+        <div class="qstart-title">Créer une lettre</div>
+        <div class="qstart-desc">Complète ton CV · Exemples inclus<br>3 styles · Génération rapide</div>
+        <span class="qstart-btn-cl">Générer →</span>
       </a>
     </div>
   </div>
@@ -495,8 +519,14 @@
       <h2 data-i18n="hero_title_1">Décrochez le job de vos rêves.</h2>
       <p data-i18n="hero_subtitle">Créez un CV professionnel en 5 minutes. 6 templates, prévisualisation en direct, export PDF gratuit.</p>
       <div class="cta-actions">
-        <a href="create-cv-free.html" class="btn btn-white btn-xl" data-i18n="hero_cta">Créer mon CV gratuitement</a>
-        <a href="cover-letter-generator.html" class="btn btn-outline-white btn-xl" data-i18n="feat_5">Lettre de Motivation</a>
+        <a href="create-cv-free.html" class="btn btn-white btn-xl">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span data-i18n="hero_cta">Créer mon CV gratuitement</span>
+        </a>
+        <a href="cover-letter-generator.html" class="btn btn-white btn-xl">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-i18n="cta_letter">Créer ma lettre gratuitement</span>
+        </a>
       </div>
       <p style="margin-top:1.5rem;font-size:0.8125rem;color:rgba(255,255,255,0.55)">100% gratuit · Aucune inscription requise · ForgCV by <a href="vixfor/index.html" style="color:rgba(255,255,255,0.75);font-weight:600;text-decoration:none">Vixfor</a></p>
     </div>

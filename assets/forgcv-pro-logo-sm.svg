@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 40" fill="none">
+  <defs>
+    <linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B57FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7C843"/>
+      <stop offset="100%" stop-color="#E6A817"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <rect x="1" y="1" width="30" height="38" rx="6" fill="url(#pg3)"/>
+  <rect x="7" y="8" width="18" height="2.5" rx="1.25" fill="white"/>
+  <rect x="7" y="14" width="14" height="2" rx="1" fill="rgba(255,255,255,0.7)"/>
+  <rect x="7" y="19" width="16" height="2" rx="1" fill="rgba(255,255,255,0.7)"/>
+  <rect x="7" y="24" width="11" height="2" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <path d="M23 28.5 L24.2 25 L25.4 28.5 L29 28.5 L26.2 30.5 L27.2 34 L24.2 32 L21.2 34 L22.2 30.5 L19.4 28.5 Z" fill="url(#gold3)"/>
+  <!-- Wordmark -->
+  <text x="40" y="25" font-family="'Inter', system-ui, sans-serif" font-size="17" font-weight="900" letter-spacing="-0.04em" fill="#0F1225">Forg<tspan fill="#5B57FF">CV</tspan></text>
+  <!-- PRO badge -->
+  <rect x="91" y="8" width="32" height="15" rx="5" fill="url(#gold3)"/>
+  <text x="96.5" y="18.5" font-family="'Inter', system-ui, sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.1em" fill="#7C2D00">PRO</text>
+</svg>

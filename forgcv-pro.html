@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgCV Pro — CV Premium, Illimité & Sans Pub | by Vixfor</title>
+  <meta name="description" content="ForgCV Pro : exportez un nombre illimité de CV en PDF HD, accédez à tous les templates premium, zéro publicité. La version ultime de ForgCV by Vixfor.">
+  <link rel="canonical" href="https://vixfor.netlify.app/forgcv-pro">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    /* ── Pro page variables ───────────────────────── */
+    :root {
+      --pro-gold:   #F59E0B;
+      --pro-gold-2: #D97706;
+      --pro-glow:   rgba(245,158,11,0.3);
+      --pro-dark:   #0A0B14;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .pro-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(91,87,255,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,158,11,0.1) 0%, transparent 60%),
+                  var(--clr-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pro-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pro-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 4px 24px rgba(91,87,255,0.25));
+    }
+
+    .pro-logo-wrap img,
+    .pro-logo-wrap svg {
+      width: clamp(180px, 40vw, 260px);
+      height: auto;
+    }
+
+    .pro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(217,119,6,0.08));
+      border: 1px solid rgba(245,158,11,0.35);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--pro-gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .pro-hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      max-width: 700px;
+    }
+
+    .pro-hero h1 .accent { color: var(--clr-accent); }
+    .pro-hero h1 .gold   { color: var(--pro-gold); }
+
+    .pro-hero p {
+      font-size: 1.1rem;
+      color: var(--clr-text-2);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.65;
+    }
+
+    .pro-cta-wrap {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-pro {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-pro-primary {
+      background: linear-gradient(135deg, var(--pro-gold), var(--pro-gold-2));
+      color: #fff;
+      box-shadow: 0 6px 24px var(--pro-glow), 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-pro-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px var(--pro-glow), 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-pro-ghost {
+      background: transparent;
+      color: var(--clr-text);
+      border: 2px solid var(--clr-border);
+    }
+
+    .btn-pro-ghost:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── Features grid ────────────────────────────── */
+    .pro-features {
+      padding: 5rem 1.5rem;
+      background: var(--clr-surface);
+    }
+
+    .pro-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .pro-feature-card {
+      background: var(--clr-bg);
+      border: 1.5px solid var(--clr-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .pro-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pro-gold), var(--clr-accent));
+      border-radius: 16px 16px 0 0;
+    }
+
+    .pro-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border-color: rgba(245,158,11,0.3);
+    }
+
+    .pro-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .pro-feature-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--clr-text);
+      margin-bottom: .5rem;
+    }
+
+    .pro-feature-desc {
+      font-size: .85rem;
+      color: var(--clr-text-2);
+      line-height: 1.55;
+    }
+
+    /* ── Pricing ──────────────────────────────────── */
+    .pro-pricing {
+      padding: 5rem 1.5rem;
+    }
+
+    .pro-price-card {
+      max-width: 420px;
+      margin: 3rem auto 0;
+      background: var(--clr-bg);
+      border: 2px solid rgba(245,158,11,0.35);
+      border-radius: 24px;
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 8px 40px rgba(245,158,11,0.12);
+    }
+
+    .pro-price-badge {
+      position: absolute;
+      top: -14px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--pro-gold), var(--pro-gold-2));
+      color: white;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      padding: 5px 18px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pro-price-amount {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      color: var(--clr-text);
+    }
+
+    .pro-price-amount sup {
+      font-size: 1.5rem;
+      font-weight: 700;
+      vertical-align: top;
+      margin-top: .8rem;
+      display: inline-block;
+    }
+
+    .pro-price-amount sub {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--clr-text-2);
+    }
+
+    .pro-perks {
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 2rem;
+      text-align: left;
+    }
+
+    .pro-perks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .9rem;
+      color: var(--clr-text);
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .pro-perks li:last-child { border-bottom: none; }
+
+    .pro-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: linear-gradient(135deg, var(--pro-gold), var(--pro-gold-2));
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: .65rem;
+      color: white;
+      font-weight: 900;
+    }
+
+    /* ── Free CTA ─────────────────────────────────── */
+    .pro-free-note {
+      text-align: center;
+      padding: 3rem 1.5rem 5rem;
+      color: var(--clr-text-2);
+      font-size: .9rem;
+    }
+
+    .pro-free-note a {
+      color: var(--clr-accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pro-free-note a:hover { text-decoration: underline; }
+
+    /* ── Section headings ─────────────────────────── */
+    .pro-section-eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pro-gold);
+      text-align: center;
+      margin-bottom: .5rem;
+    }
+
+    .pro-section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-align: center;
+      color: var(--clr-text);
+    }
+
+    @media (max-width: 640px) {
+      .pro-hero { padding: 5rem 1rem 3rem; }
+      .pro-features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────────────── -->
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="nlpro" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B57FF"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#nlpro)"/><rect x="10" y="7" width="16" height="22" rx="2.5" fill="white"/><rect x="13" y="11" width="10" height="1.8" rx="1" fill="#5B57FF"/><rect x="13" y="14.5" width="8" height="1.8" rx="1" fill="rgba(91,87,255,0.6)"/><rect x="13" y="18" width="6" height="1.8" rx="1" fill="rgba(91,87,255,0.35)"/><path d="M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z" fill="#F59E0B"/></svg>
+      <div style="display:flex;flex-direction:column;line-height:1.1">
+        <span style="font-size:15px;font-weight:800;letter-spacing:-.03em;color:var(--clr-text)">Forg<span style="color:var(--clr-accent)">CV</span></span>
+        <span style="font-size:7.5px;font-weight:700;letter-spacing:.06em;color:#F59E0B;text-transform:uppercase">PRO</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="create-cv-free.html">Créer un CV</a>
+      <a href="cover-letter-generator.html">✉️ Lettre</a>
+      <a href="templates.html">Templates</a>
+    </div>
+    <div class="nav-right">
+      <a href="create-cv-free.html" class="btn btn-primary btn-sm">Commencer gratuit</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Accueil</a>
+  <a href="create-cv-free.html">Créer un CV gratuit</a>
+  <a href="cover-letter-generator.html">✉️ Lettre de motivation</a>
+  <a href="templates.html">Templates</a>
+  <a href="forgcv-pro.html" style="color:#F59E0B;font-weight:700">⭐ ForgCV Pro</a>
+</div>
+
+<main>
+
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+<section class="pro-hero">
+  <div class="pro-logo-wrap">
+    <img src="assets/forgcv-pro-logo.svg" alt="ForgCV Pro by Vixfor" width="260" height="62">
+  </div>
+  <div class="pro-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    Bientôt disponible · Inscris-toi pour être notifié
+  </div>
+  <h1>
+    Le meilleur CV,<br>
+    <span class="accent">sans limites</span>.<br>
+    <span class="gold">Niveau Pro.</span>
+  </h1>
+  <p>
+    ForgCV Pro débloque des templates exclusifs, des exports illimités en PDF haute définition, la personnalisation avancée — et zéro publicité. La version ultime pour les candidats qui ne font aucun compromis.
+  </p>
+  <div class="pro-cta-wrap">
+    <a href="create-cv-free.html" class="btn-pro btn-pro-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Commencer avec la version gratuite
+    </a>
+    <a href="#features" class="btn-pro btn-pro-ghost">Voir les fonctionnalités</a>
+  </div>
+</section>
+
+<!-- ── Features ──────────────────────────────────────────────────────────── -->
+<section class="pro-features" id="features">
+  <div class="container">
+    <p class="pro-section-eyebrow">Ce que Pro change</p>
+    <h2 class="pro-section-title">Tout ce dont tu as besoin pour décrocher le job</h2>
+    <div class="pro-features-grid">
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">🎨</span>
+        <div class="pro-feature-title">Templates exclusifs</div>
+        <p class="pro-feature-desc">Accès à la bibliothèque complète de templates premium — des designs créés par des recruteurs pour passer les filtres ATS et marquer les esprits.</p>
+      </div>
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">📥</span>
+        <div class="pro-feature-title">Exports PDF illimités</div>
+        <p class="pro-feature-desc">Télécharge autant de versions que tu veux — adapte ton CV à chaque poste, exporte en 1 clic en PDF HD sans filigrane.</p>
+      </div>
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">⚡</span>
+        <div class="pro-feature-title">Zéro publicité</div>
+        <p class="pro-feature-desc">Expérience épurée, sans distraction. Concentre-toi sur ton CV, pas sur les bannières.</p>
+      </div>
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">✉️</span>
+        <div class="pro-feature-title">Lettres de motivation Pro</div>
+        <p class="pro-feature-desc">Générer des lettres coordonnées à ton CV, avec styles premium et personnalisation avancée par secteur d'activité.</p>
+      </div>
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">🌍</span>
+        <div class="pro-feature-title">Multi-langue avancé</div>
+        <p class="pro-feature-desc">Bascule ton CV entre 7 langues en un clic — adapté aux normes de chaque pays (FR, EN, DE, NL, ES, AR, RU).</p>
+      </div>
+      <div class="pro-feature-card">
+        <span class="pro-feature-icon">💾</span>
+        <div class="pro-feature-title">Sauvegarde Cloud (bientôt)</div>
+        <p class="pro-feature-desc">Reprends ton CV depuis n'importe quel appareil. Historique illimité de versions, synchronisation instantanée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ────────────────────────────────────────────────────────────── -->
+<section class="pro-pricing">
+  <div class="container">
+    <p class="pro-section-eyebrow">Tarif lancement</p>
+    <h2 class="pro-section-title">Un investissement, une carrière</h2>
+    <div class="pro-price-card">
+      <div class="pro-price-badge">🚀 Early Bird — places limitées</div>
+      <div style="margin-top:1.5rem">
+        <div class="pro-price-amount">
+          <sup>€</sup>3<sub>/mois</sub>
+        </div>
+        <p style="font-size:.8rem;color:var(--clr-text-3);margin:.5rem 0 1.5rem">ou €24/an — soit 2 mois offerts</p>
+      </div>
+      <ul class="pro-perks">
+        <li><span class="pro-check">✓</span> Tous les templates premium débloqués</li>
+        <li><span class="pro-check">✓</span> Exports PDF illimités, sans filigrane</li>
+        <li><span class="pro-check">✓</span> Lettres de motivation Pro</li>
+        <li><span class="pro-check">✓</span> Expérience 100% sans pub</li>
+        <li><span class="pro-check">✓</span> Support prioritaire</li>
+        <li><span class="pro-check">✓</span> Accès aux nouvelles fonctionnalités en avant-première</li>
+      </ul>
+      <a href="create-cv-free.html" class="btn-pro btn-pro-primary" style="width:100%;justify-content:center">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Commencer maintenant — 100% gratuit
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Free fallback ──────────────────────────────────────────────────────── -->
+<div class="pro-free-note">
+  <p>Pas encore prêt pour Pro ? La version <a href="create-cv-free.html">gratuite de ForgCV</a> est déjà puissante — 6 templates, export PDF HD, 7 langues, sans inscription.</p>
+</div>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer style="border-top:1px solid var(--clr-border);padding:2rem 1.5rem;text-align:center">
+  <div class="container">
+    <p style="font-size:.8rem;color:var(--clr-text-3)">
+      © 2026 <strong>ForgCV</strong> by <a href="vixfor/index.html" style="color:var(--clr-accent);font-weight:700;text-decoration:none">Vixfor</a> —
+      <a href="legal/mentions-legales.html" style="color:var(--clr-text-3)">Mentions légales</a> ·
+      <a href="legal/privacy-policy.html" style="color:var(--clr-text-3)">Confidentialité</a> ·
+      <a href="legal/cookies.html" style="color:var(--clr-text-3)">Cookies</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/cookie-consent.js" defer></script>
+<script src="js/analytics.js" defer></script>
+
+</body>
+</html>
