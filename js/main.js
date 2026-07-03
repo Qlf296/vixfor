@@ -20,14 +20,35 @@ function initNav() {
   // Hamburger toggle
   hamburger?.addEventListener('click', (e) => {
     e.stopPropagation();
-    hamburger.classList.toggle('open');
-    mobileNav?.classList.toggle('open');
+    const isOpen = hamburger.classList.toggle('open');
+    mobileNav?.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
   });
 
+  // Close menu when a mobile nav link is clicked
+  mobileNav?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger?.classList.remove('open');
+      mobileNav.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close menu on outside click
   document.addEventListener('click', (e) => {
-    if (!nav?.contains(e.target)) {
+    if (!nav?.contains(e.target) && !mobileNav?.contains(e.target)) {
       hamburger?.classList.remove('open');
       mobileNav?.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hamburger?.classList.remove('open');
+      mobileNav?.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
     }
   });
 
