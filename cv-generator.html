@@ -115,6 +115,25 @@
               <p data-i18n="cv_s1_sub">This information will appear in the header of your CV.</p>
             </div>
 
+            <!-- CV Language picker -->
+            <div class="content-lang-wrap">
+              <span class="content-lang-icon">🌍</span>
+              <div class="content-lang-inner">
+                <div class="content-lang-label">CV language</div>
+                <select id="cvLanguage" class="content-lang-select" onchange="window.updateCVLanguage(this.value)" aria-label="Select CV language">
+                  <option value="en">🇬🇧 English</option>
+                  <option value="fr">🇫🇷 Français</option>
+                  <option value="nl">🇳🇱 Nederlands</option>
+                  <option value="es">🇪🇸 Español</option>
+                  <option value="ar">🇸🇦 العربية</option>
+                  <option value="ru">🇷🇺 Русский</option>
+                  <option value="de">🇩🇪 Deutsch</option>
+                  <option value="pt">🇵🇹 Português</option>
+                </select>
+                <div class="content-lang-hint">This only affects your CV language — the site stays in English.</div>
+              </div>
+            </div>
+
             <!-- Identity -->
             <div class="form-section">
               <div class="form-section-label">Identity</div>
@@ -408,11 +427,15 @@
   </div><!-- /generator-body -->
 </div><!-- /generator-page -->
 
-<!-- html2pdf CDN -->
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/cv-lang.js"></script>
+<script src="js/cv-generator.js"></script>
 <script src="js/cookie-consent.js" defer></script>
 <script src="js/analytics.js" defer></script>
-<script src="js/main.js" defer></script>
-<script src="js/cv-generator.js"></script>
+<script src="js/email-capture.js" defer></script>
+<script src="js/share-system.js" defer></script>
+<script src="js/ai-improve.js" defer></script>
 
 <div style="text-align:center;padding:.75rem;border-top:1px solid var(--clr-border);margin-top:2rem">
   <a href="legal/mentions-legales.html" style="font-size:.72rem;color:var(--clr-text-3);text-decoration:none;margin:0 .75rem">Legal Notice</a>
