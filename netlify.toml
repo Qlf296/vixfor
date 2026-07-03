@@ -367,10 +367,7 @@
   to     = "/templates.html"
   status = 301
 
-[[redirects]]
-  from   = "/cv-tips"
-  to     = "/seo/how-to-write-a-cv.html"
-  status = 301
+
 
 [[redirects]]
   from   = "/cv-examples.html"
