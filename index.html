@@ -35,6 +35,8 @@
   <link rel="stylesheet" href="css/vixfor-design-system.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%235B57FF'/><stop offset='100%25' stop-color='%237C3AED'/></linearGradient></defs><rect width='36' height='36' rx='10' fill='url(%23g)'/><rect x='10' y='7' width='16' height='22' rx='2.5' fill='white'/><rect x='13' y='11' width='10' height='1.8' rx='1' fill='%235B57FF'/><rect x='13' y='14.5' width='8' height='1.8' rx='1' fill='rgba(91,87,255,0.6)'/><path d='M21 6 L19 13 L22.5 13 L17 22 L21.5 13 L18 13 Z' fill='%23F59E0B'/></svg>">
+  <link rel="alternate" hreflang="x-default" href="https://forgcv.com/">
+  <link rel="alternate" hreflang="en" href="https://forgcv.com/">
 </head>
 <body>
 
@@ -42,7 +44,7 @@
 <nav class="nav" id="main-nav" aria-label="Main navigation">
   <div class="container">
     <a href="index.html" class="nav-logo">
-      <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:32px;width:auto">
+      <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:32px;width:auto" fetchpriority="high">
     </a>
     <div class="nav-links">
       <a href="create-cv-free.html">Create a CV</a>
@@ -498,6 +500,46 @@
   </div>
 </section>
 
+<!-- ════ GUIDES ════ -->
+<section style="padding:4.5rem 0;border-top:1px solid var(--clr-border)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div style="display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--clr-accent);background:rgba(91,87,255,0.08);border:1px solid rgba(91,87,255,0.18);padding:5px 12px;border-radius:9999px;margin-bottom:1rem">✦ Guides</div>
+      <h2 style="font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.03em;margin:0 0 .6rem;color:var(--clr-text)">Expert CV & cover letter guides</h2>
+      <p style="font-size:.95rem;color:var(--clr-text-2);max-width:500px;margin:0 auto">Country-specific tips, format rules, and recruiter insights — all free.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem">
+      <a href="seo/cv-software-engineer.html" style="text-decoration:none;display:block;background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:14px;padding:1.5rem;transition:box-shadow .2s,transform .2s" onmouseover="this.style.boxShadow='0 8px 28px rgba(91,87,255,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+        <div style="font-size:1.6rem;margin-bottom:.75rem">💻</div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Software Engineer CV</div>
+        <div style="font-size:.82rem;color:var(--clr-text-2);line-height:1.55">ATS-optimized, skills-first format. Beat FAANG screening.</div>
+        <div style="margin-top:.875rem;font-size:.78rem;font-weight:700;color:var(--clr-accent)">Read guide →</div>
+      </a>
+      <a href="seo/cover-letter-france.html" style="text-decoration:none;display:block;background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:14px;padding:1.5rem;transition:box-shadow .2s,transform .2s" onmouseover="this.style.boxShadow='0 8px 28px rgba(91,87,255,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+        <div style="font-size:1.6rem;margin-bottom:.75rem">🇫🇷</div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Cover Letter — France</div>
+        <div style="font-size:.82rem;color:var(--clr-text-2);line-height:1.55">Cover letter for France: tone, structure, formal closing, common mistakes.</div>
+        <div style="margin-top:.875rem;font-size:.78rem;font-weight:700;color:var(--clr-accent)">Read guide →</div>
+      </a>
+      <a href="seo/cover-letter-germany.html" style="text-decoration:none;display:block;background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:14px;padding:1.5rem;transition:box-shadow .2s,transform .2s" onmouseover="this.style.boxShadow='0 8px 28px rgba(91,87,255,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+        <div style="font-size:1.6rem;margin-bottom:.75rem">🇩🇪</div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Anschreiben — Germany</div>
+        <div style="font-size:.82rem;color:var(--clr-text-2);line-height:1.55">DIN 5008 format, Betreff, evidence-based tone, signature rules.</div>
+        <div style="margin-top:.875rem;font-size:.78rem;font-weight:700;color:var(--clr-accent)">Read guide →</div>
+      </a>
+      <a href="seo/cv-europe-jobs.html" style="text-decoration:none;display:block;background:var(--clr-surface);border:1.5px solid var(--clr-border);border-radius:14px;padding:1.5rem;transition:box-shadow .2s,transform .2s" onmouseover="this.style.boxShadow='0 8px 28px rgba(91,87,255,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+        <div style="font-size:1.6rem;margin-bottom:.75rem">🌍</div>
+        <div style="font-size:.95rem;font-weight:700;color:var(--clr-text);margin-bottom:.35rem">Jobs in Europe</div>
+        <div style="font-size:.82rem;color:var(--clr-text-2);line-height:1.55">Country-by-country job market guide. CV format, salary, culture.</div>
+        <div style="margin-top:.875rem;font-size:.78rem;font-weight:700;color:var(--clr-accent)">Read guide →</div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:1.75rem">
+      <a href="seo/how-to-write-a-cv.html" style="font-size:.875rem;font-weight:600;color:var(--clr-accent);text-decoration:none">View all guides →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ════ CTA ════ -->
 <section class="cta-section">
   <div class="container">
@@ -575,7 +617,7 @@
     <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
       <div class="footer-brand">
         <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
-          <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:36px;width:auto">
+          <img loading="lazy" src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:36px;width:auto">
         </a>
         <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Build your professional CV in 2 minutes. 100% free, no sign-up.</p>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap">
@@ -598,8 +640,11 @@
           <a href="seo/how-to-write-a-cv.html">Write a CV</a>
           <a href="seo/cv-examples.html">CV Examples</a>
           <a href="seo/cv-format-2026.html">2026 Format</a>
-          <a href="seo/cv-with-no-experience.html">CV with No Experience</a>
+          <a href="seo/cv-with-no-experience.html">No Experience</a>
+          <a href="seo/cv-software-engineer.html">💻 Software Engineer CV</a>
           <a href="seo/cv-europe-jobs.html">Jobs in Europe</a>
+          <a href="seo/cover-letter-france.html">🇫🇷 Cover Letter France</a>
+          <a href="seo/cover-letter-germany.html">🇩🇪 Cover Letter Germany</a>
         </div>
       </div>
       <div class="footer-col">
@@ -681,5 +726,8 @@
 <style>
 @keyframes ripple{to{transform:scale(2.5);opacity:0}}
 </style>
+<script src="js/email-capture.js" defer></script>
+<script src="js/share-system.js" defer></script>
+<script src="js/ai-improve.js" defer></script>
 </body>
 </html>

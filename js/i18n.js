@@ -173,7 +173,7 @@ function detectLanguage() {
 function setLanguage(lang) {
   if (!LANGUAGES[lang]) return;
   currentLang = lang;
-  localStorage.setItem('cvcraft_lang', lang);
+  // language is always 'en' on public pages; cv-lang.js handles builder language
   document.documentElement.lang = lang;
   document.documentElement.dir  = LANGUAGES[lang].dir;
   applyTranslations();

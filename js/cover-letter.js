@@ -430,8 +430,9 @@ ${d.firstname} ${d.lastname}`
 
 /* ── Generate ── */
 function generateLetter() {
-  var get = function(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
   var tone = (document.querySelector('input[name="cl-tone"]:checked') || {}).value || 'professional';
+  if (typeof cvf_track === 'function') cvf_track('generate_letter', (window.letterLang || 'unknown') + '_' + tone);
+  var get = function(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
 
   var d = {
     firstname:  get('cl-firstname'),

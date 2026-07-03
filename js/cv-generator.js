@@ -206,7 +206,9 @@ function buildCVHtml(d, tpl, forPDF = false) {
   const skills   = d.skills    ? d.skills.split(',').map(s => s.trim()).filter(Boolean)    : [];
   const langList = d.languages ? d.languages.split(',').map(s => s.trim()).filter(Boolean) : [];
   const accent   = TEMPLATES[tpl]?.accent || '#5B57FF';
-  const fullName = `${d.firstname} ${d.lastname}`.trim() || 'Your Name';
+  const _nameFallbacks = {en:'Your Name',fr:'Votre Prénom Nom',de:'Ihr Name',nl:'Uw Naam',es:'Su Nombre',ar:'اسمك',ru:'Ваше Имя',pt:'Seu Nome'};
+  const _lang = (window.cvLang || 'en');
+  const fullName = `${d.firstname} ${d.lastname}`.trim() || _nameFallbacks[_lang] || 'Your Name';
 
   /* ── Helper: entry date display ── */
   const expDate = exp =>

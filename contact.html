@@ -9,12 +9,12 @@
   <meta property="og:title" content="Contact ForgCV — Support & FAQ">
   <meta property="og:description" content="A question? Our team responds within 24h. Check our FAQ too.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://forgcv.com/contact.html">
+  <meta property="og:url" content="https://forgcv.com/contact">
   <meta property="og:image" content="https://forgcv.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact ForgCV — Support">
   <meta name="twitter:description" content="Questions, suggestions — reply within 24h.">
-  <link rel="canonical" href="https://forgcv.com/contact.html">
+  <link rel="canonical" href="https://forgcv.com/contact">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
@@ -59,7 +59,7 @@
 <nav class="nav" id="main-nav">
   <div class="container">
     <a href="index.html" class="nav-logo">
-      <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:32px;width:auto">
+      <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:32px;width:auto" fetchpriority="high">
     </a>
     <div class="nav-links">
       <a href="create-cv-free.html">Create a CV</a>
@@ -194,7 +194,7 @@
     <div class="footer-grid" style="grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:2rem">
       <div class="footer-brand">
         <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:.875rem">
-          <img src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:36px;width:auto">
+          <img loading="lazy" src="assets/forgcv-logo-sm.svg" alt="ForgCV by Vixfor" width="148" height="36" style="display:block;height:36px;width:auto">
         </a>
         <p style="font-size:.8rem;color:var(--clr-text-3);line-height:1.65;max-width:210px;margin-bottom:1rem">Build your professional CV in 2 minutes. 100% free, no sign-up.</p>
         <div style="display:flex;gap:.4rem;flex-wrap:wrap">
@@ -273,9 +273,17 @@
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const name    = document.getElementById('contact-name').value.trim();
-    const email   = document.getElementById('contact-email').value.trim();
-    const message = document.getElementById('contact-message').value.trim();
+    const name        = document.getElementById('contact-name').value.trim();
+    const email       = document.getElementById('contact-email').value.trim();
+    const message     = document.getElementById('contact-message').value.trim();
+    const subjectEl   = document.getElementById('contact-subject');
+    const subjectVal  = subjectEl ? subjectEl.value : '';
+    const subjectText = subjectEl && subjectEl.options[subjectEl.selectedIndex]
+                        ? subjectEl.options[subjectEl.selectedIndex].text
+                        : '';
+    const otherDetailEl = document.getElementById('contact-other-detail');
+    const otherDetail   = otherDetailEl ? otherDetailEl.value.trim() : '';
+
     if (!name || !email || !message) {
       if (typeof showToast === 'function') showToast('Please fill in all required fields.', 'error');
       return;
@@ -284,21 +292,44 @@
     btn.innerHTML = '<span class="spinner"></span> Sending...';
     btn.disabled  = true;
 
-    const form = e.target;
-    const data = new FormData(form);
+    // If "Other" was selected, merge the detail into the message field so
+    // Netlify and the mailto fallback both receive the full context in one place
+    const msgEl = document.getElementById('contact-message');
+    if (otherDetail && msgEl) {
+      msgEl.value = '[Request details: ' + otherDetail + ']\n\n' + msgEl.value;
+    }
 
-    fetch(window.location.pathname, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
+    const form = e.target;
+
+    // Try Netlify form submission (includes all fields via FormData)
+    var formData = new URLSearchParams(new FormData(form)).toString();
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData
     })
-    .then(function() {
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       document.getElementById('contact-form-card').style.display = 'none';
       document.getElementById('contact-success').classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     })
     .catch(function(err) {
+      // Fallback: mailto: with full context so nothing is lost
+      var emailSubject = subjectText
+        ? '[ForgCV] ' + subjectText
+        : '[ForgCV] Contact form message';
+      var bodyParts = [
+        'Name: ' + name,
+        'Email: ' + email,
+        subjectText ? 'Subject: ' + subjectText : '',
+        otherDetail ? 'Details: ' + otherDetail : '',
+        '',
+        message
+      ].filter(Boolean).join('\n');
+      window.location.href = 'mailto:vixfor.contact@gmail.com'
+        + '?subject=' + encodeURIComponent(emailSubject)
+        + '&body='    + encodeURIComponent(bodyParts);
       btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Send</span>';
       btn.disabled = false;
-      if (typeof showToast === 'function') showToast('Error sending. Please retry or email <a href="mailto:vixfor.contact@gmail.com">vixfor.contact@gmail.com</a>', 'error');
       console.error('Form submit error:', err);
     });
   });

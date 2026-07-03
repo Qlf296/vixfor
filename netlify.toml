@@ -60,6 +60,20 @@
 # ── Legal routes ───────────────────────────────────────────────────────────
 
 [[redirects]]
+  from   = "/cover-letter-france"
+  to     = "/seo/cover-letter-france.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cover-letter-germany"
+  to     = "/seo/cover-letter-germany.html"
+  status = 301
+
+[[redirects]]
+  from   = "/cv-software-engineer"
+  to     = "/seo/cv-software-engineer.html"
+  status = 301
+[[redirects]]
   from   = "/cv-tips"
   to     = "/seo/cv-tips.html"
   status = 200
