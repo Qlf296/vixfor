@@ -965,3 +965,32 @@
   padding: 2rem 0;
   text-align: center;
 }
+
+/* ── Fixed-nav offset for SEO pages ─────────────────────────────────
+   The nav is position:fixed (64px). On SEO pages the first child of
+   <main> is the TOP CTA BAR which starts at y=0 — hidden behind nav.
+   body:has(.seo-hero) pushes ALL content below the nav without
+   affecting the homepage or builder pages (which have their own offset).
+   Then we collapse the seo-hero padding-top since body handles the gap.
+   ──────────────────────────────────────────────────────────────────── */
+body:has(.seo-hero) {
+  padding-top: var(--nav-h, 64px);
+}
+
+/* Override the large hardcoded padding-top in every SEO page's
+   inline <style> — only spacing between TOP CTA BAR and h1 needed */
+.seo-hero {
+  padding-top: 2.25rem !important;
+}
+
+@media (max-width: 640px) {
+  .seo-hero {
+    padding-top: 1.5rem !important;
+  }
+
+  /* TOP CTA BAR: on narrow screens the flex row wraps into 2 lines.
+     Hide the descriptive text; keep only the action button — saves ~40px */
+  body:has(.seo-hero) main > div:first-child span:first-child {
+    display: none;
+  }
+}
