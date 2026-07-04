@@ -1,0 +1,3 @@
+# Redirect vixfor.com to forgcv.com
+https://vixfor.com/* https://forgcv.com/:splat 301!
+http://vixfor.com/* https://forgcv.com/:splat 301!
