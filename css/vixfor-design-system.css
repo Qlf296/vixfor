@@ -945,3 +945,23 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   26. SEO PAGE UTILITIES (shared across all country/topic pages)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Gradient text — .grad is the short alias used across all SEO pages */
+.grad {
+  background: var(--clr-grad, linear-gradient(135deg,#5B57FF 0%,#8B5CF6 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Contextual internal-links band at bottom of SEO pages */
+.contextual-links {
+  border-top: 1px solid var(--clr-border);
+  background: var(--clr-bg-2);
+  padding: 2rem 0;
+  text-align: center;
+}
