@@ -18,7 +18,7 @@
   minify  = true
 
 [build.processing.html]
-  pretty_urls = true
+  pretty_urls = false
 
 [build.processing.images]
   compress = true
@@ -60,10 +60,9 @@
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
-    Content-Type  = "application/xml; charset=utf-8"
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    Pragma        = "no-cache"
-    Expires       = "0"
+    Content-Type  = "application/xml"
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag  = "all"
 
 # ── Block sensitive files ──────────────────────────────────────────────────
 # ── Legal routes ───────────────────────────────────────────────────────────
