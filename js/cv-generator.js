@@ -546,15 +546,6 @@ function downloadPDF() {
    * Le navigateur génère un PDF parfait (rendu natif, zéro plugin).
    * ─────────────────────────────────────────────────────────────────────
    */
-  const printWin = window.open('', '_blank', 'width=900,height=1100');
-
-  if (!printWin) {
-    btn.innerHTML = orig;
-    btn.disabled = false;
-    showToast('⚠️ Please allow pop-ups to generate the PDF.', 'error');
-    return;
-  }
-
   const fullHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -662,9 +653,24 @@ ${cvHtml}
 </body>
 </html>`;
 
-  printWin.document.open();
-  printWin.document.write(fullHtml);
-  printWin.document.close();
+  /* ── Iframe print (no popup — works on Edge, Safari, Firefox, Chrome) ── */
+  var oldFrame = document.getElementById('fgcv-print-frame');
+  if (oldFrame) oldFrame.remove();
+
+  var printFrame = document.createElement('iframe');
+  printFrame.id = 'fgcv-print-frame';
+  printFrame.setAttribute('aria-hidden', 'true');
+  printFrame.style.cssText = 'position:fixed;left:-9999px;top:0;width:210mm;height:297mm;border:0;';
+  document.body.appendChild(printFrame);
+
+  var iDoc = printFrame.contentDocument || printFrame.contentWindow.document;
+  iDoc.open();
+  iDoc.write(fullHtml);
+  iDoc.close();
+
+  printFrame.contentWindow.addEventListener('afterprint', function () {
+    setTimeout(function () { printFrame.remove(); }, 500);
+  });
 
   btn.innerHTML = orig;
   btn.disabled  = false;

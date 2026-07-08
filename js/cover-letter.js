@@ -497,16 +497,27 @@ function downloadLetterPDF() {
   var orig = btn ? btn.innerHTML : '';
   if (btn) { btn.innerHTML = '<span class="spinner"></span>'; btn.disabled = true; }
 
-  var printWin = window.open('', '_blank', 'width=800,height=1000');
-  if (!printWin) {
-    if (btn) { btn.innerHTML = orig; btn.disabled = false; }
-    if (typeof showToast === 'function') showToast('⚠️ Please allow pop-ups to generate the PDF.', 'error');
-    return;
-  }
-
   var isRTL = window.CV_LANG_DICT && window.CV_LANG_DICT[window.letterLang||'en'] && window.CV_LANG_DICT[window.letterLang||'en'].rtl;
-  printWin.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Cover Letter</title><style>*{box-sizing:border-box;margin:0;padding:0}@page{size:A4;margin:0}body{font-family:Georgia,"Times New Roman",serif;font-size:12pt;line-height:1.8;padding:22mm 28mm;color:#1A1A2E;direction:' + (isRTL?'rtl':'ltr') + ';white-space:pre-wrap}</style></head><body>' + text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '<script>window.addEventListener("load",function(){setTimeout(function(){window.print();},400)});<\/script></body></html>');
-  printWin.document.close();
+  var clHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Cover Letter</title><style>*{box-sizing:border-box;margin:0;padding:0}@page{size:A4;margin:0}body{font-family:Georgia,"Times New Roman",serif;font-size:12pt;line-height:1.8;padding:22mm 28mm;color:#1A1A2E;direction:' + (isRTL?'rtl':'ltr') + ';white-space:pre-wrap}</style></head><body>' + text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '<script>window.addEventListener("load",function(){setTimeout(function(){window.print();},400)});<\/script></body></html>';
+
+  /* ── Iframe print (no popup — works on Edge, Safari, Firefox, Chrome) ── */
+  var oldClFrame = document.getElementById('fgcv-cl-print-frame');
+  if (oldClFrame) oldClFrame.remove();
+
+  var clFrame = document.createElement('iframe');
+  clFrame.id = 'fgcv-cl-print-frame';
+  clFrame.setAttribute('aria-hidden', 'true');
+  clFrame.style.cssText = 'position:fixed;left:-9999px;top:0;width:210mm;height:297mm;border:0;';
+  document.body.appendChild(clFrame);
+
+  var clDoc = clFrame.contentDocument || clFrame.contentWindow.document;
+  clDoc.open();
+  clDoc.write(clHtml);
+  clDoc.close();
+
+  clFrame.contentWindow.addEventListener('afterprint', function () {
+    setTimeout(function () { clFrame.remove(); }, 500);
+  });
 
   if (btn) { btn.innerHTML = orig; btn.disabled = false; }
   if (typeof showToast === 'function') showToast('✅ PDF ready! Click "Save as PDF" in the print dialog.', 'success');
